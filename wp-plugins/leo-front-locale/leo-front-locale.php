@@ -621,6 +621,159 @@ function leo_inject_faq_schema() {
  * Data is extracted verbatim from verified Alibaba Trade Assurance reviews.
  * No fake reviews. Updating this list requires real new reviews.
  */
+/**
+ * Inject an enhanced Organization schema on every page. Extends the default
+ * SureRank Organization entity with the data we collected from the live site
+ * footer (Ryan Lau, phone numbers, WhatsApp, factory address, founding year,
+ * patents, certifications). Large GEO signal for LLM citation and Google
+ * knowledge graph entry.
+ */
+add_action( 'wp_head', 'leo_inject_enhanced_org_schema', 3 );
+function leo_inject_enhanced_org_schema() {
+    if ( is_admin() ) {
+        return;
+    }
+    $schema = [
+        '@context'      => 'https://schema.org',
+        '@type'         => 'Organization',
+        '@id'           => 'https://eviehometech.com/#organization-enhanced',
+        'name'          => 'Hefei Ecologie Vie Home Technology Co., Ltd.',
+        'alternateName' => [ 'Eviehome', 'Ecologie Vie Home Technology' ],
+        'url'           => 'https://eviehometech.com/',
+        'logo'          => 'https://eviehometech.com/wp-content/uploads/2026/03/eviehometech-logo-1.webp',
+        'slogan'        => 'Factory-direct smart pet products manufacturer since 2014',
+        'description'   => 'Hefei Ecologie Vie Home Technology Co., Ltd. (Eviehome) is a factory-direct smart pet products manufacturer based in Hefei, Anhui Province, China. Since 2014 we have supplied wholesale, OEM and ODM smart pet products (automatic cat litter boxes, pet feeders, pet water fountains, pet air purifiers, bird feeders, GPS trackers, bark collars, robot vacuums) to importers, distributors and private-label brands in more than 30 countries.',
+        'foundingDate'  => '2014',
+        'numberOfEmployees' => [
+            '@type'     => 'QuantitativeValue',
+            'minValue'  => 51,
+            'maxValue'  => 200,
+        ],
+        'address'       => [
+            '@type'           => 'PostalAddress',
+            'streetAddress'   => 'Mingmen Industrial Park, No. 7235 Ziyun Road, Economic and Technological Development Zone',
+            'addressLocality' => 'Hefei',
+            'addressRegion'   => 'Anhui',
+            'postalCode'      => '230601',
+            'addressCountry'  => 'CN',
+        ],
+        'contactPoint'  => [
+            [
+                '@type'             => 'ContactPoint',
+                'name'              => 'Ryan Lau',
+                'contactType'       => 'sales',
+                'email'             => 'ryanlau@eviehometech.com',
+                'telephone'         => '+86 17333173263',
+                'availableLanguage' => [ 'English', 'Chinese' ],
+                'areaServed'        => [ 'US', 'CA', 'GB', 'DE', 'FR', 'IT', 'ES', 'NL', 'BE', 'PL', 'PT', 'AU', 'NZ', 'JP', 'KR', 'SG', 'IN', 'AE', 'BR' ],
+            ],
+            [
+                '@type'             => 'ContactPoint',
+                'contactType'       => 'customer support',
+                'telephone'         => '+86 19956530913',
+                'contactOption'     => 'TollFree',
+                'availableLanguage' => [ 'English', 'Chinese' ],
+            ],
+        ],
+        'knowsAbout'    => [
+            'OEM smart pet products manufacturing',
+            'ODM pet products development',
+            'Automatic cat litter box manufacturing',
+            'Smart pet feeders',
+            'Pet water fountains',
+            'Pet air purifiers',
+            'Smart bird feeders',
+            'Pet GPS trackers',
+            'Bark collars',
+            'Pet vacuum cleaners',
+            'Private label pet products',
+            'CE certification',
+            'FCC certification',
+            'ROHS compliance',
+            'REACH compliance',
+        ],
+        'hasCredential' => [
+            [ '@type' => 'EducationalOccupationalCredential', 'name' => 'CE Marking', 'credentialCategory' => 'certification' ],
+            [ '@type' => 'EducationalOccupationalCredential', 'name' => 'FCC Part 15', 'credentialCategory' => 'certification' ],
+            [ '@type' => 'EducationalOccupationalCredential', 'name' => 'ROHS', 'credentialCategory' => 'certification' ],
+            [ '@type' => 'EducationalOccupationalCredential', 'name' => 'REACH', 'credentialCategory' => 'certification' ],
+            [ '@type' => 'EducationalOccupationalCredential', 'name' => 'ISO 9001', 'credentialCategory' => 'certification' ],
+            [ '@type' => 'EducationalOccupationalCredential', 'name' => 'PSE Japan', 'credentialCategory' => 'certification' ],
+            [ '@type' => 'EducationalOccupationalCredential', 'name' => 'IP68', 'credentialCategory' => 'certification' ],
+            [ '@type' => 'EducationalOccupationalCredential', 'name' => 'UKCA', 'credentialCategory' => 'certification' ],
+        ],
+        'sameAs'        => [
+            'https://www.instagram.com/eviehometech/',
+            'https://www.facebook.com/profile.php?id=61585057945796',
+            'https://wa.me/8617333173263',
+        ],
+        'award'         => '8 international design patents for smart pet products',
+        'makesOffer'    => [
+            '@type' => 'Offer',
+            'description' => 'OEM and ODM smart pet products manufacturing with MOQ from 500 units',
+            'priceSpecification' => [
+                '@type' => 'PriceSpecification',
+                'priceCurrency' => 'USD',
+                'description' => 'Factory-direct wholesale pricing, custom quote within 24 hours',
+            ],
+        ],
+    ];
+    echo "\n<script type=\"application/ld+json\" id=\"leo-enhanced-org-schema\">\n";
+    echo wp_json_encode( $schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
+    echo "\n</script>\n";
+}
+
+/**
+ * Inject a visible breadcrumb trail at the top of every non-home page.
+ * The BreadcrumbList schema is already emitted by SureRank, but the visible
+ * rendering is missing. We add a simple breadcrumb bar via output buffer
+ * injection right after the <body class="..."> opening tag.
+ */
+add_filter( 'leo_ob_html', 'leo_inject_visible_breadcrumbs', 20 );
+function leo_inject_visible_breadcrumbs( $html ) {
+    if ( is_front_page() || is_home() || is_admin() ) {
+        return $html;
+    }
+    // Build the breadcrumb trail based on the current WP context
+    $trail = [ [ 'label' => 'Home', 'url' => home_url( '/' ) ] ];
+    if ( is_singular( 'products' ) ) {
+        $trail[] = [ 'label' => 'Products', 'url' => home_url( '/products/' ) ];
+        $trail[] = [ 'label' => get_the_title(), 'url' => '' ];
+    } elseif ( is_singular( 'post' ) ) {
+        $trail[] = [ 'label' => 'Blog', 'url' => home_url( '/news/' ) ];
+        $trail[] = [ 'label' => get_the_title(), 'url' => '' ];
+    } elseif ( is_post_type_archive( 'products' ) ) {
+        $trail[] = [ 'label' => 'Products', 'url' => '' ];
+    } elseif ( is_page() ) {
+        $trail[] = [ 'label' => get_the_title(), 'url' => '' ];
+    } else {
+        return $html;
+    }
+
+    $crumbs_html = '<nav class="leo-breadcrumbs" aria-label="Breadcrumb"><div class="leo-breadcrumbs-inner">';
+    foreach ( $trail as $i => $crumb ) {
+        if ( $i > 0 ) {
+            $crumbs_html .= '<span class="leo-breadcrumbs-sep">&rsaquo;</span>';
+        }
+        if ( ! empty( $crumb['url'] ) ) {
+            $crumbs_html .= '<a href="' . esc_url( $crumb['url'] ) . '">' . esc_html( $crumb['label'] ) . '</a>';
+        } else {
+            $crumbs_html .= '<span aria-current="page">' . esc_html( $crumb['label'] ) . '</span>';
+        }
+    }
+    $crumbs_html .= '</div></nav>';
+
+    $style = '<style id="leo-breadcrumbs-style">.leo-breadcrumbs{background:#f8fafc;border-bottom:1px solid #e2e8f0;padding:12px 0;font-family:Inter,sans-serif;font-size:13px;color:#64748b;}.leo-breadcrumbs-inner{max-width:1200px;margin:0 auto;padding:0 24px;}.leo-breadcrumbs a{color:#16a34a;text-decoration:none;font-weight:500;}.leo-breadcrumbs a:hover{text-decoration:underline;}.leo-breadcrumbs-sep{margin:0 8px;color:#cbd5e1;}.leo-breadcrumbs [aria-current]{color:#0f172a;font-weight:600;}</style>';
+
+    // Insert right after the Breakdance header container
+    $marker = '<main class="bde-';
+    $pos = strpos( $html, $marker );
+    if ( $pos !== false ) {
+        $html = substr( $html, 0, $pos ) . $style . $crumbs_html . substr( $html, $pos );
+    }
+    return $html;
+}
+
 add_action( 'wp_head', 'leo_inject_reviews_schema', 5 );
 function leo_inject_reviews_schema() {
     if ( ! ( is_page( 'buyer-reviews' ) || is_page( 'reviews' ) ) ) {
@@ -798,6 +951,8 @@ function leo_homepage_extra_sections() {
     $html .= '<style id="leo-home-video-styles"> .leo-home-vid{padding:80px 24px;background:#0f172a;color:#fff;font-family:Inter,sans-serif;} .leo-home-vid-container{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;} .leo-home-vid-eyebrow{display:inline-block;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#16a34a;margin-bottom:16px;} .leo-home-vid h2{font-size:36px;font-weight:800;color:#fff;margin:0 0 16px;line-height:1.2;} .leo-home-vid p{font-size:17px;color:#cbd5e1;line-height:1.6;margin:0 0 24px;} .leo-home-vid ul{list-style:none;padding:0;margin:0 0 32px;} .leo-home-vid li{padding:8px 0 8px 28px;color:#cbd5e1;font-size:15px;position:relative;} .leo-home-vid li:before{content:"\2713";position:absolute;left:0;color:#16a34a;font-weight:800;font-size:16px;} .leo-home-vid-cta{display:inline-block;padding:14px 28px;background:#f97316;color:#fff;border-radius:8px;font-weight:700;text-decoration:none;box-shadow:0 4px 16px rgba(249,115,22,.4);transition:all .2s;} .leo-home-vid-cta:hover{transform:translateY(-2px);background:#ea580c;} .leo-home-vid-player{background:#000;border-radius:12px;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,.4);} .leo-home-vid-player video{width:100%;height:auto;display:block;} @media(max-width:1024px){.leo-home-vid-container{grid-template-columns:1fr;gap:32px;}.leo-home-vid h2{font-size:28px;}} </style>';
     $html .= '<section class="leo-home-vid" id="leo-product-demo-video"><div class="leo-home-vid-container"><div><span class="leo-home-vid-eyebrow">See it in action</span><h2>Smart Self-Cleaning Cat Litter Box: Live Demo</h2><p>This is the actual product, demoed inside our Hefei factory. No CGI, no marketing edit. Watch the rotating drum cycle, the sealed waste drawer, the silent motor and the WiFi app pairing.</p><ul><li>14 cat litter box models in production</li><li>OEM and ODM available from 500 units</li><li>CE, FCC, ROHS certified</li><li>45 to 60 days from order to shipped container</li></ul><a href="/contact-us/" class="leo-home-vid-cta">Request a Quote</a></div><div class="leo-home-vid-player"><video controls preload="none" playsinline><source src="https://eviehometech.com/wp-content/uploads/2026/04/eviehome-smart-cat-litter-box-product-demo.mp4" type="video/mp4">Your browser does not support video playback.</video></div></div></section>';
     $html .= '<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"Eviehome smart self-cleaning cat litter box live product demo","description":"Live demo of the Eviehome smart self-cleaning cat litter box including rotating drum cycle, sealed waste drawer, silent motor and WiFi app pairing. Filmed inside the Hefei factory in China.","contentUrl":"https://eviehometech.com/wp-content/uploads/2026/04/eviehome-smart-cat-litter-box-product-demo.mp4","uploadDate":"2026-04-10","embedUrl":"https://eviehometech.com/","publisher":{"@type":"Organization","name":"Hefei Ecologie Vie Home Technology Co., Ltd."}}</script>';
+    $html .= '<style id="leo-clients-style"> .leo-clients{padding:80px 24px;background:#fff;font-family:Inter,sans-serif;} .leo-clients-container{max-width:1200px;margin:0 auto;} .leo-clients-eyebrow{display:block;text-align:center;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#16a34a;margin-bottom:16px;} .leo-clients h2{text-align:center;font-size:36px;font-weight:800;color:#0f172a;margin:0 0 16px;line-height:1.2;} .leo-clients p.lead{text-align:center;font-size:18px;color:#64748b;max-width:720px;margin:0 auto 48px;line-height:1.6;} .leo-clients-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;} .leo-clients-grid figure{margin:0;border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(15,23,42,.1);transition:all .25s;position:relative;} .leo-clients-grid figure:hover{transform:translateY(-4px);box-shadow:0 16px 32px rgba(15,23,42,.15);} .leo-clients-grid img{width:100%;height:380px;object-fit:cover;display:block;} .leo-clients-grid figcaption{position:absolute;bottom:0;left:0;right:0;padding:20px 24px;background:linear-gradient(0deg,rgba(15,23,42,.85),transparent);color:#fff;font-size:14px;line-height:1.5;} .leo-clients-grid figcaption strong{display:block;font-size:15px;font-weight:700;margin-bottom:4px;} @media(max-width:768px){.leo-clients-grid{grid-template-columns:1fr;}.leo-clients h2{font-size:28px;}} </style>';
+    $html .= '<section class="leo-clients" id="leo-clients-factory-visit"><div class="leo-clients-container"><span class="leo-clients-eyebrow">Real customers, real factory visits</span><h2>Our Buyers Come to Hefei</h2><p class="lead">International B2B buyers from more than 30 countries visit our factory to inspect our smart pet product lines before placing their first order. You are welcome to do the same.</p><div class="leo-clients-grid"><figure><img src="https://eviehometech.com/wp-content/uploads/2026/04/eviehome-factory-customer-visit-1-scaled.jpg" alt="International B2B buyers visiting Eviehome smart pet products factory in Hefei China to inspect cat litter box production line" loading="lazy"><figcaption><strong>B2B importers meeting our team</strong>International buyers at the Eviehome showroom in Hefei</figcaption></figure><figure><img src="https://eviehometech.com/wp-content/uploads/2026/04/eviehome-factory-customer-visit-2-scaled.jpg" alt="Foreign B2B importer reviewing Eviehome smart cat litter box product samples in person at Hefei factory China" loading="lazy"><figcaption><strong>Hands-on sample inspection</strong>Customer reviewing our smart cat litter box range in person</figcaption></figure></div><p style="text-align:center;margin-top:40px;"><a href="/contact-us/" style="display:inline-block;padding:14px 28px;background:#f97316;color:#fff;border-radius:8px;font-weight:700;text-decoration:none;box-shadow:0 4px 16px rgba(249,115,22,.3);">Schedule your factory visit</a></p></div></section>';
     $html .= '<style id="leo-phase3-styles"> .leo-section{padding:80px 24px;font-family:Inter,sans-serif;color:#1e293b;} .leo-section.leo-bg-alt{background:#f8fafc;} .leo-container{max-width:1200px;margin:0 auto;} .leo-eyebrow{display:block;text-align:center;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#16a34a;margin-bottom:16px;} .leo-section h2{text-align:center;font-size:36px;font-weight:800;margin:0 0 16px;line-height:1.2;color:#0f172a;} .leo-section .leo-section-lead{text-align:center;font-size:18px;color:#64748b;max-width:720px;margin:0 auto 48px;line-height:1.6;} .leo-trust{display:grid;grid-template-columns:repeat(6,1fr);gap:24px;align-items:center;text-align:center;} .leo-trust .leo-badge{padding:24px 12px;background:#fff;border:1px solid #e2e8f0;border-radius:12px;transition:all .2s;} .leo-trust .leo-badge:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(15,23,42,.12);border-color:#16a34a;} .leo-trust .leo-badge .leo-badge-name{display:block;font-size:18px;font-weight:800;color:#0f172a;} .leo-trust .leo-badge .leo-badge-label{display:block;font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:6px;} .leo-timeline{display:grid;grid-template-columns:repeat(6,1fr);gap:24px;position:relative;} .leo-timeline:before{content:"";position:absolute;top:32px;left:8%;right:8%;height:2px;background:#e2e8f0;z-index:0;} .leo-step{position:relative;text-align:center;z-index:1;} .leo-step-num{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:#fff;color:#f97316;border:3px solid #f97316;font-size:22px;font-weight:800;margin-bottom:16px;transition:all .2s;} .leo-step:hover .leo-step-num{background:#f97316;color:#fff;transform:scale(1.05);} .leo-step h4{font-size:16px;font-weight:700;margin:0 0 8px;color:#0f172a;} .leo-step p{font-size:14px;color:#64748b;margin:0;line-height:1.5;} .leo-testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;} .leo-testimonial{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:32px;transition:all .2s;} .leo-testimonial:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(15,23,42,.12);border-color:#16a34a;} .leo-stars{color:#fbbf24;font-size:18px;letter-spacing:2px;margin-bottom:16px;} .leo-quote{font-size:15px;line-height:1.7;color:#1e293b;margin-bottom:24px;font-style:italic;} .leo-author{display:flex;align-items:center;gap:12px;} .leo-author-init{width:44px;height:44px;border-radius:50%;background:#16a34a;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;} .leo-author-name{font-weight:700;color:#0f172a;font-size:13px;} .leo-author-meta{color:#64748b;font-size:13px;} .leo-blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;} .leo-blog-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;transition:all .2s;text-decoration:none;color:inherit;display:block;} .leo-blog-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(15,23,42,.12);border-color:#16a34a;} .leo-blog-card .leo-blog-body{padding:24px;} .leo-blog-tag{display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:#16a34a;margin-bottom:12px;} .leo-blog-card h3{font-size:18px;font-weight:700;margin:0 0 12px;color:#0f172a;line-height:1.4;} .leo-blog-card p{font-size:14px;color:#64748b;margin:0;line-height:1.5;} .leo-cta-strip{padding:96px 24px;background:linear-gradient(135deg,#0f172a,#1e293b);color:#fff;text-align:center;} .leo-cta-strip h2{font-size:42px;font-weight:800;margin:0 0 16px;color:#fff;} .leo-cta-strip p{font-size:18px;color:#cbd5e1;max-width:640px;margin:0 auto 40px;line-height:1.6;} .leo-cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;} .leo-btn{display:inline-flex;align-items:center;padding:16px 32px;border-radius:8px;font-weight:600;font-size:16px;text-decoration:none;transition:all .2s;} .leo-btn-cta{background:#f97316;color:#fff;box-shadow:0 4px 16px rgba(249,115,22,.4);} .leo-btn-cta:hover{background:#ea580c;transform:translateY(-2px);} .leo-btn-wa{background:#25D366;color:#fff;} .leo-btn-wa:hover{background:#1ea952;transform:translateY(-2px);} @media(max-width:768px){.leo-trust{grid-template-columns:repeat(3,1fr);}.leo-timeline{grid-template-columns:1fr;gap:32px;}.leo-timeline:before{display:none;}.leo-testimonials{grid-template-columns:1fr;}.leo-blog-grid{grid-template-columns:1fr;}.leo-cta-strip h2{font-size:30px;}} @media(max-width:1024px){.leo-testimonials{grid-template-columns:1fr 1fr;}.leo-blog-grid{grid-template-columns:1fr 1fr;}} </style>';
     $html .= '<section class="leo-section leo-bg-alt" id="leo-trust-badges"> <div class="leo-container"> <p class="leo-eyebrow">Certifications</p> <h2>Built to Pass Every Compliance Audit</h2> <p class="leo-section-lead">Every electronic smart pet product we ship holds the certifications required by your destination market. Test reports from accredited labs available on request.</p> <div class="leo-trust"> <div class="leo-badge"><span class="leo-badge-name">CE</span><span class="leo-badge-label">European Union</span></div> <div class="leo-badge"><span class="leo-badge-name">FCC</span><span class="leo-badge-label">United States</span></div> <div class="leo-badge"><span class="leo-badge-name">UKCA</span><span class="leo-badge-label">United Kingdom</span></div> <div class="leo-badge"><span class="leo-badge-name">PSE</span><span class="leo-badge-label">Japan</span></div> <div class="leo-badge"><span class="leo-badge-name">ROHS</span><span class="leo-badge-label">EU and global</span></div> <div class="leo-badge"><span class="leo-badge-name">ISO 9001</span><span class="leo-badge-label">Quality system</span></div> </div></div></section>';
     $html .= '<section class="leo-section" id="leo-oem-timeline"> <div class="leo-container"> <p class="leo-eyebrow">From Brief to Container</p> <h2>Our 6-Step OEM Process</h2> <p class="leo-section-lead">A predictable factory-direct workflow that takes your idea from a written brief to a shipped container in 60 to 90 days for OEM and 45 days for ODM.</p> <div class="leo-timeline"> <div class="leo-step"><div class="leo-step-num">1</div><h4>Inquiry</h4><p>Share your specs, target volume and destination market.</p></div> <div class="leo-step"><div class="leo-step-num">2</div><h4>Design</h4><p>Our R and D team turns your brief into CAD files and a feasibility quote.</p></div> <div class="leo-step"><div class="leo-step-num">3</div><h4>Sampling</h4><p>Pre-production sample shipped within 15 to 20 days for your approval.</p></div> <div class="leo-step"><div class="leo-step-num">4</div><h4>Production</h4><p>Mass production on a dedicated line with weekly progress reports.</p></div> <div class="leo-step"><div class="leo-step-num">5</div><h4>QC and Testing</h4><p>100% function test plus AQL 2.5 inspection before packing.</p></div> <div class="leo-step"><div class="leo-step-num">6</div><h4>Shipping</h4><p>FOB Ningbo, CIF or DDP to your warehouse worldwide.</p></div> </div> <p style="text-align:center;margin-top:48px;"><a class="leo-btn leo-btn-cta" href="/oem-odm-services/">See the full OEM/ODM services</a></p> </div></section>';
