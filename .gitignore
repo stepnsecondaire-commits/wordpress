@@ -1,0 +1,57 @@
+# === WordPress dynamic / secrets ===
+wp-config.php
+.htaccess
+*.log
+
+# === Caches et temp ===
+site/litespeed/
+site/wp-content/cache/
+site/wp-content/upgrade/
+site/object-cache.php
+site/.litespeed_conf.dat
+
+# === Uploads (508 Mo — trop lourd pour git, géré en externe) ===
+site/uploads/
+
+# === Backups WPvivid (243 Mo — obsolètes, externaliser) ===
+site/wpvividbackups/
+site/wpvivid_staging/
+
+# === Plugins vendor (licences payantes, pas à redistribuer publiquement) ===
+# On garde la LISTE des plugins mais pas leur code propriétaire.
+# Exceptions : si on développe un plugin custom, on le whiteliste explicitement.
+site/plugins/breakdance/
+site/plugins/breakdance-pro/
+site/plugins/assets4breakdance/
+site/plugins/advanced-custom-fields-pro/
+site/plugins/surerank/
+site/plugins/surerank-pro/
+site/plugins/litespeed-cache/
+site/plugins/catfolders-pro/
+site/plugins/cimo-image-optimizer/
+site/plugins/iks-menu-pro/
+
+# === Languages WP core (regenerables) ===
+site/languages/
+
+# === Secrets email / API ===
+.env
+.env.local
+secrets/
+*.pem
+*.key
+
+# === OS / éditeur ===
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*~
+
+# === Node / Python ===
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
