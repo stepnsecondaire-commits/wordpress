@@ -145,3 +145,4 @@
 [2026-04-10T20:40:13.774876+00:00] published post_id=1263 link=https://eviehometech.com/trade-shows-pet-products-china-canton-cips/
 [2026-04-10T20:40:14.378477+00:00] indexnow: 200
 [2026-04-10T20:40:14.380745+00:00] marked article #14 as published
+[2026-04-10T20:56:34.087982+00:00] unsplash: matched 'china factory' (tried=2)
