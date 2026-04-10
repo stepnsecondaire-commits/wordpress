@@ -1,0 +1,57 @@
+name: Publish blog article
+
+on:
+  schedule:
+    # Run every 30 minutes to catch scheduled slots (06:00, 14:00, 18:00 UTC)
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+    inputs:
+      force_index:
+        description: "Force publish a specific article index (optional)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run publish.py
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          WP_BASIC_AUTH: ${{ secrets.WP_BASIC_AUTH }}
+          WP_COOKIE: ${{ secrets.WP_COOKIE }}
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: |
+          cd blog-auto
+          if [ -n "${{ github.event.inputs.force_index }}" ]; then
+            python3 publish.py --force ${{ github.event.inputs.force_index }}
+          else
+            python3 publish.py
+          fi
+
+      - name: Commit updated articles.json
+        run: |
+          cd blog-auto
+          if [ -n "$(git status --porcelain articles.json logs.txt)" ]; then
+            git config user.name "eviehome-blog-bot"
+            git config user.email "bot@eviehometech.com"
+            git add articles.json logs.txt
+            git commit -m "blog-auto: publish next due article"
+            git push
+          else
+            echo "Nothing to commit"
+          fi
