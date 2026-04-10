@@ -216,10 +216,8 @@ body.leo-scrolled .bde-header-builder{
   opacity:1;
   transform:translateX(0);
 }
-/* Smooth section transitions */
-.bde-section{padding-top:max(80px,5vw);padding-bottom:max(80px,5vw);}
+/* Mobile responsive headings only - do NOT touch existing Breakdance section padding */
 @media (max-width:768px){
-  .bde-section{padding-top:48px;padding-bottom:48px;}
   h1,.bde-heading.bde-h1{font-size:32px!important;}
   h2,.bde-heading.bde-h2{font-size:24px!important;}
 }
