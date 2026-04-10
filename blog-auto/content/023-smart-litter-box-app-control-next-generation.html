@@ -1,0 +1,106 @@
+<h1>Smart Litter Box with App Control: The Next Generation of Cat Care</h1>
+
+<p>App-controlled cat litter boxes moved from "nice to have" in 2022 to "table stakes" in 2026. Every mid-range and premium automatic cat litter box on the Amazon top 50 list ships with WiFi and a mobile app. The question for a B2B buyer is no longer whether to offer app control, it is which app features to build into your product and how to balance white-label simplicity against custom native differentiation. This article explains the current state of app-controlled cat litter boxes, the features buyers expect, the technical options available to manufacturers, and how Eviehome (Hefei Ecologie Vie Home Technology Co., Ltd., based in Hefei, China) approaches app development for the 14 cat litter box models we build.</p>
+
+<h2>What an app-controlled cat litter box does</h2>
+
+<p>A modern WiFi-enabled automatic cat litter box connects to your home WiFi network and publishes its state to a cloud backend. A mobile app on your phone subscribes to that state and displays it in real time. Through the app you can:</p>
+
+<ul>
+  <li>See the current state (idle, occupied, cleaning, clean, waste drawer full)</li>
+  <li>Manually trigger a cleaning cycle</li>
+  <li>Schedule automatic cleaning at specific times</li>
+  <li>Track cat visits per day, per week, per month</li>
+  <li>Log individual cat weight during each visit</li>
+  <li>Receive notifications when the waste drawer is full</li>
+  <li>Receive notifications when the carbon filter needs replacement</li>
+  <li>Update the firmware over the air</li>
+  <li>Share the device with family members who have their own accounts</li>
+</ul>
+
+<p>The value to the end user is twofold: convenience (you do not have to walk to the box to check it) and health tracking (the weight and visit frequency are early indicators of cat health issues).</p>
+
+<h2>Three options for the app layer</h2>
+
+<h3>Option 1: White-label Tuya</h3>
+
+<p>Tuya Smart is a Chinese IoT platform with a pre-built mobile app that factories can white-label for any smart home product. The Tuya app handles WiFi pairing, cloud connectivity, firmware updates and device control. Factories license the SDK and the white-label app from Tuya for a small royalty per unit (USD 0.50 to USD 1.50 depending on volume).</p>
+
+<p><strong>Pros</strong>: fastest time to market (6 to 12 weeks from product design to shipped inventory), zero app engineering needed on your side, standard feature set, reliable cloud infrastructure.</p>
+
+<p><strong>Cons</strong>: your brand is not the main identity in the app (Tuya Smart branding is visible on login screens and settings). Other brands using Tuya look and feel the same. Limited customization.</p>
+
+<p><strong>Recommended for</strong>: first private-label orders, entry and mid-range tier, volume under 10 000 units/year.</p>
+
+<h3>Option 2: White-label Tuya with heavy customization</h3>
+
+<p>A middle ground: start with Tuya's white-label app, then apply heavy customization (your logo as the app icon, your color scheme, your splash screen, your custom category on the Tuya app store). Tuya offers several tiers of branding, from light (your logo in the app header) to deep (a fully separate app that is still Tuya-powered under the hood but looks like your own brand).</p>
+
+<p><strong>Pros</strong>: significantly stronger brand presence, still fast time to market (8 to 16 weeks), reasonable cost (USD 2 000 to 8 000 one-time for deep branding).</p>
+
+<p><strong>Cons</strong>: still dependent on Tuya's feature roadmap. You cannot add a feature that Tuya does not support.</p>
+
+<p><strong>Recommended for</strong>: second production run, mid-range to premium tier, 5 000 to 30 000 units/year.</p>
+
+<h3>Option 3: Custom native app</h3>
+
+<p>You (or your app developer) build a native iOS and Android app from scratch that communicates directly with the cat litter box hardware. The factory's firmware team provides the communication protocol specification and integrates your app during the firmware flashing step.</p>
+
+<p><strong>Pros</strong>: complete brand control, unique features that no competitor has, no Tuya dependency, full customer data ownership, no royalty per unit.</p>
+
+<p><strong>Cons</strong>: expensive (USD 15 000 to USD 40 000 for initial development, USD 3 000 to USD 8 000 per year for maintenance), slower time to market (4 to 6 months), ongoing commitment to iOS and Android OS updates that break old app versions.</p>
+
+<p><strong>Recommended for</strong>: premium tier, 20 000+ units/year, brands building a long-term pet tech platform with multiple product lines.</p>
+
+<h2>What app features matter most to cat owners</h2>
+
+<p>Based on our analysis of the top 20 cat litter box apps on the Amazon category, here is what actually drives user engagement and App Store reviews:</p>
+
+<ol>
+  <li><strong>Reliable WiFi pairing</strong> (by far the most common complaint when it fails): a smooth 2-minute pairing flow from opening the app to the box appearing in the device list</li>
+  <li><strong>Real-time state display</strong>: the app should update within 5 seconds of a cat visit, not 5 minutes later</li>
+  <li><strong>Push notifications that work</strong>: waste drawer full, cleaning cycle error, low battery, filter replacement. Reliable notifications are surprisingly hard to get right.</li>
+  <li><strong>Per-cat weight tracking</strong>: multi-cat households want to see each cat's weight over time</li>
+  <li><strong>Manual cleaning cycle button</strong>: the most-used feature of any cat litter box app</li>
+  <li><strong>Cleaning cycle history</strong>: a timeline of the last 50 cleaning cycles with timestamp and duration</li>
+  <li><strong>Firmware update notification</strong>: the box should auto-update new firmware without breaking</li>
+  <li><strong>Multi-user sharing</strong>: shared device access for couples or families</li>
+</ol>
+
+<h2>What app features do NOT matter</h2>
+
+<p>Avoid over-building these features that sound good on paper but do not change conversion or retention:</p>
+
+<ul>
+  <li><strong>Voice control (Alexa, Google Home)</strong>: technically possible but few cat owners actually use it</li>
+  <li><strong>Cat photo gallery in the app</strong>: nobody uses it</li>
+  <li><strong>Social sharing of cat milestones</strong>: nobody uses it</li>
+  <li><strong>In-app shopping for consumables</strong>: low conversion, high friction, the user is on Amazon anyway</li>
+  <li><strong>Gamification of cat health goals</strong>: does not match the actual use pattern</li>
+</ul>
+
+<h2>The app is part of the warranty cost</h2>
+
+<p>One underestimated cost of running an app-controlled cat litter box brand is the ongoing maintenance of the app itself. iOS and Android release OS updates twice a year that can break older apps. Tuya's backend infrastructure changes over time. Your app needs someone watching it and patching it or it degrades over months.</p>
+
+<p>Budget USD 3 000 to USD 8 000 per year in ongoing maintenance for a custom native app, or USD 500 to USD 1 500 per year for Tuya white-label where Tuya handles most of the backend maintenance. Include this in your product financial model.</p>
+
+<h2>Frequently asked questions</h2>
+
+<h3>Does Eviehome offer custom native apps or only Tuya white-label?</h3>
+
+<p>Both. For private-label buyers we default to white-label Tuya because it is the fastest and most reliable path. For OEM buyers at 20 000+ annual volume we offer custom native app integration with our firmware team.</p>
+
+<h3>How much per unit royalty does Tuya charge?</h3>
+
+<p>USD 0.50 to USD 1.50 per connected unit depending on volume and feature set. Typically absorbed in the factory's unit price, not billed separately.</p>
+
+<h3>Can I switch from white-label Tuya to a custom app later?</h3>
+
+<p>Yes, but the existing Tuya-deployed units will stay on Tuya. You can only migrate to the custom app for NEW units manufactured after the switch. Plan this carefully if you want to maintain a single app experience across your customer base.</p>
+
+<h2>About Eviehome</h2>
+
+<p>Eviehome offers Tuya white-label and custom native app integration on all 14 automatic cat litter box models. Based in Hefei, China since 2014. See our <a href="https://eviehometech.com/automatic-cat-litter-box-b2b-buyers-guide/">definitive B2B buyer's guide for automatic cat litter boxes</a> and our <a href="https://eviehometech.com/oem-odm-services/">OEM and ODM services page</a>.</p>
+
+<p>Contact Ryan Lau at <a href="mailto:ryanlau@eviehometech.com">ryanlau@eviehometech.com</a>, on WhatsApp at <a href="https://wa.me/8619956530913">+86 199 5653 0913</a>, or <a href="https://eviehometech.com/contact-us/">use the contact form</a>.</p>
