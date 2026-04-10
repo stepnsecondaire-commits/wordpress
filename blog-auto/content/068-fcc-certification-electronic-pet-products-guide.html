@@ -1,0 +1,159 @@
+<h1>FCC Certification for Electronic Pet Products: A Complete Guide</h1>
+
+<p>FCC certification is the single required electronic certification for importing electronic pet products into the United States. Every product with a WiFi chip, Bluetooth, cellular radio, or even a simple digital timer needs to comply with FCC rules. Importing non-compliant product is illegal, carries six-figure fines, and can lead to seized shipments at customs. Yet many first-time brands underestimate FCC and get burned. This article explains what FCC certification is, what it costs, and how to get it right on the first try. Written from Hefei, China, by Eviehome (Hefei Ecologie Vie Home Technology Co., Ltd.).</p>
+
+<h2>What is FCC certification</h2>
+
+<p>FCC (Federal Communications Commission) regulates radio frequency emissions and electromagnetic interference in the United States. Any electronic device that emits radio frequency signals intentionally (WiFi, Bluetooth, cellular) or unintentionally (digital circuits, switching power supplies) must be FCC-tested and certified before it can be imported or sold in the US.</p>
+
+<p>FCC certification is a legal requirement, not an optional marketing badge.</p>
+
+<h2>The 3 FCC compliance paths</h2>
+
+<h3>Part 15 Unintentional Radiator (FCC SDoC)</h3>
+
+<p>For products that do NOT intentionally emit radio signals but have digital electronics (circuit boards, LCDs, switching power supplies). These include a basic pet feeder with a digital timer but no WiFi.</p>
+
+<ul>
+  <li><strong>Test type</strong>: emissions testing in an EMC chamber</li>
+  <li><strong>Certification type</strong>: Supplier's Declaration of Conformity (SDoC)</li>
+  <li><strong>Cost</strong>: USD 1 500 to 3 500</li>
+  <li><strong>Timeline</strong>: 2 to 4 weeks</li>
+  <li><strong>Who files</strong>: manufacturer or importer</li>
+</ul>
+
+<h3>Part 15 Intentional Radiator (FCC ID)</h3>
+
+<p>For products that intentionally emit radio signals: WiFi, Bluetooth, Zigbee, Z-wave, LoRa, cellular. These include every modern smart pet product with an app.</p>
+
+<ul>
+  <li><strong>Test type</strong>: emissions + RF performance testing</li>
+  <li><strong>Certification type</strong>: FCC ID (formal authorization)</li>
+  <li><strong>Cost</strong>: USD 3 000 to 8 000 for a standard WiFi product, USD 5 000 to 15 000 for cellular</li>
+  <li><strong>Timeline</strong>: 3 to 8 weeks</li>
+  <li><strong>Who files</strong>: a Telecommunication Certification Body (TCB) accredited by the FCC</li>
+</ul>
+
+<h3>Modular approval (the shortcut)</h3>
+
+<p>If your product uses a pre-certified WiFi or Bluetooth module (like the ESP32, which has its own FCC ID), you can inherit the module's certification and skip the full RF test. This is the most common path for smart pet products.</p>
+
+<ul>
+  <li><strong>Requirement</strong>: use a module with an existing FCC ID, follow the module manufacturer's integration guidelines</li>
+  <li><strong>Still need</strong>: Part 15 unintentional radiator testing for the host product</li>
+  <li><strong>Cost savings</strong>: USD 2 000 to 6 000 vs full radio testing</li>
+  <li><strong>Timeline</strong>: 2 to 4 weeks vs 3 to 8 weeks</li>
+</ul>
+
+<p>Modular approval is why almost every smart pet factory uses off-the-shelf WiFi modules (Espressif ESP32, Realtek 8710, TI CC3200). The inherited certification saves significant cost and time.</p>
+
+<h2>What gets tested</h2>
+
+<p>A typical FCC test covers:</p>
+
+<ul>
+  <li><strong>Radiated emissions</strong>: how much RF energy the device emits at various frequencies</li>
+  <li><strong>Conducted emissions</strong>: RF energy transmitted back through the power cord</li>
+  <li><strong>RF performance</strong>: for intentional radiators, the transmit power, bandwidth, and modulation characteristics</li>
+  <li><strong>Occupancy and hopping</strong>: for frequency-hopping devices like Bluetooth</li>
+  <li><strong>SAR (Specific Absorption Rate)</strong>: for devices worn close to the body, like pet health collars. Required if the device transmits more than a certain power level and is used within 5 cm of a person.</li>
+</ul>
+
+<h2>Where to test</h2>
+
+<p>Three options:</p>
+
+<h3>1. Chinese test labs</h3>
+
+<p>Fastest and cheapest. Most pet factories use local Chinese labs that are FCC-accredited. Cost savings: 30 to 50 percent vs Western labs. Quality is acceptable for standard products.</p>
+
+<p>Common labs: CTTL, Bureau Veritas China, SGS China, TUV Rheinland China.</p>
+
+<h3>2. US-based test labs</h3>
+
+<p>Slightly more expensive but easier communication if you are a US-based brand. Common labs: Intertek, UL, Bureau Veritas US, MET Labs.</p>
+
+<h3>3. International labs</h3>
+
+<p>TUV, SGS, DNV operate globally. Useful if you want consistent reporting across multiple certifications (FCC + CE + RED + etc.).</p>
+
+<h2>The FCC ID and labeling</h2>
+
+<p>If your product has an FCC ID (intentional radiator), the ID must be:</p>
+
+<ul>
+  <li><strong>Printed on the product</strong>: physical label or molded-in text, legible without removing covers</li>
+  <li><strong>Included in the user manual</strong>: with the standard FCC compliance statement</li>
+  <li><strong>On the packaging</strong>: for retail identification</li>
+  <li><strong>Accessible to consumers</strong>: cannot be hidden under batteries or behind stickers</li>
+</ul>
+
+<p>The FCC label format is specific. Get it wrong and your product fails a customs inspection.</p>
+
+<h2>Common FCC certification mistakes</h2>
+
+<ul>
+  <li><strong>Assuming a factory's existing FCC ID covers your product</strong>: it only covers the exact model tested. A modified product needs its own test.</li>
+  <li><strong>Using an unauthorized Chinese test lab</strong>: some Chinese labs are not FCC-accredited and their reports are invalid.</li>
+  <li><strong>Missing the user manual FCC statement</strong>: the statement must include specific wording about interference and authorized changes.</li>
+  <li><strong>Changing the antenna after certification</strong>: any antenna change invalidates the certification.</li>
+  <li><strong>Adding a radio module after certification</strong>: any new transmitter requires retesting.</li>
+</ul>
+
+<h2>What to ask your factory</h2>
+
+<ol>
+  <li>What FCC certification does the base product already have? Is the FCC ID current?</li>
+  <li>Is the WiFi or Bluetooth module pre-certified? What is its FCC ID?</li>
+  <li>Which test lab handles the FCC testing? Is it FCC-accredited?</li>
+  <li>Can you provide the full FCC test report and certification letter in my brand name?</li>
+  <li>What is the cost to certify the product under my brand name vs using your existing certification?</li>
+</ol>
+
+<p>A reputable factory answers all these clearly and provides documentation.</p>
+
+<h2>Timeline and cost estimate for a typical WiFi pet feeder</h2>
+
+<ul>
+  <li>Use pre-certified ESP32 module: saves USD 3 to 5k and 3 to 5 weeks</li>
+  <li>Part 15 SDoC testing for the host product: USD 1 500 to 2 500</li>
+  <li>Documentation and label creation: USD 300 to 800</li>
+  <li>TCB filing (not needed for SDoC): USD 0</li>
+  <li><strong>Total</strong>: USD 1 800 to 3 300</li>
+  <li><strong>Timeline</strong>: 3 to 5 weeks</li>
+</ul>
+
+<p>For a full radio certification (no pre-certified module): USD 4 000 to 8 000 and 5 to 8 weeks.</p>
+
+<h2>FCC + Amazon Brand Registry</h2>
+
+<p>Amazon increasingly requires proof of FCC compliance for electronic product listings. For the Amazon Brand Registry, you may need to upload:</p>
+
+<ul>
+  <li>FCC ID or SDoC declaration</li>
+  <li>Test report summary</li>
+  <li>Manufacturer identification</li>
+  <li>Importer of record information</li>
+</ul>
+
+<p>Keep these documents ready before your Amazon launch.</p>
+
+<h2>Frequently asked questions</h2>
+
+<h3>Can I use the factory's existing FCC ID for my private label product?</h3>
+
+<p>Yes, if the product is functionally identical to the factory's certified model. No, if you change the enclosure, antenna, or radio. When in doubt, retest.</p>
+
+<h3>What happens if I import without FCC certification?</h3>
+
+<p>Customs can seize the shipment. The importer (you) can be fined up to USD 11 000 per day of non-compliance. Amazon can remove the listing. Do not skip FCC.</p>
+
+<h3>Does Eviehome provide FCC certifications under customer brand names?</h3>
+
+<p>Yes. We handle FCC testing and documentation for OEM customers. We work with FCC-accredited labs in Shenzhen and provide full certification packages. Contact Ryan Lau for a quote.</p>
+
+<h2>About Eviehome</h2>
+
+<p>Eviehome provides FCC, CE, ROHS, REACH and other certifications in customer brand names for all OEM products. Based in Hefei, China since 2014. See our <a href="https://eviehometech.com/certifications-quality/">certifications and quality page</a>.</p>
+
+<p>Contact Ryan Lau at <a href="mailto:ryanlau@eviehometech.com">ryanlau@eviehometech.com</a>, on WhatsApp at <a href="https://wa.me/8619956530913">+86 199 5653 0913</a>, or <a href="https://eviehometech.com/contact-us/">use the contact form</a>.</p>
