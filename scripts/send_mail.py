@@ -156,6 +156,9 @@ def send(subject: str, to_addr: str, body_md: str) -> dict:
         return {"status": e.code, "body": e.read().decode("utf-8")}
 
 
+DEFAULT_RECIPIENTS = ["stepnsecondaire@gmail.com", "eyvenbest@163.com"]
+
+
 def main() -> int:
     if len(sys.argv) < 2:
         print("Usage: python3 scripts/send_mail.py <path-to-mail.md>", file=sys.stderr)
@@ -168,14 +171,22 @@ def main() -> int:
 
     meta, body = parse_email_file(mail_path)
     subject = meta.get("subject", "(no subject)")
-    to_addr = meta.get("to", "stepnsecondaire@gmail.com")
+    to_field = meta.get("to", "")
+    recipients = [r.strip() for r in to_field.split(",") if r.strip()] if to_field else DEFAULT_RECIPIENTS
 
-    print(f"Sending to {to_addr}")
-    print(f"Subject:   {subject}")
-    result = send(subject, to_addr, body)
-    print(f"Status:    {result['status']}")
-    print(f"Response:  {result['body']}")
-    return 0 if result["status"] == 200 else 1
+    print(f"Subject: {subject}")
+    print(f"Recipients ({len(recipients)}): {', '.join(recipients)}")
+
+    failures = 0
+    for addr in recipients:
+        print(f"\n-> {addr}")
+        result = send(subject, addr, body)
+        print(f"   status: {result['status']}")
+        print(f"   resp:   {result['body']}")
+        if result["status"] != 200:
+            failures += 1
+
+    return 0 if failures == 0 else 1
 
 
 if __name__ == "__main__":

@@ -1,26 +1,53 @@
 # Audit SEO — eviehometech.com
 
-**Date :** 2026-04-10
+**Date :** 2026-04-10 (v2, corrigée après vérif live)
 **Cible :** Hefei Ecologie Vie Home Technology Co., Ltd. (fabricant chinois de produits smart pet)
 **Objectif business :** maximiser le référencement organique Google EU/US pour capter des **acheteurs B2B récurrents** (importateurs, distributeurs, marques, e-commerçants)
 **Admin WordPress :** reste en chinois (non négociable)
-**Front :** doit devenir multilingue EN en priorité (+ FR/DE/ES en phase 2)
+**Front :** contenu déjà en anglais — à réaligner techniquement sur `en_US`
+
+## ⚠️ Errata v1 → v2
+
+La première version de cet audit s'appuyait uniquement sur les **fichiers statiques extraits du `.wpress`** et a manqué plusieurs éléments générés dynamiquement par WordPress (robots.txt, sitemap, meta tags SureRank). Vérifications live le 2026-04-10 :
+
+| Claim v1 | Réalité live v2 |
+|---|---|
+| 🔴 robots.txt bloque Google (`Disallow: /`) | ✅ robots.txt propre (`Disallow: /wp-admin/` + sitemap référencé). Le fichier avec `Disallow: /` trouvé dans l'extract était un cache obsolète LiteSpeed. |
+| 🔴 Pas de sitemap | ✅ `sitemap_index.xml` live, 6 sous-sitemaps (pages, posts, products, categories, tags, product-category), `lastmod` du jour |
+| 🔴 Pas de Google Search Console | ✅ déjà branché (`google-site-verification` meta présente) |
+| 🔴 Site 100% chinois, inadressable EU/US | ⚠️ **contenu déjà en anglais** (titres, slugs, H1, produits). Seul le tag `<html lang="zh-Hans">` + `og:locale=zh_CN` trahit encore "site chinois" à Google. |
+| 🔴 78% des pages sans meta description | ⚠️ les **produits** ont des meta desc (auto-dump bullet points, qualité moyenne). Les **4 pages clés** (Home, Products, About, Contact) n'en ont pas. |
+| 🟠 Besoin d'un plugin multilingue (Polylang Pro) | ❌ pas nécessaire — le contenu est déjà en anglais. Il suffit d'un **mu-plugin 5 lignes** pour forcer `en_US` sur le front tout en gardant l'admin en `zh_CN`. |
+
+**Impact sur le plan :** la Phase 2 "Multilingue EN (3-5 jours)" est **supprimée**. Remplacée par un fix locale de 15 minutes. Le chantier global passe de ~6 semaines à ~3 semaines de travail.
 
 ---
 
 ## 1. Résumé exécutif
 
-Le site est **techniquement bien outillé** (stack moderne : WordPress 6.9.4 + Breakdance + ACF Pro + SureRank SEO + LiteSpeed Cache) mais **totalement invisible pour Google** à cause d'un blocage robots.txt, et **structurellement inadapté** à une stratégie B2B EU/US parce que tout est en chinois sans plugin multilingue.
+Le site est **techniquement en bon état** (stack moderne : WordPress 6.9.4 + Breakdance + ACF Pro + SureRank SEO + LiteSpeed Cache), **indexable** (robots.txt propre, sitemap live, GSC branché, meta robots `index, follow`), **contenu déjà en anglais**. Les schemas JSON-LD Organization/WebSite/WebPage sont présents sur toutes les pages testées.
 
-**Score SEO actuel estimé : 15/100.** Le potentiel est fort (bon foncier, bons outils) mais il faut débloquer 3 verrous critiques avant toute stratégie de contenu.
+Les vrais problèmes sont plus subtils : un **signal de langue mixte** qui plombe le ranking (le code HTML dit "chinois" alors que le contenu est en anglais), des **meta descriptions manquantes** sur les 4 pages clés, des **titres non-optimisés B2B**, une **homepage sans H1**, et un **déficit de contenu conversion B2B** (pages OEM/ODM, case studies, trust signals, formulaires qualifiants).
 
-### Top 5 des problèmes critiques
+**Score SEO actuel estimé : 45/100** (vs 15/100 annoncé en v1). Le potentiel est intact : stack saine, contenu anglais déjà en place, schemas OK. Il s'agit de **finitions SEO** + **renforcement de contenu B2B**, pas de refonte.
 
-1. 🔴 **robots.txt bloque toute indexation** (`Disallow: /`) → site invisible de Google/Bing
-2. 🔴 **Site 100% en chinois, zéro plugin multilingue** → aucun marché EU/US adressable
-3. 🔴 **~78% des pages sans meta description** → CTR SERP en berne
-4. 🟠 **446 Mo de vidéos 4K non compressées** → Core Web Vitals catastrophiques
-5. 🟠 **Aucun formulaire de contact / devis** détecté → friction conversion B2B
+### Top 6 problèmes réels (v2)
+
+1. 🔴 **`<html lang="zh-Hans">` + `og:locale="zh_CN"`** alors que tout le contenu est en anglais → Google reçoit un signal contradictoire et classe le site comme chinois. **Fix : mu-plugin 5 lignes, 15 min.**
+2. 🟠 **Meta descriptions manquantes** sur Home / Products / About / Contact → CTR SERP dégradé. **Fix : 4 meta desc B2B-ciblées, 30 min.**
+3. 🟠 **Page titles basiques** ("Home - Hefei Ecologie...") au lieu de keyword-driven B2B ("Smart Pet Products OEM Manufacturer | Wholesale China"). **Fix : 4-8 titres, 1h.**
+4. 🟠 **Homepage sans H1** → faiblesse structurelle SEO. **Fix : 10 min dans Breakdance.**
+5. 🟠 **Meta descriptions produits auto-dump** sans ponctuation ("Convenient installationSafety without leakage...") → faible qualité. **Fix : 37 descriptions à réécrire, 1 journée.**
+6. 🟡 **446 Mo de vidéos 4K non compressées** → Core Web Vitals dégradés. **Fix : ffmpeg batch H.265 1080p, 2-3h.**
+
+### Problèmes connexes moins critiques
+
+- **Aucun formulaire de contact B2B qualifiant** détecté dans l'export statique (à reconfirmer live sur la page Contact)
+- **Un `eval()`** dans le plugin `assets4breakdance` (Supa Code Block) à auditer côté capability check
+- **243 Mo de backups WPvivid obsolètes** occupent le serveur Hostinger
+- **Pas de breadcrumbs rendus** (schéma OK, rendu HTML absent)
+- **Pas de landing pages B2B spécifiques** (OEM/ODM, Quality & Certifications, Factory Tour, Case Studies)
+- **Pas de blog SEO** actif pour capter les requêtes top-of-funnel sourcing/import
 
 ### Potentiel estimé
 
@@ -126,13 +153,14 @@ Home · Products · About Us · Contact Us · Reviews · News · Privacy Policy 
 
 ---
 
-## 4. Problèmes critiques (à corriger immédiatement)
+## 4. Problèmes critiques v2 (à corriger immédiatement)
 
-- [ ] **C1.** Corriger `robots.txt` — remplacer `Disallow: /` par `Disallow: /wp-admin/\nAllow: /wp-admin/admin-ajax.php` + référencer le sitemap. **Impact : débloque l'indexation totale. Effort : 2 minutes.**
-- [ ] **C2.** Installer un plugin multilingue (**Polylang Pro recommandé**, léger, SEO-friendly, compatible ACF/Breakdance) et créer la version **EN** complète du site. **Impact : ouvre les marchés EU/US. Effort : 3-5 jours (install + traduction des 8 pages + menus + produits).**
-- [ ] **C3.** Remplir les **meta descriptions manquantes** pour toutes les pages et produits via SureRank (8 pages + 37 produits = 45 entrées). **Impact : +20-40% CTR SERP. Effort : 1 journée.**
-- [ ] **C4.** Ajouter un **formulaire de devis/contact B2B** (WPForms Lite ou Fluent Forms, tous deux gratuits et légers) sur `/contact` avec champs qualifiants (entreprise, pays, volume annuel, produits d'intérêt). **Impact : capture des leads. Effort : 2h.**
-- [ ] **C5.** Auditer l'usage du `eval()` dans `assets4breakdance/Supa_Code_Block` — vérifier qui peut publier ce bloc, ajouter des garde-fous capability check. **Impact : sécurité. Effort : 1h.**
+- [ ] **C1.** Déployer un **mu-plugin `leo-front-locale.php`** qui force `locale = en_US` sur le front tout en gardant `zh_CN` dans l'admin. Résultat : `<html lang="en-US">`, `og:locale="en_US"`, alignement du signal de langue avec le contenu réel. **Impact : débloque le ranking anglophone. Effort : 15 min.**
+- [ ] **C2.** Rédiger les **4 meta descriptions manquantes** (Home, Products, About Us, Contact Us) via SureRank, 140-160 caractères, B2B-ciblées (keywords : `smart pet products manufacturer`, `wholesale`, `OEM`, `china supplier`). **Impact : +CTR SERP. Effort : 30 min.**
+- [ ] **C3.** **Réécrire les 4 page titles** : Home → `Smart Pet Products OEM Manufacturer & Wholesale Supplier | China`, Products → `Smart Pet Products Catalog | OEM/ODM Wholesale | Eviehome`, About → `About Hefei Ecologie Vie Home Technology | Pet Products Manufacturer`, Contact → `Contact Us | Smart Pet Products Wholesale | MOQ & OEM Inquiries`. **Impact : ranking + CTR. Effort : 30 min.**
+- [ ] **C4.** Ajouter un **H1 explicite sur la homepage** via Breakdance (actuellement absent). Proposition : `Smart Pet Products. Wholesale & OEM from China.` **Effort : 15 min.**
+- [ ] **C5.** Vérifier sur la page `/contact-us/` live si un **formulaire B2B qualifiant** existe déjà. Si non, en ajouter un (Fluent Forms / WPForms) avec champs : Company, Country, Annual Volume, Products of Interest, Message. **Effort : 30 min à 2h.**
+- [ ] **C6.** **Sécurité** : audit du `eval()` dans `assets4breakdance/Supa_Code_Block` — vérifier capability check et qui peut publier ce bloc. **Effort : 1h.**
 
 ## 5. Améliorations importantes (impact fort)
 
@@ -285,47 +313,41 @@ Une fois le contenu EN stabilisé, créer des landings marché :
 
 ---
 
-## 9. Plan d'implémentation priorisé
+## 9. Plan d'implémentation priorisé v2
 
-### Phase 1 — Déblocage (semaine 1) — objectif : rendre le site indexable
+### Phase 1 — Finitions SEO critiques (demi-journée) — objectif : aligner les signaux techniques avec le contenu anglais déjà en place
 1. ✅ Audit complet (fait)
-2. **C1** robots.txt (2 min)
-3. **C5** audit eval() assets4breakdance (1h)
-4. **I1+I2** sitemap + Search Console (1h)
-5. **C4** formulaire contact B2B (2h)
-6. **C3** meta descriptions (1 journée)
-7. Premier mail récap envoyé
+2. **C1** mu-plugin `leo-front-locale.php` (15 min)
+3. **C4** H1 homepage (15 min)
+4. **C3** réécriture 4 page titles (30 min)
+5. **C2** 4 meta descriptions (30 min)
+6. **C5** vérif formulaire contact live + ajout si manquant (30 min - 2h)
+7. **C6** audit sécurité eval() (1h)
+8. **Total :** ~4 heures de travail
+9. Email récap envoyé à stepnsecondaire@gmail.com + eyvenbest@163.com
 
-### Phase 2 — Multilingue EN (semaines 2-3)
-1. **C2** install Polylang Pro + config
-2. Traduction des 8 pages en EN (outil DeepL + relecture)
-3. Traduction des 37 produits en EN
-4. Traduction menus + widgets
-5. **I4** hreflang
-6. Soumission sitemap multilingue Search Console
-
-### Phase 3 — Performance (semaine 4)
+### Phase 2 — Performance (1-2 jours)
 1. **P1** réencodage des 42 vidéos en H.265 1080p
 2. **P7** mise en place Cloudflare CDN
 3. **P3/P4/P5** tuning thumbnails + lazy + UCSS
 4. Vérification Core Web Vitals (PageSpeed Insights, CrUX)
 
-### Phase 4 — Contenu B2B (semaines 5-8)
+### Phase 3 — Contenu B2B (semaines 2-4)
 1. **T1** page OEM/ODM
 2. **T2** page Quality & Certifications
 3. **T3** page Factory Tour
-4. **C6-C10** réécriture produits + descriptions longues
+4. **C6-C10** réécriture 37 produits (titres, meta desc, descriptions longues, alt text)
 5. **I5-I8** schemas Product/FAQ/Breadcrumb
-6. **T5** WhatsApp Business
+6. **T5** WhatsApp Business visible
 
-### Phase 5 — Blog SEO (mois 3-6)
+### Phase 4 — Blog SEO (mois 2-6)
 - Mise en place de l'architecture blog auto (même modèle que les autres projets user)
 - Plan éditorial 16 articles M1-M4
 - Publication continue post-M4
 
-### Phase 6 — Expansion marchés (mois 6+)
-- Landing pages marché US/EU/UK
-- Traductions DE/FR/ES
+### Phase 5 — Expansion (mois 6+)
+- Landing pages marché US/EU/UK (si ROI démontré)
+- Traductions DE/FR/ES si demande
 - Outreach backlinks B2B (annuaires fournisseurs, Alibaba cross-linking)
 
 ---
