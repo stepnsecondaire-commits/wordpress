@@ -260,15 +260,76 @@ Output only the JSON object."""
     return json.loads(text)
 
 
-def unsplash_upload(query, alt_text):
-    """Search Unsplash, download the first result, upload to WP media library."""
+CLUSTER_UNSPLASH_FALLBACKS = {
+    1: ["china factory", "container shipping", "export manufacturing"],
+    2: ["cat", "kitten", "cat owner"],
+    3: ["cat food bowl", "dog food bowl", "pet feeding"],
+    4: ["smart pet", "pet technology", "pet owner home"],
+    5: ["factory worker china", "manufacturing line", "production line"],
+    6: ["laboratory testing", "quality control", "certification"],
+    7: ["business chart", "market analytics", "pet industry"],
+    8: ["cat care", "dog care", "pet care home"],
+}
+
+GENERIC_UNSPLASH_FALLBACKS = [
+    "pet products",
+    "cat and dog",
+    "pets home",
+    "cat",
+    "dog",
+]
+
+
+def unsplash_search(query):
+    """Search Unsplash for one query, return first photo dict or None."""
     url = f"https://api.unsplash.com/search/photos?query={urllib.parse.quote(query)}&per_page=3&orientation=landscape"
     req = urllib.request.Request(url, headers={"Authorization": f"Client-ID {UNSPLASH_KEY}"})
-    with urllib.request.urlopen(req, timeout=30) as r:
-        search = json.loads(r.read())
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            search = json.loads(r.read())
+    except Exception as e:
+        log(f"unsplash search error for '{query}': {e}")
+        return None
     if not search.get("results"):
+        return None
+    return search["results"][0]
+
+
+def unsplash_upload(query, alt_text, cluster=None):
+    """Search Unsplash with fallback cascade, download, upload to WP media library.
+
+    Cascade: primary query -> cluster-specific fallbacks -> generic fallbacks.
+    Returns (media_id, media_url) or (None, None) if every attempt fails.
+    """
+    photo = None
+    tried = []
+
+    # 1. Primary query
+    tried.append(query)
+    photo = unsplash_search(query)
+
+    # 2. Cluster fallbacks
+    if not photo and cluster in CLUSTER_UNSPLASH_FALLBACKS:
+        for alt_q in CLUSTER_UNSPLASH_FALLBACKS[cluster]:
+            tried.append(alt_q)
+            photo = unsplash_search(alt_q)
+            if photo:
+                query = alt_q
+                break
+
+    # 3. Generic fallbacks
+    if not photo:
+        for alt_q in GENERIC_UNSPLASH_FALLBACKS:
+            tried.append(alt_q)
+            photo = unsplash_search(alt_q)
+            if photo:
+                query = alt_q
+                break
+
+    if not photo:
+        log(f"unsplash: no results for any query, tried={tried}")
         return None, None
-    photo = search["results"][0]
+    log(f"unsplash: matched '{query}' (tried={len(tried)})")
     download_url = photo["urls"]["regular"]
     req = urllib.request.Request(download_url, headers={"User-Agent": "eviehome-blog-auto/1.0"})
     with urllib.request.urlopen(req, timeout=60) as r:
@@ -418,7 +479,7 @@ def main():
     media_url = None
     if generated.get("unsplash_query"):
         try:
-            media_id, media_url = unsplash_upload(generated["unsplash_query"], article["title"])
+            media_id, media_url = unsplash_upload(generated["unsplash_query"], article["title"], cluster=article.get("cluster"))
             log(f"image uploaded id={media_id} url={media_url}")
         except Exception as e:
             log(f"image upload failed: {e}")
