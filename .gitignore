@@ -17,6 +17,15 @@ site/uploads/
 site/wpvividbackups/
 site/wpvivid_staging/
 
+# === Database dump (contient des secrets client : API keys, OAuth tokens) ===
+# JAMAIS commit, même en snapshot. Les extracts SQL nettoyés vont dans audit/raw-findings/.
+site/database.sql
+site/*.sql
+site/index.php
+site/package.json
+site/plugins/index.php
+site/object-cache.php
+
 # === Plugins vendor (licences payantes, pas à redistribuer publiquement) ===
 # On garde la LISTE des plugins mais pas leur code propriétaire.
 # Exceptions : si on développe un plugin custom, on le whiteliste explicitement.

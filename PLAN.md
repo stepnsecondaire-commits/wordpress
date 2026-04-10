@@ -12,10 +12,10 @@ Source : plan fourni par Augustin le 2026-04-10.
 
 | # | Action | Détail | Gain attendu | Effort | Statut |
 |---|--------|--------|--------------|--------|--------|
-| 1.1 | **Corriger `<html lang="zh_CN">` → `en`** | mu-plugin qui force la locale front en anglais. L'admin reste en chinois. Google classe actuellement le site comme "site chinois" → il ne le propose JAMAIS aux requêtes anglophones. | 🔴 CRITIQUE — sans ça, 0 trafic US/EU possible | 15 min | ⏳ |
-| 1.2 | **Title tags optimisés B2B sur les 6 pages clés** | Home : "Smart Pet Products Manufacturer China \| OEM & ODM \| Ecologie Vie" / Products : "Automatic Cat Litter Box & Pet Tech \| Wholesale & Private Label" / About : "About Ecologie Vie — Factory-Direct Smart Pet Products from China" / Contact : "Contact Us — Request a Quote for Bulk Pet Products" / Reviews / FAQs | CTR SERP x2-3, ranking direct sur les mots-clés cibles | 1h | ⏳ |
-| 1.3 | **Meta descriptions sur toutes les pages** | Chaque page = 1 meta description unique, 150-160 chars, avec CTA B2B ("Request a quote", "MOQ from 500 units", "CE/FCC certified") | CTR SERP +30-50% | 1h | ⏳ |
-| 1.4 | **H1 sur la homepage** | Actuellement absent. Mettre : "Smart Pet Products Manufacturer — OEM/ODM Direct From China" | Signal SEO structurel fort | 15 min | ⏳ |
+| 1.1 | **Corriger `<html lang="zh_CN">` → `en`** | Plugin `leo-front-locale` installé et activé via admin WP (2026-04-10). Vérifié live : `<html lang="en-US">` + `og:locale="en_US"`. Admin reste en zh_CN. | 🔴 CRITIQUE — sans ça, 0 trafic US/EU possible | 15 min | ✅ |
+| 1.2 | **Title tags optimisés B2B sur les 7 pages clés** | Home, Products (CPT archive via filter), About, Contact, Reviews, News, FAQs — tous mis à jour via SureRank REST API. Vérifiés live après purge LiteSpeed. | CTR SERP x2-3, ranking direct sur les mots-clés cibles | 1h | ✅ |
+| 1.3 | **Meta descriptions sur toutes les pages** | 7 meta descriptions B2B-ciblées (MOQ, OEM, CE/FCC, request a quote) posées via SureRank + mu-plugin pour /products/. | CTR SERP +30-50% | 1h | ✅ |
+| 1.4 | **H1 sur la homepage** | Vérif live : un H1 existe déjà ("ODM & OEM Smart Pet Product") — petit défaut cosmétique (deux spans sans espace) à polir en Breakdance plus tard mais Google le détecte. | Signal SEO structurel fort | 15 min | ✅ (cosmétique à polir) |
 | 1.5 | ~~**Installer RankMath**~~ → **Garder SureRank** (déjà installé) | SureRank gère déjà titles/meta/OG/schemas depuis l'admin chinois. Pas de nouveau plugin à installer. | Pas de conflit SEO | 0 | ✅ décidé |
 
 ---

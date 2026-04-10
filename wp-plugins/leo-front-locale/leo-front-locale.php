@@ -55,6 +55,39 @@ function leo_force_html_lang_en( $output ) {
 add_filter( 'surerank_og_locale', function () { return 'en_US'; }, 9999 );
 
 /**
+ * Custom title + description for CPT archives (products) that SureRank
+ * does not cover through its per-post UI. The /products/ URL resolves
+ * to the "products" post_type_archive, not the page with slug "products".
+ */
+add_filter( 'pre_get_document_title', 'leo_cpt_archive_title', 9999 );
+function leo_cpt_archive_title( $title ) {
+    if ( is_post_type_archive( 'products' ) ) {
+        return 'Smart Pet Products Catalog | OEM & Wholesale China | Eviehome';
+    }
+    return $title;
+}
+
+add_filter( 'surerank_set_meta', 'leo_cpt_archive_meta', 9999 );
+function leo_cpt_archive_meta( $meta ) {
+    if ( is_post_type_archive( 'products' ) ) {
+        $meta['page_title']       = 'Smart Pet Products Catalog | OEM & Wholesale China | Eviehome';
+        $meta['page_description'] = 'Full catalog of smart pet products: automatic litter boxes, feeders, fountains, air purifiers, bird feeders. OEM/ODM available. MOQ 500 units, CE/FCC certified.';
+    }
+    return $meta;
+}
+
+/**
+ * Ensure the meta description is printed on the products archive even if
+ * SureRank skips it. Hooks into wp_head at priority 1.
+ */
+add_action( 'wp_head', 'leo_cpt_archive_meta_description', 1 );
+function leo_cpt_archive_meta_description() {
+    if ( is_post_type_archive( 'products' ) ) {
+        echo "\n<meta name=\"description\" content=\"Full catalog of smart pet products: automatic litter boxes, feeders, fountains, air purifiers, bird feeders. OEM/ODM available. MOQ 500 units, CE/FCC certified.\" />\n";
+    }
+}
+
+/**
  * Final safety net: rewrite og:locale meta tag in the rendered HTML output
  * for the very front-end, in case a plugin writes it outside of filters.
  */
