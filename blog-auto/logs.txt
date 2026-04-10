@@ -53,3 +53,45 @@
 [2026-04-10T13:31:42.979609+00:00] published post_id=1165 link=https://eviehometech.com/global-smart-pet-products-market-report-2026/
 [2026-04-10T13:31:43.176624+00:00] indexnow: 202
 [2026-04-10T13:31:43.180540+00:00] marked article #77 as published
+[2026-04-10T17:32:40.401997+00:00] picked article #2 [How to Find a Reliable Pet Products Manufacturer in China]
+[2026-04-10T17:32:40.403105+00:00] using pre-written content file for article #2
+[2026-04-10T17:32:40.403232+00:00] generated 11960 chars, meta_title='How to Find a Reliable Pet Products Manufacturer in China...'
+[2026-04-10T17:32:47.828229+00:00] image uploaded id=1242 url=https://eviehometech.com/wp-content/uploads/2026/04/reliable-pet-products-manufacturer-china.jpg
+[2026-04-10T17:32:49.018109+00:00] published post_id=1243 link=https://eviehometech.com/find-reliable-pet-products-manufacturer-china/
+[2026-04-10T17:32:49.576175+00:00] indexnow: 200
+[2026-04-10T17:32:49.579694+00:00] marked article #2 as published
+[2026-04-10T17:32:49.685942+00:00] picked article #3 [Alibaba vs Direct Factory: Which Is Better for Pet Products?]
+[2026-04-10T17:32:49.686982+00:00] using pre-written content file for article #3
+[2026-04-10T17:32:49.687079+00:00] generated 10862 chars, meta_title='Alibaba vs Direct Factory: Which Is Better for Pet Products?'
+[2026-04-10T17:32:50.055588+00:00] image uploaded id=None url=None
+[2026-04-10T17:32:52.513963+00:00] published post_id=1244 link=https://eviehometech.com/alibaba-vs-direct-factory-pet-products/
+[2026-04-10T17:32:53.057378+00:00] indexnow: 200
+[2026-04-10T17:32:53.060043+00:00] marked article #3 as published
+[2026-04-10T17:32:53.162490+00:00] picked article #4 [How to Verify a Chinese Pet Products Supplier: Red Flags and Green Flags]
+[2026-04-10T17:32:53.163539+00:00] using pre-written content file for article #4
+[2026-04-10T17:32:53.163636+00:00] generated 10907 chars, meta_title='How to Verify a Chinese Pet Products Supplier: Red Flags and'
+[2026-04-10T17:32:56.103549+00:00] image uploaded id=1245 url=https://eviehometech.com/wp-content/uploads/2026/04/verify-chinese-supplier.jpg
+[2026-04-10T17:32:57.244403+00:00] published post_id=1246 link=https://eviehometech.com/verify-chinese-pet-products-supplier-red-green-flags/
+[2026-04-10T17:32:57.803154+00:00] indexnow: 200
+[2026-04-10T17:32:57.806098+00:00] marked article #4 as published
+[2026-04-10T17:32:57.907784+00:00] picked article #5 [Understanding MOQ: Minimum Order Quantities for Pet Products]
+[2026-04-10T17:32:57.908941+00:00] using pre-written content file for article #5
+[2026-04-10T17:32:57.909068+00:00] generated 10398 chars, meta_title='Understanding MOQ: Minimum Order Quantities for Pet Products'
+[2026-04-10T17:33:00.929812+00:00] image uploaded id=1247 url=https://eviehometech.com/wp-content/uploads/2026/04/moq-pet-products.jpg
+[2026-04-10T17:33:02.163941+00:00] published post_id=1248 link=https://eviehometech.com/understanding-moq-pet-products-china/
+[2026-04-10T17:33:02.643744+00:00] indexnow: 200
+[2026-04-10T17:33:02.647671+00:00] marked article #5 as published
+[2026-04-10T17:33:02.752421+00:00] picked article #6 [How to Negotiate Prices with Chinese Pet Product Manufacturers]
+[2026-04-10T17:33:02.753418+00:00] using pre-written content file for article #6
+[2026-04-10T17:33:02.753543+00:00] generated 10109 chars, meta_title='How to Negotiate Prices with Chinese Pet Product Manufacture'
+[2026-04-10T17:33:06.093633+00:00] image uploaded id=1249 url=https://eviehometech.com/wp-content/uploads/2026/04/negotiate-china-manufacturer-prices.jpg
+[2026-04-10T17:33:07.247606+00:00] published post_id=1250 link=https://eviehometech.com/negotiate-prices-chinese-pet-products-manufacturers/
+[2026-04-10T17:33:07.803283+00:00] indexnow: 200
+[2026-04-10T17:33:07.806676+00:00] marked article #6 as published
+[2026-04-10T17:33:07.916890+00:00] picked article #7 [Step-by-Step: Your First Order from a Chinese Pet Products Factory]
+[2026-04-10T17:33:07.917926+00:00] using pre-written content file for article #7
+[2026-04-10T17:33:07.918076+00:00] generated 10779 chars, meta_title='Step-by-Step: Your First Order from a Chinese Pet Products F'
+[2026-04-10T17:33:11.334997+00:00] image uploaded id=1251 url=https://eviehometech.com/wp-content/uploads/2026/04/first-order-china-factory.jpg
+[2026-04-10T17:33:12.491267+00:00] published post_id=1252 link=https://eviehometech.com/first-order-chinese-pet-products-factory/
+[2026-04-10T17:33:13.043635+00:00] indexnow: 200
+[2026-04-10T17:33:13.046593+00:00] marked article #7 as published
