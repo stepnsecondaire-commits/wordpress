@@ -120,6 +120,25 @@ function leo_add_video_preload_none( $html ) {
 // add_filter( 'breakdance_php_code_block_is_inside_shortcode', '__return_true', 9999 );
 
 /**
+ * Serve the IndexNow key file at the domain root so Bing and Yandex can
+ * validate the key we use to ping them when a new blog post is published.
+ * The key file lives at https://eviehometech.com/{key}.txt and must return
+ * plain text containing only the key value.
+ */
+add_action( 'parse_request', 'leo_serve_indexnow_key', 0 );
+function leo_serve_indexnow_key( $wp ) {
+    $request_uri = isset( $_SERVER['REQUEST_URI'] ) ? $_SERVER['REQUEST_URI'] : '';
+    $key         = 'eviehome-indexnow-7f3a2b8c9d1e4f5a';
+    if ( strpos( $request_uri, '/' . $key . '.txt' ) === 0 ) {
+        status_header( 200 );
+        nocache_headers();
+        header( 'Content-Type: text/plain; charset=utf-8' );
+        echo $key;
+        exit;
+    }
+}
+
+/**
  * Fix the broken category link in the Breakdance footer menu.
  * The footer references /product-category/automatic-pet-fountain/ but the
  * real taxonomy slug is automatic-cat-fountain. Editing the footer would

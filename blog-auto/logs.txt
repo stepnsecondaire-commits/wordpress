@@ -1,0 +1,55 @@
+[2026-04-10T13:18:31.966612+00:00] picked article #1 [The Complete Guide to Sourcing Smart Pet Products from China]
+[2026-04-10T13:18:31.967310+00:00] using pre-written content file for article #1
+[2026-04-10T13:18:31.967405+00:00] generated 18668 chars, meta_title='The Complete Guide to Sourcing Smart Pet Products from China'
+[2026-04-10T13:18:33.966377+00:00] unsplash upload error: {"code":"rest_cannot_create","message":"Sorry, you are not allowed to create posts as this user.","data":{"status":401}}
+[2026-04-10T13:18:33.966839+00:00] image uploaded id=None url=None
+[2026-04-10T13:18:34.576303+00:00] publish error: 401 {"code":"rest_cannot_create","message":"Sorry, you are not allowed to create posts as this user.","data":{"status":401}}
+[2026-04-10T13:19:10.778569+00:00] picked article #1 [The Complete Guide to Sourcing Smart Pet Products from China]
+[2026-04-10T13:19:10.779327+00:00] using pre-written content file for article #1
+[2026-04-10T13:19:10.779441+00:00] generated 18668 chars, meta_title='The Complete Guide to Sourcing Smart Pet Products from China'
+[2026-04-10T13:19:13.676147+00:00] image uploaded id=1156 url=https://eviehometech.com/wp-content/uploads/2026/04/china-sourcing-pet-products.jpg
+[2026-04-10T13:19:14.963126+00:00] published post_id=1157 link=https://eviehometech.com/complete-guide-sourcing-smart-pet-products-china/
+[2026-04-10T13:19:15.295986+00:00] indexnow: 202
+[2026-04-10T13:19:15.300570+00:00] marked article #1 as published
+[2026-04-10T13:25:41.304079+00:00] picked article #16 [Automatic Cat Litter Box: The Definitive B2B Buyer's Guide]
+[2026-04-10T13:25:41.304883+00:00] using pre-written content file for article #16
+[2026-04-10T13:25:41.304980+00:00] generated 16631 chars, meta_title='Automatic Cat Litter Box: The Definitive B2B Buyer's Guide..'
+[2026-04-10T13:25:44.279973+00:00] image uploaded id=1158 url=https://eviehometech.com/wp-content/uploads/2026/04/automatic-cat-litter-box-wholesale.jpg
+[2026-04-10T13:25:45.610070+00:00] published post_id=1159 link=https://eviehometech.com/automatic-cat-litter-box-b2b-buyers-guide/
+[2026-04-10T13:25:45.847397+00:00] indexnow: 202
+[2026-04-10T13:25:45.852070+00:00] marked article #16 as published
+[2026-04-10T13:31:26.060802+00:00] picked article #31 [Smart Pet Feeders: The Complete Wholesale Buyer's Guide]
+[2026-04-10T13:31:26.061651+00:00] using pre-written content file for article #31
+[2026-04-10T13:31:26.061753+00:00] generated 9129 chars, meta_title='Smart Pet Feeders: The Complete Wholesale Buyer's Guide...'
+[2026-04-10T13:31:29.513581+00:00] image uploaded id=1160 url=https://eviehometech.com/wp-content/uploads/2026/04/smart-pet-feeder-wholesale.jpg
+[2026-04-10T13:31:31.197537+00:00] published post_id=1161 link=https://eviehometech.com/smart-pet-feeders-wholesale-buyers-guide/
+[2026-04-10T13:31:31.623215+00:00] indexnow: 202
+[2026-04-10T13:31:31.627750+00:00] marked article #31 as published
+[2026-04-10T13:31:31.794713+00:00] picked article #43 [The Rise of Smart Pet Products: Market Overview 2026]
+[2026-04-10T13:31:31.795328+00:00] using pre-written content file for article #43
+[2026-04-10T13:31:31.795433+00:00] generated 8686 chars, meta_title='The Rise of Smart Pet Products: Market Overview 2026 | Evieh'
+[2026-04-10T13:31:32.092174+00:00] image uploaded id=None url=None
+[2026-04-10T13:31:34.255366+00:00] published post_id=1162 link=https://eviehometech.com/rise-smart-pet-products-market-2026/
+[2026-04-10T13:31:34.474251+00:00] indexnow: 202
+[2026-04-10T13:31:34.480068+00:00] marked article #43 as published
+[2026-04-10T13:31:34.587570+00:00] picked article #55 [OEM vs ODM for Pet Products: Everything You Need to Know]
+[2026-04-10T13:31:34.588564+00:00] using pre-written content file for article #55
+[2026-04-10T13:31:34.588671+00:00] generated 9426 chars, meta_title='OEM vs ODM for Pet Products: Everything You Need to Know...'
+[2026-04-10T13:31:34.899790+00:00] image uploaded id=None url=None
+[2026-04-10T13:31:37.138028+00:00] published post_id=1163 link=https://eviehometech.com/oem-vs-odm-pet-products-complete-guide/
+[2026-04-10T13:31:37.555679+00:00] indexnow: 202
+[2026-04-10T13:31:37.561690+00:00] marked article #55 as published
+[2026-04-10T13:31:37.671166+00:00] picked article #67 [Pet Product Certifications Explained: CE, FCC, PSE, ROHS and More]
+[2026-04-10T13:31:37.672156+00:00] using pre-written content file for article #67
+[2026-04-10T13:31:37.672302+00:00] generated 9537 chars, meta_title='Pet Product Certifications Explained: CE, FCC, PSE, ROHS and'
+[2026-04-10T13:31:37.993836+00:00] image uploaded id=None url=None
+[2026-04-10T13:31:40.214997+00:00] published post_id=1164 link=https://eviehometech.com/pet-product-certifications-ce-fcc-pse-rohs/
+[2026-04-10T13:31:40.620027+00:00] indexnow: 202
+[2026-04-10T13:31:40.623045+00:00] marked article #67 as published
+[2026-04-10T13:31:40.734149+00:00] picked article #77 [Global Smart Pet Products Market Report 2026]
+[2026-04-10T13:31:40.735095+00:00] using pre-written content file for article #77
+[2026-04-10T13:31:40.735198+00:00] generated 10195 chars, meta_title='Global Smart Pet Products Market Report 2026 | Eviehome'
+[2026-04-10T13:31:40.790112+00:00] image uploaded id=None url=None
+[2026-04-10T13:31:42.979609+00:00] published post_id=1165 link=https://eviehometech.com/global-smart-pet-products-market-report-2026/
+[2026-04-10T13:31:43.176624+00:00] indexnow: 202
+[2026-04-10T13:31:43.180540+00:00] marked article #77 as published
