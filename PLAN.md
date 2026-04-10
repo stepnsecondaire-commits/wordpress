@@ -1,6 +1,8 @@
 # Plan d'action SEO complet — eviehometech.com
 ## Objectif : Ranker en Europe + USA sur les requêtes B2B smart pet products & sourcing Chine
 
+**STATUT 2026-04-10 : Phases 1 à 5 complètes + blog cron actif. Projet en autopilot jusqu'au 13/05/2026. Voir README.md pour le statut final.**
+
 Source : plan fourni par Augustin le 2026-04-10.
 
 **Ajustement v2 :** on garde **SureRank** (déjà installé et configuré) au lieu d'installer RankMath. SureRank gère titles/meta/OG/schemas avec une UI équivalente, et l'installation de RankMath par-dessus créerait un conflit.
