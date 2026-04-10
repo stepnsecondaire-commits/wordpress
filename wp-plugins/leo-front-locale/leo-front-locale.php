@@ -365,6 +365,43 @@ function leo_register_posts_list_endpoint() {
         ],
     ] );
 }
+/**
+ * Admin-only REST endpoint to create a post of any post_type, used to create
+ * Popup Maker popups (which are not exposed via /wp/v2/popup).
+ *
+ * POST /wp-json/leo/v1/create_post
+ * Body: { "post_type": "popup", "post_title": "...", "post_content": "...", "post_status": "publish", "meta": {...} }
+ */
+add_action( 'rest_api_init', function () {
+    register_rest_route( 'leo/v1', '/create_post', [
+        'methods'             => 'POST',
+        'callback'            => 'leo_rest_create_post',
+        'permission_callback' => function () { return current_user_can( 'manage_options' ); },
+    ] );
+} );
+function leo_rest_create_post( $request ) {
+    $body = $request->get_json_params();
+    if ( empty( $body['post_type'] ) ) {
+        return new WP_Error( 'bad_request', 'post_type required', [ 'status' => 400 ] );
+    }
+    $post_id = wp_insert_post( [
+        'post_type'    => $body['post_type'],
+        'post_title'   => isset( $body['post_title'] ) ? $body['post_title'] : '',
+        'post_content' => isset( $body['post_content'] ) ? $body['post_content'] : '',
+        'post_status'  => isset( $body['post_status'] ) ? $body['post_status'] : 'publish',
+        'post_name'    => isset( $body['post_name'] ) ? $body['post_name'] : '',
+    ], true );
+    if ( is_wp_error( $post_id ) ) {
+        return new WP_Error( 'insert_failed', $post_id->get_error_message(), [ 'status' => 500 ] );
+    }
+    if ( ! empty( $body['meta'] ) && is_array( $body['meta'] ) ) {
+        foreach ( $body['meta'] as $key => $value ) {
+            update_post_meta( $post_id, $key, wp_slash( is_array( $value ) || is_object( $value ) ? $value : (string) $value ) );
+        }
+    }
+    return [ 'success' => true, 'post_id' => $post_id, 'post_type' => $body['post_type'] ];
+}
+
 function leo_rest_list_posts( $request ) {
     $post_type = $request->get_param( 'post_type' );
     $posts = get_posts( [
