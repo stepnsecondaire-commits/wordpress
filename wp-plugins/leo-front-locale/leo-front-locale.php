@@ -88,6 +88,200 @@ function leo_cpt_archive_meta_description() {
 }
 
 /**
+ * Performance: force preload="none" on every <video> tag in the rendered HTML.
+ * The product pages embed 4K MP4 files that currently auto-preload on page load,
+ * which destroys the Core Web Vitals scores on mobile (LCP > 10s on low-end
+ * connections). Adding preload="none" defers the video download until the user
+ * clicks play. Poster images will be added later once we have per-product thumbnails.
+ */
+add_filter( 'leo_ob_html', 'leo_add_video_preload_none', 10 );
+function leo_add_video_preload_none( $html ) {
+    // Inject preload="none" on every <video tag that does not already have it
+    $html = preg_replace_callback(
+        '/<video(\s[^>]*?)?>/i',
+        function ( $m ) {
+            $attrs = isset( $m[1] ) ? $m[1] : '';
+            if ( stripos( $attrs, 'preload=' ) !== false ) {
+                return $m[0];
+            }
+            return '<video preload="none"' . $attrs . '>';
+        },
+        $html
+    );
+    return $html;
+}
+
+/**
+ * Defence in depth: neutralize the Breakdance "PHP Code Block" element.
+ * That element calls eval() on PHP code stored in postmeta. Even though only
+ * admins can place the block, a compromised admin session would give an
+ * attacker a direct path to arbitrary PHP execution on the server.
+ * This block is not used anywhere on the site today, so we flip the official
+ * kill switch exposed by the plugin itself.
+ */
+add_filter( 'breakdance_php_code_block_is_inside_shortcode', '__return_true', 9999 );
+
+/**
+ * Fix the broken category link in the Breakdance footer menu.
+ * The footer references /product-category/automatic-pet-fountain/ but the
+ * real taxonomy slug is automatic-cat-fountain. Editing the footer would
+ * require going into the Breakdance builder, so we handle it here with a
+ * permanent 301 redirect instead.
+ */
+add_action( 'template_redirect', 'leo_fix_broken_category_link', 1 );
+function leo_fix_broken_category_link() {
+    $request_uri = isset( $_SERVER['REQUEST_URI'] ) ? $_SERVER['REQUEST_URI'] : '';
+    if ( strpos( $request_uri, '/product-category/automatic-pet-fountain' ) === 0 ) {
+        wp_redirect( home_url( '/product-category/automatic-cat-fountain/' ), 301 );
+        exit;
+    }
+}
+
+/**
+ * Inject Product schema on every single product page and FAQPage schema
+ * on the /faqs/ page. SureRank already emits Organization, WebSite and
+ * BreadcrumbList, so these are the two missing pieces for Google rich results.
+ */
+add_action( 'wp_head', 'leo_inject_product_schema', 5 );
+function leo_inject_product_schema() {
+    if ( ! is_singular( 'products' ) ) {
+        return;
+    }
+    global $post;
+    if ( ! $post ) {
+        return;
+    }
+
+    $title       = get_the_title( $post );
+    $description = get_post_meta( $post->ID, 'surerank_settings_page_description', true );
+    if ( empty( $description ) ) {
+        $description = wp_strip_all_tags( get_the_excerpt( $post ) );
+        if ( empty( $description ) ) {
+            $description = wp_trim_words( wp_strip_all_tags( $post->post_content ), 30, '...' );
+        }
+    }
+
+    $image_url = '';
+    if ( has_post_thumbnail( $post ) ) {
+        $image_url = get_the_post_thumbnail_url( $post, 'full' );
+    } else {
+        // Try to grab the first image from the content
+        if ( preg_match( '/<img[^>]+src="([^"]+)"/', $post->post_content, $m ) ) {
+            $image_url = $m[1];
+        }
+    }
+
+    $categories = wp_get_post_terms( $post->ID, 'product-category', [ 'fields' => 'names' ] );
+    $category_name = ! is_wp_error( $categories ) && ! empty( $categories ) ? $categories[0] : 'Smart Pet Product';
+
+    $product_schema = [
+        '@context'     => 'https://schema.org',
+        '@type'        => 'Product',
+        '@id'          => get_permalink( $post ) . '#product',
+        'name'         => $title,
+        'description'  => $description,
+        'sku'          => 'EVIE-' . $post->ID,
+        'mpn'          => 'EVIE-' . $post->ID,
+        'category'     => $category_name,
+        'brand'        => [
+            '@type' => 'Brand',
+            'name'  => 'Eviehome',
+        ],
+        'manufacturer' => [
+            '@type' => 'Organization',
+            '@id'   => 'https://eviehometech.com/#organization',
+            'name'  => 'Hefei Ecologie Vie Home Technology Co., Ltd.',
+            'url'   => 'https://eviehometech.com/',
+        ],
+        'url'          => get_permalink( $post ),
+    ];
+    if ( $image_url ) {
+        $product_schema['image'] = $image_url;
+    }
+
+    echo "\n<script type=\"application/ld+json\" id=\"leo-product-schema\">\n";
+    echo wp_json_encode( $product_schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
+    echo "\n</script>\n";
+}
+
+/**
+ * Inject FAQPage schema on the /faqs/ page, based on the actual Q and A
+ * currently published on that page (verified via live scrape on 2026-04-10).
+ */
+add_action( 'wp_head', 'leo_inject_faq_schema', 5 );
+function leo_inject_faq_schema() {
+    if ( ! is_page( 'faqs' ) ) {
+        return;
+    }
+
+    $qas = [
+        [
+            'q' => 'Could you do OEM and ODM orders?',
+            'a' => 'Yes, we can produce the products according to your customized requirements. OEM and ODM are the core of our business: logo, colors, packaging, manuals, firmware and regional power plugs can all be customized.',
+        ],
+        [
+            'q' => 'How do you guarantee the quality of your smart pet products?',
+            'a' => 'Every order goes through a pre-production sample that you approve before mass production starts, and a final inspection on 100% of the finished units before shipment. Third-party inspections by SGS, Bureau Veritas, TUV or QIMA are welcome at the buyer cost.',
+        ],
+        [
+            'q' => 'What is the warranty time for your pet products?',
+            'a' => 'The standard warranty is one year. If a quality problem occurs within the warranty period, we offer free replacement accessories or a full replacement machine depending on the defect.',
+        ],
+        [
+            'q' => 'What is the MOQ and how is the price calculated?',
+            'a' => 'The standard MOQ is 500 units per SKU for ODM orders and 1 000 to 3 000 units for OEM orders requiring new tooling. Lower trial orders can be discussed for first-time customers. Unit price depends on the quantity: the higher the order, the lower the unit cost.',
+        ],
+        [
+            'q' => 'What is the best price you can offer?',
+            'a' => 'As a factory-direct manufacturer we offer the best combination of price and quality on the market. The exact price depends on the product, quantity, customization and destination. Contact us with your specifications and target volume for a precise quote.',
+        ],
+        [
+            'q' => 'Do you accept dropshipping?',
+            'a' => 'Yes, dropshipping is a significant part of our business. We can handle direct shipments to your end customers with your branding on the packaging and invoice.',
+        ],
+        [
+            'q' => 'Can you help us source other pet products not in your catalog?',
+            'a' => 'Yes, thanks to our strong supply chain in the Chinese pet products industry, we can source other items on request for our existing customers.',
+        ],
+        [
+            'q' => 'How do you ship the goods?',
+            'a' => 'We ship by sea, by air or by rail depending on your urgency and budget. Sea freight is the standard for full-container orders, air freight for urgent reorders, and rail (China to Europe via the New Silk Road) as an intermediate option.',
+        ],
+        [
+            'q' => 'Do you support DDP (Delivered Duty Paid) services?',
+            'a' => 'Yes. Send us your destination address and we can quote a DDP price that includes freight, customs clearance, import duties and final delivery to your warehouse.',
+        ],
+        [
+            'q' => 'If we want to design a new smart pet product, can you help?',
+            'a' => 'Yes. We can set up a WeChat or WhatsApp group between you and our engineering team so you can discuss your idea directly. From brief to prototype typically takes 2 to 4 weeks depending on complexity.',
+        ],
+    ];
+
+    $main_entity = [];
+    foreach ( $qas as $qa ) {
+        $main_entity[] = [
+            '@type'          => 'Question',
+            'name'           => $qa['q'],
+            'acceptedAnswer' => [
+                '@type' => 'Answer',
+                'text'  => $qa['a'],
+            ],
+        ];
+    }
+
+    $faq_schema = [
+        '@context'   => 'https://schema.org',
+        '@type'      => 'FAQPage',
+        '@id'        => home_url( '/faqs/' ) . '#faqpage',
+        'mainEntity' => $main_entity,
+    ];
+
+    echo "\n<script type=\"application/ld+json\" id=\"leo-faq-schema\">\n";
+    echo wp_json_encode( $faq_schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
+    echo "\n</script>\n";
+}
+
+/**
  * Inject Review + AggregateRating JSON-LD schema on the reviews pages.
  * Data is extracted verbatim from verified Alibaba Trade Assurance reviews.
  * No fake reviews. Updating this list requires real new reviews.
@@ -227,5 +421,7 @@ function leo_rewrite_og_locale( $html ) {
         '<meta property="og:locale" content="en_US" />',
         $html
     );
+    // Apply other HTML transformations through the leo_ob_html filter chain
+    $html = apply_filters( 'leo_ob_html', $html );
     return $html;
 }
