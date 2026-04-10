@@ -1,0 +1,124 @@
+<h1>IoT Pet Products: How Connected Devices Are Changing Pet Care</h1>
+
+<p>IoT (Internet of Things) is the underlying technology that makes every smart pet product work. The product is a sensor or actuator, the cloud is the brain, the phone app is the interface, and a cellular or WiFi radio ties them together. For a B2B buyer entering the smart pet category, understanding the IoT stack, the cloud infrastructure options and the data security implications is what separates a brand that scales reliably from a brand that collapses under technical debt. This article covers the IoT architecture behind connected pet products, written from Hefei, China, by Eviehome (Hefei Ecologie Vie Home Technology Co., Ltd.).</p>
+
+<h2>The IoT pet product stack</h2>
+
+<p>A typical IoT pet product has 4 layers:</p>
+
+<ol>
+  <li><strong>Device layer</strong>: the physical product with a microcontroller (ESP32, Allwinner, Rockchip, Realtek), sensors (cameras, weight sensors, accelerometers, temperature sensors) and actuators (motors, solenoids, speakers).</li>
+  <li><strong>Connectivity layer</strong>: WiFi 2.4 GHz (most common), Bluetooth (local connection), LTE/NB-IoT (cellular, for trackers), or Zigbee/Thread (emerging for hubs).</li>
+  <li><strong>Cloud layer</strong>: the backend that stores data, runs AI models, sends push notifications, and maintains the schedule. Typically AWS IoT Core, Tuya, or a custom backend on AWS/Azure/GCP.</li>
+  <li><strong>Application layer</strong>: the mobile app (iOS and Android) or web dashboard that the owner uses.</li>
+</ol>
+
+<p>Each layer has its own failure modes. A great device with a bad cloud is a bad product. A great cloud with a bad app is a bad product. All four layers must work together.</p>
+
+<h2>Cloud platform choices</h2>
+
+<h3>Tuya Cloud</h3>
+
+<p>The Chinese IoT platform powering the majority of white-label smart home devices globally. Pros: fastest time to market (device onboarding + app in 2 to 4 weeks), proven reliability at scale, GDPR-compliant EU/US hosting, SDK for custom app branding. Cons: shared infrastructure, limited customization at the backend.</p>
+
+<p><strong>Best for</strong>: first-time brands and volume under 50 000 devices per year.</p>
+
+<h3>AWS IoT Core</h3>
+
+<p>Amazon's managed IoT platform, priced per device and message. Pros: full control, best-in-class scalability, Alexa integration native. Cons: requires a backend engineering team (USD 150 000+ year 1), certification and setup complexity, longer time to market.</p>
+
+<p><strong>Best for</strong>: established brands with engineering teams, 50 000+ devices per year.</p>
+
+<h3>Azure IoT Hub, Google Cloud IoT</h3>
+
+<p>Similar to AWS but with different pricing and regional strengths. Used by enterprise brands with existing Azure or GCP footprints. Rare in pet products.</p>
+
+<h3>Custom backend</h3>
+
+<p>Some brands (especially European startups) build custom backends on bare AWS/Hetzner/Scaleway. Pros: full control, lowest per-device cost at scale. Cons: engineering cost, maintenance burden, security responsibility.</p>
+
+<p><strong>Best for</strong>: established brands willing to invest USD 300 000+ in backend engineering over 2 years.</p>
+
+<h2>Data security: the underrated risk</h2>
+
+<p>IoT pet products collect sensitive data: location (GPS trackers), video feeds (cameras), schedules (feeders), pet biometrics (weight). A data breach is a brand-killing event. The security requirements every brand should insist on:</p>
+
+<ul>
+  <li><strong>TLS 1.2 or higher</strong> for all device-to-cloud communication.</li>
+  <li><strong>Unique per-device credentials</strong>, not shared secrets across a fleet.</li>
+  <li><strong>Signed firmware updates</strong> so attackers cannot flash malicious firmware.</li>
+  <li><strong>End-to-end encryption of video streams</strong> with keys rotated per session.</li>
+  <li><strong>At-rest encryption of cloud data</strong>.</li>
+  <li><strong>Regular penetration testing</strong>: annual pen test by a qualified third party.</li>
+  <li><strong>SOC 2 or ISO 27001 compliance</strong> at the cloud platform level.</li>
+</ul>
+
+<p>Tuya offers SOC 2 and ISO 27001 out of the box. AWS IoT Core offers the raw tools; your team is responsible for proper configuration. For a first brand, Tuya is the lower-risk choice.</p>
+
+<h2>Bandwidth and data costs</h2>
+
+<p>IoT pet products generate vastly different data volumes depending on the product type:</p>
+
+<ul>
+  <li><strong>Pet feeder</strong>: 1 to 10 KB per message, 5 to 50 messages per day. Negligible bandwidth cost.</li>
+  <li><strong>GPS tracker</strong>: 200 to 500 bytes per location update, 100 to 500 updates per day. Fits comfortably in a USD 1 to 3 per month IoT SIM plan.</li>
+  <li><strong>Camera feeder</strong>: 50 to 500 MB per day of video if continuously recording, 2 to 50 MB per day if motion-triggered. Cloud storage cost adds up: USD 0.10 to 0.50 per device per month for hot storage.</li>
+  <li><strong>Cat litter box with weight logging</strong>: 1 to 10 KB per visit, 5 to 20 visits per day. Negligible.</li>
+</ul>
+
+<p>Camera-equipped products are the only category where IoT cloud cost matters. For everything else, the per-device cost is under USD 0.20 per month, leaving plenty of room for subscription revenue.</p>
+
+<h2>Firmware updates (OTA)</h2>
+
+<p>Over-the-air firmware updates are essential for IoT pet products because:</p>
+
+<ul>
+  <li>Security patches need to be deployed fleet-wide after a vulnerability is discovered.</li>
+  <li>Feature improvements happen post-launch (better bark detection, more bird species, new app features).</li>
+  <li>Bug fixes save on returns and support tickets.</li>
+</ul>
+
+<p>A good OTA system: delta updates (not full firmware), resume-on-failure, signed binaries, staged rollouts (5 percent to 50 percent to 100 percent of fleet), and automatic rollback on failure detection. Tuya includes this. Custom backends must build it.</p>
+
+<h2>Interoperability standards</h2>
+
+<p>Two standards affect the IoT pet category in 2026:</p>
+
+<ul>
+  <li><strong>Matter</strong>: the smart home standard backed by Apple, Google, Amazon, Samsung. Matter-certified devices work in all major smart home platforms without separate integrations. Pet products are slowly adopting Matter.</li>
+  <li><strong>Thread</strong>: low-power mesh networking protocol that underpins Matter. Useful for battery-powered sensors.</li>
+</ul>
+
+<p>For 2026, Matter adoption in pet products is still early. Most brands stick with WiFi + Alexa/Google integration directly. Matter is worth planning for but not yet a requirement.</p>
+
+<h2>The privacy debate</h2>
+
+<p>Pet products increasingly collect data that could be sensitive to the human household:</p>
+
+<ul>
+  <li>Cameras inside the home (can incidentally record people)</li>
+  <li>Location data (reveals owner movement patterns)</li>
+  <li>Feeding schedules (reveals when the home is unattended)</li>
+</ul>
+
+<p>Privacy-conscious buyers (especially in Germany, France, Netherlands) are increasingly demanding: EU-based data storage, opt-out for any cloud features, transparent data retention policies. Brands that lead on privacy win the EU market. Brands that are vague lose trust.</p>
+
+<h2>Frequently asked questions</h2>
+
+<h3>Can a product work without the cloud?</h3>
+
+<p>Some products are designed with "local-first" mode: the feeder dispenses meals locally, the camera records to SD card, the tracker uses a home Bluetooth beacon. These products are more resilient but require more sophisticated firmware. Worth paying for on premium models.</p>
+
+<h3>How long should a smart pet product stay supported with cloud updates?</h3>
+
+<p>Minimum 3 years. Premium brands offer 5+ years. Customers expect at least as long as their warranty. Plan your cloud infrastructure budget accordingly.</p>
+
+<h3>Does Eviehome use Tuya or a custom cloud?</h3>
+
+<p>Tuya for our OEM partners (fastest to market, lowest engineering burden). Custom cloud integrations available for established brands with AWS IoT Core or custom backends. Contact Ryan Lau for architecture options.</p>
+
+<h2>About Eviehome</h2>
+
+<p>Eviehome manufactures Tuya-native and custom-cloud-ready smart pet products. Based in Hefei, China since 2014. See our <a href="https://eviehometech.com/smart-pet-feeder-app-integration-2026/">smart pet feeder app integration article</a>.</p>
+
+<p>Contact Ryan Lau at <a href="mailto:ryanlau@eviehometech.com">ryanlau@eviehometech.com</a>, on WhatsApp at <a href="https://wa.me/8619956530913">+86 199 5653 0913</a>, or <a href="https://eviehometech.com/contact-us/">use the contact form</a>.</p>
