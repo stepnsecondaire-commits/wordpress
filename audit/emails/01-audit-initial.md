@@ -1,28 +1,28 @@
 ---
-subject: [leo] Audit initial eviehometech.com — 3 verrous critiques à débloquer
+subject: [Leo Project] Initial SEO audit of eviehometech.com: 3 critical blockers to unlock
 to: stepnsecondaire@gmail.com
 ---
 
-# Audit initial — eviehometech.com
+# Initial SEO audit: eviehometech.com
 
-Salut,
+Hi Leo,
 
-Voici le recap de l'audit complet du site **eviehometech.com** (Hefei Ecologie Vie Home Technology Co., Ltd.) qu'on vient de faire. Objectif rappel : maximiser le référencement organique Google EU/US pour capter des acheteurs B2B récurrents (importateurs, distributeurs, marques qui sourcent/achètent en Chine).
+Here is the recap of the complete audit we just ran on **eviehometech.com** (Hefei Ecologie Vie Home Technology Co., Ltd.). The goal is clear: maximize organic Google traffic from Europe and the United States to capture recurring B2B buyers (importers, distributors, private label brands, e-commerce operators) who are looking for a reliable wholesale / OEM partner in China.
 
-## Ce qu'on a fait
+## What we did
 
-- Extraction complète du fichier `.wpress` (905 Mo)
-- Audit read-only de la structure technique (thèmes, plugins, mu-plugins, versions)
-- Audit de la base de données MySQL (548 posts, 2329 postmeta, 131 termes)
-- Audit SEO on-page (meta, schemas, H1/H2, hreflang, textes hardcodés)
-- Audit performance (1 640 médias, détail vidéos 4K)
-- Rédaction du document `AUDIT.md` avec plan d'action priorisé en checkboxes
+- Extracted the full WordPress export (905 MB `.wpress` file)
+- Read-only audit of the technical stack (themes, plugins, mu-plugins, versions)
+- Analysis of the MySQL database (548 posts, 2329 postmeta, 131 terms)
+- On-page SEO audit (meta tags, schemas, headings, hreflang, hardcoded strings)
+- Performance audit (1 640 media files, focus on 4K videos)
+- Drafted the full action plan in `AUDIT.md`
 
-Aucune modif faite sur le site — pur mode lecture.
+Nothing was modified on the live site. Pure read-only mode.
 
-## Ce que fait le fournisseur (Léo)
+## Your business as we see it
 
-Fabricant chinois de **smart pet products** — vente wholesale + OEM/ODM. 37 produits publiés, 8 catégories :
+Chinese manufacturer of **smart pet products**, wholesale + OEM/ODM. 37 products currently published across 8 categories:
 
 - Automatic Cat Litter Box (14)
 - Automatic Cat Fountain (7)
@@ -33,101 +33,101 @@ Fabricant chinois de **smart pet products** — vente wholesale + OEM/ODM. 37 pr
 - Pet Smart Toys (2)
 - Bark Collar & GPS Tracker (1)
 
-Il y a 8 pages publiées : Home, Products, About, Contact, Reviews, News, Privacy, Terms, FAQs.
+Eight live pages: Home, Products, About, Contact, Reviews, News, Privacy, Terms, FAQs.
 
-## Ce qui va bien
+## What is working well
 
-- **Stack moderne et saine** : WordPress 6.9.4, Breakdance (page builder), ACF Pro, SureRank SEO, LiteSpeed Cache, Cimo Image Optimizer. Tout est à jour.
-- **Thème custom minimaliste** : zéro texte hardcodé dans le PHP, tout le contenu est éditable depuis l'admin WordPress — c'est exactement ce qu'on voulait.
-- **Images très bien optimisées** : 98,5% en WebP, moyenne 31 Ko/image.
-- **Schemas JSON-LD déjà configurés** : Organization, WebSite, SearchAction, WebPage.
-- **Hébergeur sérieux** : Hostinger (mu-plugins officiels propres).
-- **Sécurité globalement saine** : un seul admin, pas de backdoor, plugins à jour.
+- **Modern and clean stack**: WordPress 6.9.4, Breakdance (page builder), ACF Pro, SureRank SEO, LiteSpeed Cache, Cimo Image Optimizer. Everything is up to date.
+- **Custom minimal theme**: zero hardcoded text in the PHP files, 100% of the front-end content is editable from the WordPress admin. This is exactly what we want.
+- **Images are already very well optimized**: 98.5% WebP, average 31 KB per file.
+- **JSON-LD schemas already configured**: Organization, WebSite, SearchAction, WebPage.
+- **Serious hosting**: Hostinger (clean official mu-plugins).
+- **Security is overall healthy**: one admin only, no backdoor detected, all plugins up to date.
 
-## 🔴 Les 3 verrous critiques (à débloquer avant toute stratégie de contenu)
+## The 3 critical blockers (must be fixed before any content strategy)
 
-### 1. Le site est TOTALEMENT invisible pour Google
+### 1. The site is completely invisible to Google
 
-Le fichier `litespeed/robots.txt` contient littéralement :
+The file `litespeed/robots.txt` literally contains:
 
 ```
 User-agent: *
 Disallow: /
 ```
 
-→ Google et Bing ont l'interdiction formelle de crawler quoi que ce soit. Le site existe mais il n'est pas dans l'index. **Aucun SEO possible tant que ce n'est pas corrigé.**
+Google and Bing are formally forbidden from crawling anything. The site exists but it is not in the index. **No SEO is possible until this is fixed.**
 
-**Fix : 2 minutes de travail.** On remplace par un robots.txt propre qui autorise le crawl et référence le sitemap.
+**Fix: 2 minutes of work.** Replace it with a clean robots.txt that allows crawling and references the sitemap.
 
-### 2. Le site est 100% en chinois et n'a AUCUN plugin multilingue
+### 2. The site is 100% in Chinese with zero multilingual plugin
 
-`WPLANG = zh_CN`. Pas de WPML, pas de Polylang, pas de Weglot, rien. Tout le contenu (pages, produits, menus, ACF) est en chinois. Le nom du menu principal c'est "主菜单".
+`WPLANG = zh_CN`. No WPML, no Polylang, no Weglot, nothing. All content (pages, products, menus, ACF fields) is in Chinese. The main menu is named "主菜单".
 
-→ Aujourd'hui le site est **inadressable** pour des acheteurs B2B américains, anglais, allemands, français. Même si on débloque Google, ce qu'il va indexer c'est du chinois, ce qui ne matchera jamais les requêtes anglophones qu'on vise (`china sourcing`, `pet products manufacturer`, `OEM cat feeder`, etc.).
+Today the site is **unreachable** for American, British, German, French B2B buyers. Even if we unlock Google, what it would index is Chinese, which will never match the English queries we are targeting (`china sourcing`, `pet products manufacturer`, `OEM cat feeder`, and so on).
 
-**Fix : 3-5 jours de travail.** Installer **Polylang Pro** (recommandé vs WPML, plus léger, compatible Breakdance + ACF, meilleur pour perf) puis créer la version EN complète des 8 pages + 37 produits.
+**Fix: 3 to 5 days of work.** Install **Polylang Pro** (recommended over WPML: lighter, fully compatible with Breakdance and ACF, better for performance) then build the complete English version of the 8 pages and 37 products.
 
-### 3. 78% des pages n'ont pas de meta description
+### 3. 78% of pages have no meta description
 
-SureRank a bien la capacité de gérer les meta descriptions, mais elles n'ont pas été remplies pour la majorité des pages et produits. Résultat : Google va fabriquer lui-même des snippets souvent mauvais, et le CTR sur les résultats de recherche sera faible même si on monte en position.
+SureRank can handle meta descriptions, but most pages and products have theirs empty. As a result, Google will fabricate its own SERP snippets, often poor ones, and the CTR on search results will be weak even if we rank well.
 
-**Fix : 1 journée de travail.** Remplir les 45 meta descriptions à la main (8 pages + 37 produits), en anglais optimisé pour les mots-clés B2B.
+**Fix: 1 day of work.** Manually fill 45 meta descriptions (8 pages + 37 products) in SEO-optimized English targeting the B2B keywords.
 
-## 🟠 Autres points importants (pas critiques mais gros impact)
+## Other important findings (not critical but high impact)
 
-- **446 Mo de vidéos 4K non compressées** (42 fichiers, 8 à 29 Mo chacun) — ça tue les Core Web Vitals. On peut gagner **~380 Mo (-85%)** en réencodant en H.265 1080p avec ffmpeg.
-- **Aucun formulaire de contact/devis** détecté (pas de Contact Form 7, WPForms, Fluent Forms). Pour un site B2B dont l'objectif est de générer des leads, c'est un trou énorme.
-- **Un `eval()` dans le plugin `assets4breakdance`** (Supa Code Block) → à auditer pour vérifier qui peut publier ce bloc (risque RCE si mauvaise ACL).
-- **Pages sans structure H1/H2** propre signalées par SureRank.
-- **Pas de WhatsApp Business chat** visible alors que le numéro est déjà dans le schema Organization.
+- **446 MB of uncompressed 4K videos** (42 files, 8 to 29 MB each). This kills the Core Web Vitals scores. Re-encoding in H.265 1080p with ffmpeg would save around **-380 MB (-85%)**.
+- **No contact or quote form** detected (no Contact Form 7, WPForms, Fluent Forms). For a B2B site whose goal is to generate leads, this is a huge gap.
+- **An `eval()` call** in the `assets4breakdance` plugin (Supa Code Block) needs a quick security review: who can publish this block? (RCE risk if the capability check is too loose).
+- **Pages with weak H1 / H2 structure** flagged by SureRank.
+- **No WhatsApp Business chat** visible even though the number is already declared in the Organization schema.
 
-## Pourquoi on branche GitHub
+## Why we are using GitHub
 
-On met le projet sur GitHub ([stepnsecondaire-commits/wordpress](https://github.com/stepnsecondaire-commits/wordpress)) pour trois raisons :
+We put the project on GitHub ([stepnsecondaire-commits/wordpress](https://github.com/stepnsecondaire-commits/wordpress)) for three reasons:
 
-1. **Versionning** : chaque modification est tracée (qui, quand, pourquoi). Si on casse quelque chose, on revient en arrière en une commande.
-2. **Collaboration** : toi + moi on voit la même chose, on peut review les changements avant qu'ils aillent en prod.
-3. **Sauvegarde** : le code du site est dupliqué hors Hostinger. Si le serveur meurt, on a tout.
+1. **Versioning**: every modification is tracked (who, when, why). If we break something, we revert in one command.
+2. **Collaboration**: both of us see the same thing and can review changes before they hit production.
+3. **Backup**: the site code is duplicated outside Hostinger. If the server dies, we still have everything.
 
-On ne pousse PAS tout le contenu du `.wpress` :
+We are **not** pushing the entire `.wpress` content:
 
-- ❌ `uploads/` (508 Mo d'images et vidéos) — trop lourd, on garde en externe
-- ❌ `wpvividbackups/` (243 Mo de backups obsolètes) — inutile
-- ❌ Code des plugins payants (Breakdance, ACF Pro, SureRank Pro) — licences, pas à redistribuer
-- ✅ On garde : `AUDIT.md`, le thème custom `breakdance-zero-theme-master`, le dump `database.sql`, les scripts d'automatisation, les emails récap
+- The 508 MB `uploads/` folder stays out of git (images and videos, too heavy)
+- The 243 MB `wpvividbackups/` stays out (obsolete backups)
+- Paid plugins code (Breakdance, ACF Pro, SureRank Pro) stays out (license compliance)
+- What is tracked: `AUDIT.md`, the custom theme `breakdance-zero-theme-master`, the `database.sql` dump, the automation scripts, and the recap emails
 
-Repo final propre, ~10 Mo au lieu de 905 Mo.
+Final repo is clean, around 10 MB instead of 905 MB.
 
-## Plan des prochaines étapes
+## Next steps
 
-### Phase 1 — Déblocage (cette semaine)
-1. Corriger `robots.txt`
-2. Auditer l'`eval()` de assets4breakdance
-3. Publier sitemap + configurer Google Search Console + Bing Webmaster
-4. Installer un formulaire contact B2B
-5. Remplir les 45 meta descriptions
+### Phase 1: unblocking (this week)
+1. Fix `robots.txt`
+2. Security review of the `eval()` in assets4breakdance
+3. Publish sitemap + set up Google Search Console and Bing Webmaster Tools
+4. Install a B2B contact form
+5. Write the 45 missing meta descriptions
 
-### Phase 2 — Multilingue EN (semaines 2-3)
-Polylang Pro + traduction intégrale en anglais.
+### Phase 2: English version (weeks 2 to 3)
+Polylang Pro + full English translation.
 
-### Phase 3 — Performance (semaine 4)
-Réencodage vidéos H.265 + Cloudflare CDN.
+### Phase 3: performance (week 4)
+Re-encode videos in H.265 + Cloudflare CDN.
 
-### Phase 4 — Contenu B2B (semaines 5-8)
-Pages OEM/ODM, Quality & Certifications, Factory Tour, Case Studies + réécriture produits + schemas Product/FAQ/Breadcrumb.
+### Phase 4: B2B content (weeks 5 to 8)
+OEM/ODM capabilities page, Quality & Certifications page, Factory Tour, Case Studies, product copy rewrite, Product/FAQ/Breadcrumb schemas.
 
-### Phase 5 — Blog SEO (mois 3-6)
-Mise en place de l'architecture blog auto (même modèle que tes autres blogs : publish.py + GitHub Actions + Claude Sonnet 4).
+### Phase 5: SEO blog (months 3 to 6)
+Programmatic SEO blog pipeline to keep publishing targeted articles without manual effort.
 
-## Ce qu'il me faut de toi pour démarrer la phase 1
+## What we need from you to start Phase 1
 
-1. **Validation du plan ci-dessus** (ou ajustements)
-2. **Confirmation pour pousser le repo initial sur GitHub** (token d'accès si tu veux que je push directement)
-3. **Accès admin WordPress** (URL + login) quand on passera aux actions en prod
-4. **Credentials Hostinger** (ou accès SFTP/SSH) pour corriger le robots.txt
-5. **Gmail App Password** pour que ce script d'envoi d'emails fonctionne (ce mail-ci est un brouillon, je ne peux pas encore l'envoyer)
+1. **Validation of the plan above** (or adjustments you want)
+2. **WordPress admin access** (URL + login) when we move to live actions
+3. **Hostinger credentials** (or SFTP / SSH access) to fix robots.txt
+4. **Confirmation you are OK with the repo setup** on GitHub
 
-Le document complet avec toutes les checkboxes est dans `AUDIT.md` à la racine du repo.
+The full document with all the checkbox action items is in `AUDIT.md` at the root of the repo.
 
-Bonne journée —
-Claude (pour Augustin)
+Have a good day,
+
+The Leo Project team
