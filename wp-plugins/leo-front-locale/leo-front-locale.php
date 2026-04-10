@@ -88,6 +88,126 @@ function leo_cpt_archive_meta_description() {
 }
 
 /**
+ * Inject Review + AggregateRating JSON-LD schema on the reviews pages.
+ * Data is extracted verbatim from verified Alibaba Trade Assurance reviews.
+ * No fake reviews. Updating this list requires real new reviews.
+ */
+add_action( 'wp_head', 'leo_inject_reviews_schema', 5 );
+function leo_inject_reviews_schema() {
+    if ( ! ( is_page( 'buyer-reviews' ) || is_page( 'reviews' ) ) ) {
+        return;
+    }
+
+    $item_reviewed = [
+        '@type' => 'Organization',
+        '@id'   => 'https://eviehometech.com/#organization',
+        'name'  => 'Hefei Ecologie Vie Home Technology Co., Ltd.',
+        'url'   => 'https://eviehometech.com/',
+    ];
+
+    $reviews = [
+        [
+            'author'      => 'Jasmin Movahedian',
+            'country'     => 'Italy',
+            'rating'      => 5,
+            'product'     => 'OEM Electric Smart Quick Self Cleaning Deodorant Cat Litter Box',
+            'body'        => "Everything is perfect with this automatic litter. My two cats love it and I need to take out the trash only once a week. I really recommend it, especially because this one has the hidden drawer which is more elegant than other litters.",
+        ],
+        [
+            'author'      => 'Arno Gregary',
+            'country'     => 'South Korea',
+            'rating'      => 5,
+            'product'     => 'OEM Cat Litter Box Self Cleaning Smart Cat Litter Box',
+            'body'        => "Since getting this automatic litter box, my three cats litter area has become so much cleaner and tidier. What I like most is its large capacity and automatic cleaning function, eliminating the need for manual scooping. The app allows me to view usage data and my cats littering habits.",
+        ],
+        [
+            'author'      => 'Justin Davidson',
+            'country'     => 'Australia',
+            'rating'      => 5,
+            'product'     => 'Smart Pet Water Dispenser 304 Stainless Steel Cat and Dog Fountain',
+            'body'        => "It is better than the description. The dogs do not splash in the water. Definitely recommend it.",
+        ],
+        [
+            'author'      => 'Mohammad Mohsin',
+            'country'     => 'India',
+            'rating'      => 5,
+            'product'     => 'OEM Cat Litter Box Self Cleaning Smart Cat Litter Box',
+            'body'        => "The product is very good value for money, quiet operation, no smell in the room.",
+        ],
+        [
+            'author'      => 'user XVII',
+            'country'     => 'Singapore',
+            'rating'      => 5,
+            'product'     => 'Automatic Cat Litter Box with Smart WiFi for Multi-Cat Households',
+            'body'        => "Nice job.",
+        ],
+        [
+            'author'      => 'user XVII',
+            'country'     => 'Singapore',
+            'rating'      => 5,
+            'product'     => '304 Stainless Steel Motion Sensor Pet Fountain',
+            'body'        => "Perfect.",
+        ],
+        [
+            'author'      => 'user XVII',
+            'country'     => 'Singapore',
+            'rating'      => 5,
+            'product'     => 'Automatic Dog Feeder Camera 1080P Live Streaming',
+            'body'        => "Perfect.",
+        ],
+    ];
+
+    $review_nodes = [];
+    foreach ( $reviews as $r ) {
+        $review_nodes[] = [
+            '@type'         => 'Review',
+            'itemReviewed'  => $item_reviewed,
+            'author'        => [
+                '@type'  => 'Person',
+                'name'   => $r['author'],
+                'address' => [
+                    '@type'        => 'PostalAddress',
+                    'addressCountry' => $r['country'],
+                ],
+            ],
+            'reviewBody'    => $r['body'],
+            'name'          => 'Verified Alibaba Trade Assurance review for ' . $r['product'],
+            'reviewRating'  => [
+                '@type'       => 'Rating',
+                'ratingValue' => $r['rating'],
+                'bestRating'  => 5,
+                'worstRating' => 1,
+            ],
+            'publisher'     => [
+                '@type' => 'Organization',
+                'name'  => 'Alibaba Trade Assurance',
+            ],
+        ];
+    }
+
+    $aggregate = [
+        '@context'      => 'https://schema.org',
+        '@type'         => 'Organization',
+        '@id'           => 'https://eviehometech.com/#organization',
+        'name'          => 'Hefei Ecologie Vie Home Technology Co., Ltd.',
+        'url'           => 'https://eviehometech.com/',
+        'aggregateRating' => [
+            '@type'       => 'AggregateRating',
+            'ratingValue' => 5.0,
+            'bestRating'  => 5,
+            'worstRating' => 1,
+            'ratingCount' => count( $reviews ),
+            'reviewCount' => count( $reviews ),
+        ],
+        'review' => $review_nodes,
+    ];
+
+    echo "\n<script type=\"application/ld+json\" id=\"leo-reviews-schema\">\n";
+    echo wp_json_encode( $aggregate, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
+    echo "\n</script>\n";
+}
+
+/**
  * Final safety net: rewrite og:locale meta tag in the rendered HTML output
  * for the very front-end, in case a plugin writes it outside of filters.
  */
