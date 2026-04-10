@@ -112,14 +112,12 @@ function leo_add_video_preload_none( $html ) {
 }
 
 /**
- * Defence in depth: neutralize the Breakdance "PHP Code Block" element.
- * That element calls eval() on PHP code stored in postmeta. Even though only
- * admins can place the block, a compromised admin session would give an
- * attacker a direct path to arbitrary PHP execution on the server.
- * This block is not used anywhere on the site today, so we flip the official
- * kill switch exposed by the plugin itself.
+ * REMOVED 2026-04-10 after production incident: this kill switch triggered
+ * the "For security reasons..." message on live pages including
+ * /oem-odm-services/. Further investigation needed before re-enabling.
+ * See audit notes for the path forward on the eval() hardening.
  */
-add_filter( 'breakdance_php_code_block_is_inside_shortcode', '__return_true', 9999 );
+// add_filter( 'breakdance_php_code_block_is_inside_shortcode', '__return_true', 9999 );
 
 /**
  * Fix the broken category link in the Breakdance footer menu.
