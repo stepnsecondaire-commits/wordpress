@@ -95,3 +95,45 @@
 [2026-04-10T17:33:12.491267+00:00] published post_id=1252 link=https://eviehometech.com/first-order-chinese-pet-products-factory/
 [2026-04-10T17:33:13.043635+00:00] indexnow: 200
 [2026-04-10T17:33:13.046593+00:00] marked article #7 as published
+[2026-04-10T17:44:36.529579+00:00] picked article #8 [Importing Pet Products from China to the USA: Regulations and Tariffs]
+[2026-04-10T17:44:36.532213+00:00] using pre-written content file for article #8
+[2026-04-10T17:44:36.532626+00:00] generated 9046 chars, meta_title='Importing Pet Products from China to the USA: Regulations an'
+[2026-04-10T17:44:36.850621+00:00] image uploaded id=None url=None
+[2026-04-10T17:44:40.358407+00:00] published post_id=1253 link=https://eviehometech.com/import-pet-products-china-usa-regulations/
+[2026-04-10T17:44:40.958913+00:00] indexnow: 200
+[2026-04-10T17:44:40.962199+00:00] marked article #8 as published
+[2026-04-10T17:44:41.066527+00:00] picked article #9 [Importing Pet Products to Europe: CE Marking and EU Compliance Guide]
+[2026-04-10T17:44:41.067502+00:00] using pre-written content file for article #9
+[2026-04-10T17:44:41.067601+00:00] generated 9865 chars, meta_title='Importing Pet Products to Europe: CE Marking and EU Complian'
+[2026-04-10T17:44:44.362820+00:00] image uploaded id=1254 url=https://eviehometech.com/wp-content/uploads/2026/04/ce-marking-pet-products.jpg
+[2026-04-10T17:44:45.588937+00:00] published post_id=1255 link=https://eviehometech.com/import-pet-products-europe-ce-marking-compliance/
+[2026-04-10T17:44:46.210181+00:00] indexnow: 200
+[2026-04-10T17:44:46.212328+00:00] marked article #9 as published
+[2026-04-10T17:44:46.314228+00:00] picked article #10 [Importing Pet Products to the UK Post-Brexit: What You Need to Know]
+[2026-04-10T17:44:46.315190+00:00] using pre-written content file for article #10
+[2026-04-10T17:44:46.315287+00:00] generated 9208 chars, meta_title='Importing Pet Products to the UK Post-Brexit: What You Need '
+[2026-04-10T17:44:46.610835+00:00] image uploaded id=None url=None
+[2026-04-10T17:44:48.764378+00:00] published post_id=1256 link=https://eviehometech.com/import-pet-products-uk-post-brexit/
+[2026-04-10T17:44:49.335091+00:00] indexnow: 200
+[2026-04-10T17:44:49.337909+00:00] marked article #10 as published
+[2026-04-10T17:44:49.441072+00:00] picked article #11 [Shipping Pet Products from China: FOB, CIF, DDP Explained]
+[2026-04-10T17:44:49.442121+00:00] using pre-written content file for article #11
+[2026-04-10T17:44:49.442226+00:00] generated 9955 chars, meta_title='Shipping Pet Products from China: FOB, CIF, DDP Explained...'
+[2026-04-10T17:44:52.589214+00:00] image uploaded id=1257 url=https://eviehometech.com/wp-content/uploads/2026/04/fob-cif-ddp-pet-products.jpg
+[2026-04-10T17:44:53.768461+00:00] published post_id=1258 link=https://eviehometech.com/shipping-pet-products-china-fob-cif-ddp/
+[2026-04-10T17:44:54.242520+00:00] indexnow: 200
+[2026-04-10T17:44:54.244622+00:00] marked article #11 as published
+[2026-04-10T17:44:54.347714+00:00] picked article #12 [How to Handle Quality Control When Manufacturing in China]
+[2026-04-10T17:44:54.348738+00:00] using pre-written content file for article #12
+[2026-04-10T17:44:54.348858+00:00] generated 10177 chars, meta_title='How to Handle Quality Control When Manufacturing in China...'
+[2026-04-10T17:44:57.363244+00:00] image uploaded id=1259 url=https://eviehometech.com/wp-content/uploads/2026/04/quality-control-china-factory.jpg
+[2026-04-10T17:44:58.508858+00:00] published post_id=1260 link=https://eviehometech.com/quality-control-manufacturing-china-pet-products/
+[2026-04-10T17:44:58.995067+00:00] indexnow: 200
+[2026-04-10T17:44:58.998503+00:00] marked article #12 as published
+[2026-04-10T17:44:59.101684+00:00] picked article #13 [Common Mistakes When Sourcing Pet Products from China and How to Avoid Them]
+[2026-04-10T17:44:59.102679+00:00] using pre-written content file for article #13
+[2026-04-10T17:44:59.102820+00:00] generated 9941 chars, meta_title='Common Mistakes When Sourcing Pet Products from China and Ho'
+[2026-04-10T17:45:02.409383+00:00] image uploaded id=1261 url=https://eviehometech.com/wp-content/uploads/2026/04/sourcing-china-mistakes.jpg
+[2026-04-10T17:45:03.636606+00:00] published post_id=1262 link=https://eviehometech.com/common-mistakes-sourcing-pet-products-china/
+[2026-04-10T17:45:04.110248+00:00] indexnow: 200
+[2026-04-10T17:45:04.113926+00:00] marked article #13 as published
