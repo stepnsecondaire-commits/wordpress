@@ -175,7 +175,11 @@ function leo_rest_update_postmeta( $request ) {
     if ( ! get_post( $post_id ) ) {
         return new WP_Error( 'no_post', 'Post not found', [ 'status' => 404 ] );
     }
-    update_post_meta( $post_id, $body['key'], wp_unslash( $body['value'] ) );
+    // REST API JSON body is NOT magic-quoted, so we MUST NOT call wp_unslash here.
+    // However update_post_meta() pipes its value through wp_unslash internally,
+    // which would strip backslashes. We pre-slash to compensate, so the round trip
+    // is a no-op for binary-safe JSON content.
+    update_post_meta( $post_id, $body['key'], wp_slash( $body['value'] ) );
     return [ 'success' => true, 'post_id' => $post_id, 'key' => $body['key'] ];
 }
 
