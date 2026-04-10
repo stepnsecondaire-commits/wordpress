@@ -125,6 +125,99 @@ function leo_add_video_preload_none( $html ) {
  * The key file lives at https://eviehometech.com/{key}.txt and must return
  * plain text containing only the key value.
  */
+/**
+ * Admin-only REST endpoints to read and write private postmeta.
+ * Needed because Breakdance stores its tree data in postmeta keys that are
+ * not exposed by the default WP REST API. Gated behind manage_options.
+ *
+ * GET  /wp-json/leo/v1/postmeta?post_id=31
+ *   Returns every postmeta key for the post. Admin only.
+ * POST /wp-json/leo/v1/postmeta
+ *   Body: { "post_id": 31, "key": "_breakdance_data", "value": "..." }
+ *   Updates a single postmeta value. Admin only.
+ */
+add_action( 'rest_api_init', 'leo_register_postmeta_endpoints' );
+function leo_register_postmeta_endpoints() {
+    register_rest_route( 'leo/v1', '/postmeta', [
+        [
+            'methods'             => 'GET',
+            'callback'            => 'leo_rest_get_postmeta',
+            'permission_callback' => function () {
+                return current_user_can( 'manage_options' );
+            },
+            'args' => [
+                'post_id' => [ 'required' => true, 'type' => 'integer' ],
+            ],
+        ],
+        [
+            'methods'             => 'POST',
+            'callback'            => 'leo_rest_update_postmeta',
+            'permission_callback' => function () {
+                return current_user_can( 'manage_options' );
+            },
+        ],
+    ] );
+}
+function leo_rest_get_postmeta( $request ) {
+    $post_id = (int) $request->get_param( 'post_id' );
+    if ( ! get_post( $post_id ) ) {
+        return new WP_Error( 'no_post', 'Post not found', [ 'status' => 404 ] );
+    }
+    $meta = get_post_meta( $post_id );
+    return [ 'post_id' => $post_id, 'meta' => $meta ];
+}
+function leo_rest_update_postmeta( $request ) {
+    $body = $request->get_json_params();
+    if ( empty( $body['post_id'] ) || empty( $body['key'] ) || ! array_key_exists( 'value', $body ) ) {
+        return new WP_Error( 'bad_request', 'Missing post_id, key or value', [ 'status' => 400 ] );
+    }
+    $post_id = (int) $body['post_id'];
+    if ( ! get_post( $post_id ) ) {
+        return new WP_Error( 'no_post', 'Post not found', [ 'status' => 404 ] );
+    }
+    update_post_meta( $post_id, $body['key'], wp_unslash( $body['value'] ) );
+    return [ 'success' => true, 'post_id' => $post_id, 'key' => $body['key'] ];
+}
+
+/**
+ * Admin-only REST endpoint to list posts of any post_type, including
+ * private CPTs like breakdance_header, breakdance_footer, breakdance_template.
+ */
+add_action( 'rest_api_init', 'leo_register_posts_list_endpoint' );
+function leo_register_posts_list_endpoint() {
+    register_rest_route( 'leo/v1', '/posts', [
+        'methods'             => 'GET',
+        'callback'            => 'leo_rest_list_posts',
+        'permission_callback' => function () {
+            return current_user_can( 'manage_options' );
+        },
+        'args' => [
+            'post_type' => [ 'required' => true, 'type' => 'string' ],
+        ],
+    ] );
+}
+function leo_rest_list_posts( $request ) {
+    $post_type = $request->get_param( 'post_type' );
+    $posts = get_posts( [
+        'post_type'      => $post_type,
+        'post_status'    => [ 'publish', 'draft', 'private' ],
+        'posts_per_page' => 100,
+        'orderby'        => 'ID',
+        'order'          => 'ASC',
+    ] );
+    $out = [];
+    foreach ( $posts as $p ) {
+        $out[] = [
+            'id'        => $p->ID,
+            'slug'      => $p->post_name,
+            'title'     => $p->post_title,
+            'status'    => $p->post_status,
+            'post_type' => $p->post_type,
+        ];
+    }
+    return $out;
+}
+
 add_action( 'parse_request', 'leo_serve_indexnow_key', 0 );
 function leo_serve_indexnow_key( $wp ) {
     $request_uri = isset( $_SERVER['REQUEST_URI'] ) ? $_SERVER['REQUEST_URI'] : '';
