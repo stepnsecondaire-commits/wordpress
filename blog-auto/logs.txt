@@ -138,3 +138,10 @@
 [2026-04-10T17:45:04.110248+00:00] indexnow: 200
 [2026-04-10T17:45:04.113926+00:00] marked article #13 as published
 [2026-04-10T20:24:29.260260+00:00] no article due for publication
+[2026-04-10T20:40:10.349439+00:00] picked article #14 [Trade Shows for Pet Products in China: Canton Fair, CIPS and More]
+[2026-04-10T20:40:10.349749+00:00] using pre-written content file for article #14
+[2026-04-10T20:40:10.349811+00:00] generated 9852 chars, meta_title='Trade Shows for Pet Products in China: Canton Fair, CIPS and'
+[2026-04-10T20:40:10.763001+00:00] image uploaded id=None url=None
+[2026-04-10T20:40:13.774876+00:00] published post_id=1263 link=https://eviehometech.com/trade-shows-pet-products-china-canton-cips/
+[2026-04-10T20:40:14.378477+00:00] indexnow: 200
+[2026-04-10T20:40:14.380745+00:00] marked article #14 as published
