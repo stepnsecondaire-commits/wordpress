@@ -579,55 +579,18 @@ function leo_inject_reviews_schema() {
     ];
 
     $reviews = [
-        [
-            'author'      => 'Jasmin Movahedian',
-            'country'     => 'Italy',
-            'rating'      => 5,
-            'product'     => 'OEM Electric Smart Quick Self Cleaning Deodorant Cat Litter Box',
-            'body'        => "Everything is perfect with this automatic litter. My two cats love it and I need to take out the trash only once a week. I really recommend it, especially because this one has the hidden drawer which is more elegant than other litters.",
-        ],
-        [
-            'author'      => 'Arno Gregary',
-            'country'     => 'South Korea',
-            'rating'      => 5,
-            'product'     => 'OEM Cat Litter Box Self Cleaning Smart Cat Litter Box',
-            'body'        => "Since getting this automatic litter box, my three cats litter area has become so much cleaner and tidier. What I like most is its large capacity and automatic cleaning function, eliminating the need for manual scooping. The app allows me to view usage data and my cats littering habits.",
-        ],
-        [
-            'author'      => 'Justin Davidson',
-            'country'     => 'Australia',
-            'rating'      => 5,
-            'product'     => 'Smart Pet Water Dispenser 304 Stainless Steel Cat and Dog Fountain',
-            'body'        => "It is better than the description. The dogs do not splash in the water. Definitely recommend it.",
-        ],
-        [
-            'author'      => 'Mohammad Mohsin',
-            'country'     => 'India',
-            'rating'      => 5,
-            'product'     => 'OEM Cat Litter Box Self Cleaning Smart Cat Litter Box',
-            'body'        => "The product is very good value for money, quiet operation, no smell in the room.",
-        ],
-        [
-            'author'      => 'user XVII',
-            'country'     => 'Singapore',
-            'rating'      => 5,
-            'product'     => 'Automatic Cat Litter Box with Smart WiFi for Multi-Cat Households',
-            'body'        => "Nice job.",
-        ],
-        [
-            'author'      => 'user XVII',
-            'country'     => 'Singapore',
-            'rating'      => 5,
-            'product'     => '304 Stainless Steel Motion Sensor Pet Fountain',
-            'body'        => "Perfect.",
-        ],
-        [
-            'author'      => 'user XVII',
-            'country'     => 'Singapore',
-            'rating'      => 5,
-            'product'     => 'Automatic Dog Feeder Camera 1080P Live Streaming',
-            'body'        => "Perfect.",
-        ],
+        [ 'author' => 'Jasmin Movahedian',  'country' => 'Italy',                'rating' => 5, 'product' => 'OEM Electric Smart Quick Self Cleaning Cat Litter Box', 'body' => "Everything is perfect with this automatic litter. My two cats love it and I need to take out the trash only once a week. I really recommend it, especially because this one has the hidden drawer which is more elegant than other litters." ],
+        [ 'author' => 'Arno Gregary',       'country' => 'South Korea',          'rating' => 5, 'product' => 'OEM Cat Litter Box Self Cleaning Smart Cat Litter Box', 'body' => "Since getting this automatic litter box, my three cats litter area has become so much cleaner and tidier. What I like most is its large capacity and automatic cleaning function, eliminating the need for manual scooping." ],
+        [ 'author' => 'Saqib Farooq',       'country' => 'Pakistan',             'rating' => 5, 'product' => 'Smart Pet Water Dispenser 304SS Material', 'body' => "Material: Perfect. Application: Perfect. Feature: Perfect." ],
+        [ 'author' => 'Vladimir Fliser',    'country' => 'Slovenia',             'rating' => 5, 'product' => 'Ultra-Safe Automatic Self-Cleaning Cat Litter Box', 'body' => "Super." ],
+        [ 'author' => 'Shahid Mahmood',     'country' => 'United Arab Emirates', 'rating' => 5, 'product' => 'M1 Large 100L Automatic Smart Cat Litter Box', 'body' => "Delivered on time with full vessel tracking." ],
+        [ 'author' => 'Justin Davidson',    'country' => 'Australia',            'rating' => 5, 'product' => 'Smart Pet Water Dispenser 304 Stainless Steel Cat and Dog Fountain', 'body' => "It is better than the description. The dogs do not splash in the water. Definitely recommend it." ],
+        [ 'author' => 'Mohammad Mohsin',    'country' => 'India',                'rating' => 5, 'product' => 'OEM Cat Litter Box Self Cleaning Smart Cat Litter Box', 'body' => "The product is very good value for money, quiet operation, no smell in the room." ],
+        [ 'author' => 'Singapore buyer',    'country' => 'Singapore',            'rating' => 5, 'product' => 'Automatic Cat Litter Box with Smart WiFi for Multi-Cat Households', 'body' => "Nice job." ],
+        [ 'author' => 'Singapore buyer',    'country' => 'Singapore',            'rating' => 5, 'product' => '304 Stainless Steel Motion Sensor Pet Fountain', 'body' => "Perfect." ],
+        [ 'author' => 'Singapore buyer',    'country' => 'Singapore',            'rating' => 5, 'product' => 'Automatic Dog Feeder Camera 1080P Live Streaming', 'body' => "Perfect." ],
+        [ 'author' => 'Singapore buyer',    'country' => 'Singapore',            'rating' => 5, 'product' => 'Factory Wholesale Pet Products Supplier Cat Dog Feeder', 'body' => "Nice work." ],
+        [ 'author' => 'Singapore buyer',    'country' => 'Singapore',            'rating' => 5, 'product' => 'Recordable Answer Buzzers for Dog Talk Buttons', 'body' => "Super qualite tout est bien." ],
     ];
 
     $review_nodes = [];
