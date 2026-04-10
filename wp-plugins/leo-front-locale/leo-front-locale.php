@@ -340,12 +340,31 @@ function leo_rest_update_postmeta( $request ) {
     if ( ! get_post( $post_id ) ) {
         return new WP_Error( 'no_post', 'Post not found', [ 'status' => 404 ] );
     }
-    // REST API JSON body is NOT magic-quoted, so we MUST NOT call wp_unslash here.
-    // However update_post_meta() pipes its value through wp_unslash internally,
-    // which would strip backslashes. We pre-slash to compensate, so the round trip
-    // is a no-op for binary-safe JSON content.
-    update_post_meta( $post_id, $body['key'], wp_slash( $body['value'] ) );
-    return [ 'success' => true, 'post_id' => $post_id, 'key' => $body['key'] ];
+    // Try update first, fall back to add if no existing meta
+    $result = update_post_meta( $post_id, $body['key'], wp_slash( $body['value'] ) );
+    if ( $result === false ) {
+        // update_post_meta returns false if the value is the same OR on real failure.
+        // Try delete + add to force a write.
+        delete_post_meta( $post_id, $body['key'] );
+        $result = add_post_meta( $post_id, $body['key'], wp_slash( $body['value'] ), true );
+    }
+    // Bust any object cache for this post's meta
+    wp_cache_delete( $post_id, 'post_meta' );
+    if ( function_exists( 'clean_post_cache' ) ) {
+        clean_post_cache( $post_id );
+    }
+    // Read back to verify
+    $verify = get_post_meta( $post_id, $body['key'], true );
+    $persisted = ( $verify === $body['value'] );
+    return [
+        'success'    => $result !== false,
+        'post_id'    => $post_id,
+        'key'        => $body['key'],
+        'result'     => is_bool( $result ) ? ( $result ? 'true' : 'false' ) : (int) $result,
+        'persisted'  => $persisted,
+        'read_len'   => is_string( $verify ) ? strlen( $verify ) : null,
+        'sent_len'   => strlen( $body['value'] ),
+    ];
 }
 
 /**
@@ -700,6 +719,30 @@ function leo_rewrite_og_locale( $html ) {
         '<meta property="og:locale" content="en_US" />',
         $html
     );
+
+    // Footer lorem ipsum hotfix - Breakdance overwrites our postmeta updates
+    // on this template, so we patch the rendered HTML at the output buffer level.
+    $html = str_replace(
+        'Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed consectetur neque tristique pellentesque.',
+        'Stay updated with our latest smart pet products, trade show appearances, and industry insights. Join 2000+ pet industry professionals.',
+        $html
+    );
+    // Belt and braces if the two sentences are split:
+    $html = str_replace(
+        'Sagittis scelerisque nulla cursus in enim consectetur quam.',
+        'Stay updated with our latest smart pet products, trade show appearances, and industry insights. Join 2000+ pet industry professionals.',
+        $html
+    );
+    $html = str_replace(
+        ' Dictum urna sed consectetur neque tristique pellentesque.',
+        '',
+        $html
+    );
+
+    // Footer broken /faq/ link hotfix - same reason as above
+    $html = preg_replace( '#href="/faq/"#', 'href="/faqs/"', $html );
+    $html = preg_replace( '#href="/faq"#', 'href="/faqs/"', $html );
+
     // Apply other HTML transformations through the leo_ob_html filter chain
     $html = apply_filters( 'leo_ob_html', $html );
     // Inject homepage Phase 3 sections just before the Breakdance footer
@@ -708,6 +751,40 @@ function leo_rewrite_og_locale( $html ) {
         $extras  = leo_homepage_extra_sections();
         $html    = str_replace( $marker, $extras . $marker, $html );
     }
+    // Inject About Us factory tour video section just before the Breakdance footer
+    if ( is_page( 'about-us' ) && function_exists( 'leo_about_extra_sections' ) ) {
+        $marker  = "<div class='breakdance'><footer";
+        $extras  = leo_about_extra_sections();
+        $html    = str_replace( $marker, $extras . $marker, $html );
+    }
+    return $html;
+}
+
+/**
+ * Factory tour video section for /about-us/. Three Hefei factory tour videos
+ * with VideoObject schema. Injected via output buffer to avoid touching the
+ * Breakdance tree of the about page.
+ */
+function leo_about_extra_sections() {
+    $html = '';
+    $html .= '<style id="leo-about-video-styles"> .leo-vid-section{padding:80px 24px;background:#f8fafc;font-family:Inter,sans-serif;color:#1e293b;} .leo-vid-container{max-width:1200px;margin:0 auto;} .leo-vid-eyebrow{display:block;text-align:center;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#16a34a;margin-bottom:16px;} .leo-vid-section h2{text-align:center;font-size:36px;font-weight:800;margin:0 0 16px;line-height:1.2;color:#0f172a;} .leo-vid-lead{text-align:center;font-size:18px;color:#64748b;max-width:720px;margin:0 auto 48px;line-height:1.6;} .leo-vid-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;} .leo-vid-grid figure{margin:0;background:#0f172a;border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(15,23,42,.15);transition:all .25s;} .leo-vid-grid figure:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(15,23,42,.2);} .leo-vid-grid video{width:100%;height:auto;display:block;background:#0f172a;} .leo-vid-grid figcaption{padding:14px 18px;background:#fff;font-size:13px;color:#475569;line-height:1.4;} @media(max-width:1024px){.leo-vid-grid{grid-template-columns:1fr 1fr;}} @media(max-width:640px){.leo-vid-grid{grid-template-columns:1fr;}.leo-vid-section h2{font-size:28px;}} </style>';
+    $html .= '<section class="leo-vid-section" id="leo-about-factory-tour">';
+    $html .= '<div class="leo-vid-container">';
+    $html .= '<p class="leo-vid-eyebrow">Inside the factory</p>';
+    $html .= '<h2>Real Footage from our Hefei Production Lines</h2>';
+    $html .= '<p class="leo-vid-lead">No stock video, no marketing reel. Three short clips shot inside the Eviehome assembly line, quality control station and packing area in Hefei, China. This is exactly what your buyers see when they visit us in person.</p>';
+    $html .= '<div class="leo-vid-grid">';
+    $html .= '<figure><video controls preload="none" playsinline><source src="https://eviehometech.com/wp-content/uploads/2026/04/eviehome-factory-tour-production-line-1.mp4" type="video/mp4">Your browser does not support video playback.</video><figcaption>Eviehome smart pet products assembly line in operation</figcaption></figure>';
+    $html .= '<figure><video controls preload="none" playsinline><source src="https://eviehometech.com/wp-content/uploads/2026/04/eviehome-factory-tour-production-line-2.mp4" type="video/mp4">Your browser does not support video playback.</video><figcaption>Quality control and finished goods inspection</figcaption></figure>';
+    $html .= '<figure><video controls preload="none" playsinline><source src="https://eviehometech.com/wp-content/uploads/2026/04/eviehome-factory-tour-production-line-3.mp4" type="video/mp4">Your browser does not support video playback.</video><figcaption>Packing and palletizing for export shipments</figcaption></figure>';
+    $html .= '</div>';
+    $html .= '<p style="text-align:center;margin-top:40px;"><a href="/contact-us/" style="display:inline-block;padding:14px 32px;background:#f97316;color:#fff;border-radius:8px;font-weight:700;text-decoration:none;box-shadow:0 4px 16px rgba(249,115,22,.3);">Schedule a factory visit or video call</a></p>';
+    $html .= '</div></section>';
+    $html .= '<script type="application/ld+json">{"@context":"https://schema.org","@graph":[';
+    $html .= '{"@type":"VideoObject","name":"Eviehome smart pet products assembly line in operation","description":"Live footage from the Eviehome smart pet products assembly line in Hefei, China.","contentUrl":"https://eviehometech.com/wp-content/uploads/2026/04/eviehome-factory-tour-production-line-1.mp4","uploadDate":"2026-04-10","embedUrl":"https://eviehometech.com/about-us/","publisher":{"@type":"Organization","name":"Hefei Ecologie Vie Home Technology Co., Ltd."}},';
+    $html .= '{"@type":"VideoObject","name":"Eviehome quality control and finished goods inspection","description":"Quality control inspection on Eviehome smart pet products before packing.","contentUrl":"https://eviehometech.com/wp-content/uploads/2026/04/eviehome-factory-tour-production-line-2.mp4","uploadDate":"2026-04-10","embedUrl":"https://eviehometech.com/about-us/","publisher":{"@type":"Organization","name":"Hefei Ecologie Vie Home Technology Co., Ltd."}},';
+    $html .= '{"@type":"VideoObject","name":"Eviehome packing and palletizing for export shipments","description":"Packing and palletizing of Eviehome smart pet products for international export shipments.","contentUrl":"https://eviehometech.com/wp-content/uploads/2026/04/eviehome-factory-tour-production-line-3.mp4","uploadDate":"2026-04-10","embedUrl":"https://eviehometech.com/about-us/","publisher":{"@type":"Organization","name":"Hefei Ecologie Vie Home Technology Co., Ltd."}}';
+    $html .= ']}</script>';
     return $html;
 }
 
@@ -718,6 +795,9 @@ function leo_rewrite_og_locale( $html ) {
  */
 function leo_homepage_extra_sections() {
     $html = '';
+    $html .= '<style id="leo-home-video-styles"> .leo-home-vid{padding:80px 24px;background:#0f172a;color:#fff;font-family:Inter,sans-serif;} .leo-home-vid-container{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;} .leo-home-vid-eyebrow{display:inline-block;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#16a34a;margin-bottom:16px;} .leo-home-vid h2{font-size:36px;font-weight:800;color:#fff;margin:0 0 16px;line-height:1.2;} .leo-home-vid p{font-size:17px;color:#cbd5e1;line-height:1.6;margin:0 0 24px;} .leo-home-vid ul{list-style:none;padding:0;margin:0 0 32px;} .leo-home-vid li{padding:8px 0 8px 28px;color:#cbd5e1;font-size:15px;position:relative;} .leo-home-vid li:before{content:"\2713";position:absolute;left:0;color:#16a34a;font-weight:800;font-size:16px;} .leo-home-vid-cta{display:inline-block;padding:14px 28px;background:#f97316;color:#fff;border-radius:8px;font-weight:700;text-decoration:none;box-shadow:0 4px 16px rgba(249,115,22,.4);transition:all .2s;} .leo-home-vid-cta:hover{transform:translateY(-2px);background:#ea580c;} .leo-home-vid-player{background:#000;border-radius:12px;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,.4);} .leo-home-vid-player video{width:100%;height:auto;display:block;} @media(max-width:1024px){.leo-home-vid-container{grid-template-columns:1fr;gap:32px;}.leo-home-vid h2{font-size:28px;}} </style>';
+    $html .= '<section class="leo-home-vid" id="leo-product-demo-video"><div class="leo-home-vid-container"><div><span class="leo-home-vid-eyebrow">See it in action</span><h2>Smart Self-Cleaning Cat Litter Box: Live Demo</h2><p>This is the actual product, demoed inside our Hefei factory. No CGI, no marketing edit. Watch the rotating drum cycle, the sealed waste drawer, the silent motor and the WiFi app pairing.</p><ul><li>14 cat litter box models in production</li><li>OEM and ODM available from 500 units</li><li>CE, FCC, ROHS certified</li><li>45 to 60 days from order to shipped container</li></ul><a href="/contact-us/" class="leo-home-vid-cta">Request a Quote</a></div><div class="leo-home-vid-player"><video controls preload="none" playsinline><source src="https://eviehometech.com/wp-content/uploads/2026/04/eviehome-smart-cat-litter-box-product-demo.mp4" type="video/mp4">Your browser does not support video playback.</video></div></div></section>';
+    $html .= '<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"Eviehome smart self-cleaning cat litter box live product demo","description":"Live demo of the Eviehome smart self-cleaning cat litter box including rotating drum cycle, sealed waste drawer, silent motor and WiFi app pairing. Filmed inside the Hefei factory in China.","contentUrl":"https://eviehometech.com/wp-content/uploads/2026/04/eviehome-smart-cat-litter-box-product-demo.mp4","uploadDate":"2026-04-10","embedUrl":"https://eviehometech.com/","publisher":{"@type":"Organization","name":"Hefei Ecologie Vie Home Technology Co., Ltd."}}</script>';
     $html .= '<style id="leo-phase3-styles"> .leo-section{padding:80px 24px;font-family:Inter,sans-serif;color:#1e293b;} .leo-section.leo-bg-alt{background:#f8fafc;} .leo-container{max-width:1200px;margin:0 auto;} .leo-eyebrow{display:block;text-align:center;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#16a34a;margin-bottom:16px;} .leo-section h2{text-align:center;font-size:36px;font-weight:800;margin:0 0 16px;line-height:1.2;color:#0f172a;} .leo-section .leo-section-lead{text-align:center;font-size:18px;color:#64748b;max-width:720px;margin:0 auto 48px;line-height:1.6;} .leo-trust{display:grid;grid-template-columns:repeat(6,1fr);gap:24px;align-items:center;text-align:center;} .leo-trust .leo-badge{padding:24px 12px;background:#fff;border:1px solid #e2e8f0;border-radius:12px;transition:all .2s;} .leo-trust .leo-badge:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(15,23,42,.12);border-color:#16a34a;} .leo-trust .leo-badge .leo-badge-name{display:block;font-size:18px;font-weight:800;color:#0f172a;} .leo-trust .leo-badge .leo-badge-label{display:block;font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:6px;} .leo-timeline{display:grid;grid-template-columns:repeat(6,1fr);gap:24px;position:relative;} .leo-timeline:before{content:"";position:absolute;top:32px;left:8%;right:8%;height:2px;background:#e2e8f0;z-index:0;} .leo-step{position:relative;text-align:center;z-index:1;} .leo-step-num{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:#fff;color:#f97316;border:3px solid #f97316;font-size:22px;font-weight:800;margin-bottom:16px;transition:all .2s;} .leo-step:hover .leo-step-num{background:#f97316;color:#fff;transform:scale(1.05);} .leo-step h4{font-size:16px;font-weight:700;margin:0 0 8px;color:#0f172a;} .leo-step p{font-size:14px;color:#64748b;margin:0;line-height:1.5;} .leo-testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;} .leo-testimonial{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:32px;transition:all .2s;} .leo-testimonial:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(15,23,42,.12);border-color:#16a34a;} .leo-stars{color:#fbbf24;font-size:18px;letter-spacing:2px;margin-bottom:16px;} .leo-quote{font-size:15px;line-height:1.7;color:#1e293b;margin-bottom:24px;font-style:italic;} .leo-author{display:flex;align-items:center;gap:12px;} .leo-author-init{width:44px;height:44px;border-radius:50%;background:#16a34a;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;} .leo-author-name{font-weight:700;color:#0f172a;font-size:13px;} .leo-author-meta{color:#64748b;font-size:13px;} .leo-blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;} .leo-blog-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;transition:all .2s;text-decoration:none;color:inherit;display:block;} .leo-blog-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(15,23,42,.12);border-color:#16a34a;} .leo-blog-card .leo-blog-body{padding:24px;} .leo-blog-tag{display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:#16a34a;margin-bottom:12px;} .leo-blog-card h3{font-size:18px;font-weight:700;margin:0 0 12px;color:#0f172a;line-height:1.4;} .leo-blog-card p{font-size:14px;color:#64748b;margin:0;line-height:1.5;} .leo-cta-strip{padding:96px 24px;background:linear-gradient(135deg,#0f172a,#1e293b);color:#fff;text-align:center;} .leo-cta-strip h2{font-size:42px;font-weight:800;margin:0 0 16px;color:#fff;} .leo-cta-strip p{font-size:18px;color:#cbd5e1;max-width:640px;margin:0 auto 40px;line-height:1.6;} .leo-cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;} .leo-btn{display:inline-flex;align-items:center;padding:16px 32px;border-radius:8px;font-weight:600;font-size:16px;text-decoration:none;transition:all .2s;} .leo-btn-cta{background:#f97316;color:#fff;box-shadow:0 4px 16px rgba(249,115,22,.4);} .leo-btn-cta:hover{background:#ea580c;transform:translateY(-2px);} .leo-btn-wa{background:#25D366;color:#fff;} .leo-btn-wa:hover{background:#1ea952;transform:translateY(-2px);} @media(max-width:768px){.leo-trust{grid-template-columns:repeat(3,1fr);}.leo-timeline{grid-template-columns:1fr;gap:32px;}.leo-timeline:before{display:none;}.leo-testimonials{grid-template-columns:1fr;}.leo-blog-grid{grid-template-columns:1fr;}.leo-cta-strip h2{font-size:30px;}} @media(max-width:1024px){.leo-testimonials{grid-template-columns:1fr 1fr;}.leo-blog-grid{grid-template-columns:1fr 1fr;}} </style>';
     $html .= '<section class="leo-section leo-bg-alt" id="leo-trust-badges"> <div class="leo-container"> <p class="leo-eyebrow">Certifications</p> <h2>Built to Pass Every Compliance Audit</h2> <p class="leo-section-lead">Every electronic smart pet product we ship holds the certifications required by your destination market. Test reports from accredited labs available on request.</p> <div class="leo-trust"> <div class="leo-badge"><span class="leo-badge-name">CE</span><span class="leo-badge-label">European Union</span></div> <div class="leo-badge"><span class="leo-badge-name">FCC</span><span class="leo-badge-label">United States</span></div> <div class="leo-badge"><span class="leo-badge-name">UKCA</span><span class="leo-badge-label">United Kingdom</span></div> <div class="leo-badge"><span class="leo-badge-name">PSE</span><span class="leo-badge-label">Japan</span></div> <div class="leo-badge"><span class="leo-badge-name">ROHS</span><span class="leo-badge-label">EU and global</span></div> <div class="leo-badge"><span class="leo-badge-name">ISO 9001</span><span class="leo-badge-label">Quality system</span></div> </div></div></section>';
     $html .= '<section class="leo-section" id="leo-oem-timeline"> <div class="leo-container"> <p class="leo-eyebrow">From Brief to Container</p> <h2>Our 6-Step OEM Process</h2> <p class="leo-section-lead">A predictable factory-direct workflow that takes your idea from a written brief to a shipped container in 60 to 90 days for OEM and 45 days for ODM.</p> <div class="leo-timeline"> <div class="leo-step"><div class="leo-step-num">1</div><h4>Inquiry</h4><p>Share your specs, target volume and destination market.</p></div> <div class="leo-step"><div class="leo-step-num">2</div><h4>Design</h4><p>Our R and D team turns your brief into CAD files and a feasibility quote.</p></div> <div class="leo-step"><div class="leo-step-num">3</div><h4>Sampling</h4><p>Pre-production sample shipped within 15 to 20 days for your approval.</p></div> <div class="leo-step"><div class="leo-step-num">4</div><h4>Production</h4><p>Mass production on a dedicated line with weekly progress reports.</p></div> <div class="leo-step"><div class="leo-step-num">5</div><h4>QC and Testing</h4><p>100% function test plus AQL 2.5 inspection before packing.</p></div> <div class="leo-step"><div class="leo-step-num">6</div><h4>Shipping</h4><p>FOB Ningbo, CIF or DDP to your warehouse worldwide.</p></div> </div> <p style="text-align:center;margin-top:48px;"><a class="leo-btn leo-btn-cta" href="/oem-odm-services/">See the full OEM/ODM services</a></p> </div></section>';
