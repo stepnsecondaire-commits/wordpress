@@ -167,3 +167,11 @@
 [2026-04-12T20:02:21.391361+00:00] no article due for publication
 [2026-04-12T22:01:07.762452+00:00] no article due for publication
 [2026-04-13T00:03:45.421392+00:00] no article due for publication
+[2026-04-13T07:29:02.163798+00:00] picked article #15 [Cost Breakdown: What Does It Really Cost to Manufacture Pet Products in China?]
+[2026-04-13T07:29:02.164110+00:00] using pre-written content file for article #15
+[2026-04-13T07:29:02.164178+00:00] generated 11665 chars, meta_title='Cost Breakdown: What Does It Really Cost to Manufacture Pet '
+[2026-04-13T07:29:02.595918+00:00] unsplash: matched 'china factory' (tried=2)
+[2026-04-13T07:29:04.434085+00:00] image uploaded id=1266 url=https://eviehometech.com/wp-content/uploads/2026/04/china-factory-1.jpg
+[2026-04-13T07:29:05.334548+00:00] published post_id=1267 link=https://eviehometech.com/cost-breakdown-manufacture-pet-products-china/
+[2026-04-13T07:29:06.181794+00:00] indexnow: 200
+[2026-04-13T07:29:06.184070+00:00] marked article #15 as published
