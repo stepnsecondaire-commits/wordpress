@@ -192,3 +192,11 @@
 [2026-04-13T23:06:05.756503+00:00] published post_id=1271 link=https://eviehometech.com/self-cleaning-vs-rotation-vs-flushing-litter-boxes/
 [2026-04-13T23:06:06.379380+00:00] indexnow: 200
 [2026-04-13T23:06:06.382835+00:00] marked article #18 as published
+[2026-04-14T06:16:19.920808+00:00] picked article #19 [Top Features Buyers Look for in Automatic Cat Litter Boxes in 2026]
+[2026-04-14T06:16:19.921057+00:00] using pre-written content file for article #19
+[2026-04-14T06:16:19.921099+00:00] generated 8136 chars, meta_title='Top Features Buyers Look for in Automatic Cat Litter Boxes i'
+[2026-04-14T06:16:20.528424+00:00] unsplash: matched 'automatic cat litter box features' (tried=1)
+[2026-04-14T06:16:23.373572+00:00] image uploaded id=1272 url=https://eviehometech.com/wp-content/uploads/2026/04/automatic-cat-litter-box-features.jpg
+[2026-04-14T06:16:24.619298+00:00] published post_id=1273 link=https://eviehometech.com/top-features-automatic-cat-litter-boxes-2026/
+[2026-04-14T06:16:25.435857+00:00] indexnow: 200
+[2026-04-14T06:16:25.437706+00:00] marked article #19 as published
