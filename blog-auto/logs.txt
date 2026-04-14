@@ -201,3 +201,11 @@
 [2026-04-14T06:16:25.435857+00:00] indexnow: 200
 [2026-04-14T06:16:25.437706+00:00] marked article #19 as published
 [2026-04-14T10:48:43.605030+00:00] no article due for publication
+[2026-04-14T19:56:36.269987+00:00] picked article #20 [How to Private Label an Automatic Cat Litter Box]
+[2026-04-14T19:56:36.270331+00:00] using pre-written content file for article #20
+[2026-04-14T19:56:36.270394+00:00] generated 10924 chars, meta_title='How to Private Label an Automatic Cat Litter Box | Eviehome'
+[2026-04-14T19:56:36.439011+00:00] unsplash: matched 'cat' (tried=2)
+[2026-04-14T19:56:38.143737+00:00] image uploaded id=1274 url=https://eviehometech.com/wp-content/uploads/2026/04/cat.jpg
+[2026-04-14T19:56:38.931539+00:00] published post_id=1275 link=https://eviehometech.com/private-label-automatic-cat-litter-box/
+[2026-04-14T19:56:39.387148+00:00] indexnow: 200
+[2026-04-14T19:56:39.389219+00:00] marked article #20 as published
