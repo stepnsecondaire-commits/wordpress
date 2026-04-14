@@ -209,3 +209,11 @@
 [2026-04-14T19:56:38.931539+00:00] published post_id=1275 link=https://eviehometech.com/private-label-automatic-cat-litter-box/
 [2026-04-14T19:56:39.387148+00:00] indexnow: 200
 [2026-04-14T19:56:39.389219+00:00] marked article #20 as published
+[2026-04-14T22:33:19.576069+00:00] picked article #21 [Automatic Cat Litter Box Safety Standards: What Retailers Need to Know]
+[2026-04-14T22:33:19.576367+00:00] using pre-written content file for article #21
+[2026-04-14T22:33:19.576436+00:00] generated 8897 chars, meta_title='Automatic Cat Litter Box Safety Standards: What Retailers Ne'
+[2026-04-14T22:33:19.867368+00:00] unsplash: matched 'cat litter box safety standards' (tried=1)
+[2026-04-14T22:33:23.653850+00:00] image uploaded id=1276 url=https://eviehometech.com/wp-content/uploads/2026/04/cat-litter-box-safety-standards.jpg
+[2026-04-14T22:33:25.025701+00:00] published post_id=1277 link=https://eviehometech.com/automatic-cat-litter-box-safety-standards/
+[2026-04-14T22:33:25.586437+00:00] indexnow: 200
+[2026-04-14T22:33:25.589582+00:00] marked article #21 as published
