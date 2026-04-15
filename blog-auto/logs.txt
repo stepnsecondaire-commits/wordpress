@@ -234,3 +234,11 @@
 [2026-04-15T14:58:36.259378+00:00] published post_id=1284 link=https://eviehometech.com/smart-litter-box-app-control-next-generation/
 [2026-04-15T14:58:36.779845+00:00] indexnow: 200
 [2026-04-15T14:58:36.782421+00:00] marked article #23 as published
+[2026-04-15T18:55:04.089276+00:00] picked article #24 [How to Market Automatic Cat Litter Boxes to Millennial Pet Owners]
+[2026-04-15T18:55:04.089585+00:00] using pre-written content file for article #24
+[2026-04-15T18:55:04.089641+00:00] generated 8660 chars, meta_title='How to Market Automatic Cat Litter Boxes to Millennial Pet O'
+[2026-04-15T18:55:04.439533+00:00] unsplash: matched 'market cat litter box millennials' (tried=1)
+[2026-04-15T18:55:08.319497+00:00] image uploaded id=1285 url=https://eviehometech.com/wp-content/uploads/2026/04/market-cat-litter-box-millennials.jpg
+[2026-04-15T18:55:09.400657+00:00] published post_id=1286 link=https://eviehometech.com/market-automatic-litter-boxes-millennial-pet-owners/
+[2026-04-15T18:55:09.780018+00:00] indexnow: 200
+[2026-04-15T18:55:09.782387+00:00] marked article #24 as published
