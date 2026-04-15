@@ -226,3 +226,11 @@
 [2026-04-15T06:14:10.191235+00:00] indexnow error: The read operation timed out
 [2026-04-15T06:14:10.193581+00:00] marked article #22 as published
 [2026-04-15T10:45:06.807814+00:00] no article due for publication
+[2026-04-15T14:58:29.974984+00:00] picked article #23 [Smart Litter Box with App Control: The Next Generation of Cat Care]
+[2026-04-15T14:58:29.975318+00:00] using pre-written content file for article #23
+[2026-04-15T14:58:29.975383+00:00] generated 8722 chars, meta_title='Smart Litter Box with App Control: The Next Generation of Ca'
+[2026-04-15T14:58:30.596752+00:00] unsplash: matched 'smart litter box app' (tried=1)
+[2026-04-15T14:58:34.936218+00:00] image uploaded id=1283 url=https://eviehometech.com/wp-content/uploads/2026/04/smart-litter-box-app.jpg
+[2026-04-15T14:58:36.259378+00:00] published post_id=1284 link=https://eviehometech.com/smart-litter-box-app-control-next-generation/
+[2026-04-15T14:58:36.779845+00:00] indexnow: 200
+[2026-04-15T14:58:36.782421+00:00] marked article #23 as published
