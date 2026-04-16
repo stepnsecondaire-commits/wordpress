@@ -243,3 +243,11 @@
 [2026-04-15T18:55:09.780018+00:00] indexnow: 200
 [2026-04-15T18:55:09.782387+00:00] marked article #24 as published
 [2026-04-15T22:05:31.303795+00:00] no article due for publication
+[2026-04-16T06:13:20.456042+00:00] picked article #25 [Automatic Cat Litter Box Troubleshooting: Common Issues and Solutions]
+[2026-04-16T06:13:20.456329+00:00] using pre-written content file for article #25
+[2026-04-16T06:13:20.456388+00:00] generated 10419 chars, meta_title='Automatic Cat Litter Box Troubleshooting: Common Issues and '
+[2026-04-16T06:13:20.768272+00:00] unsplash: matched 'cat litter box troubleshooting' (tried=1)
+[2026-04-16T06:13:24.552097+00:00] image uploaded id=1287 url=https://eviehometech.com/wp-content/uploads/2026/04/cat-litter-box-troubleshooting.jpg
+[2026-04-16T06:13:26.139158+00:00] published post_id=1288 link=https://eviehometech.com/automatic-cat-litter-box-troubleshooting/
+[2026-04-16T06:13:26.794181+00:00] indexnow: 200
+[2026-04-16T06:13:26.796440+00:00] marked article #25 as published
