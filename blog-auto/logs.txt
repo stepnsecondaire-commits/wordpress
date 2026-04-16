@@ -252,3 +252,11 @@
 [2026-04-16T06:13:26.794181+00:00] indexnow: 200
 [2026-04-16T06:13:26.796440+00:00] marked article #25 as published
 [2026-04-16T10:47:15.845631+00:00] no article due for publication
+[2026-04-16T16:11:51.995505+00:00] picked article #26 [Wholesale Automatic Cat Litter Boxes: Pricing, Margins and Market Data]
+[2026-04-16T16:11:51.995784+00:00] using pre-written content file for article #26
+[2026-04-16T16:11:51.995839+00:00] generated 9183 chars, meta_title='Wholesale Automatic Cat Litter Boxes: Pricing, Margins and M'
+[2026-04-16T16:11:52.429295+00:00] unsplash: matched 'wholesale cat litter box pricing' (tried=1)
+[2026-04-16T16:11:56.445906+00:00] image uploaded id=1289 url=https://eviehometech.com/wp-content/uploads/2026/04/wholesale-cat-litter-box-pricing.jpg
+[2026-04-16T16:11:57.754805+00:00] published post_id=1290 link=https://eviehometech.com/wholesale-automatic-cat-litter-boxes-pricing-margins/
+[2026-04-16T16:11:58.374146+00:00] indexnow: 200
+[2026-04-16T16:11:58.376024+00:00] marked article #26 as published
