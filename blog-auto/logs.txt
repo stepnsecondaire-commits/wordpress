@@ -286,3 +286,11 @@
 [2026-04-17T14:44:07.472116+00:00] indexnow: 200
 [2026-04-17T14:44:07.474327+00:00] marked article #29 as published
 [2026-04-17T17:37:00.219168+00:00] no article due for publication
+[2026-04-17T20:09:46.511606+00:00] picked article #30 [The Cat Litter Box Market in 2026: Trends, Growth and Opportunities]
+[2026-04-17T20:09:46.511946+00:00] using pre-written content file for article #30
+[2026-04-17T20:09:46.512030+00:00] generated 8786 chars, meta_title='The Cat Litter Box Market in 2026: Trends, Growth and Opport'
+[2026-04-17T20:09:47.051965+00:00] unsplash: matched 'cat litter box market 2026' (tried=1)
+[2026-04-17T20:09:51.003228+00:00] image uploaded id=1297 url=https://eviehometech.com/wp-content/uploads/2026/04/cat-litter-box-market-2026.jpg
+[2026-04-17T20:09:52.090913+00:00] published post_id=1298 link=https://eviehometech.com/cat-litter-box-market-2026-trends-growth/
+[2026-04-17T20:09:52.741732+00:00] indexnow: 200
+[2026-04-17T20:09:52.744101+00:00] marked article #30 as published
