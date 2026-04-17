@@ -268,3 +268,11 @@
 [2026-04-16T22:26:21.271358+00:00] published post_id=1292 link=https://eviehometech.com/odor-control-technology-smart-cat-litter-boxes/
 [2026-04-16T22:26:21.822590+00:00] indexnow: 200
 [2026-04-16T22:26:21.825830+00:00] marked article #27 as published
+[2026-04-17T06:13:57.809541+00:00] picked article #28 [Automatic Litter Box Accessories and Replacement Parts: A Hidden Revenue Stream]
+[2026-04-17T06:13:57.809894+00:00] using pre-written content file for article #28
+[2026-04-17T06:13:57.809960+00:00] generated 7071 chars, meta_title='Automatic Litter Box Accessories and Replacement Parts: A Hi'
+[2026-04-17T06:14:01.229052+00:00] unsplash: matched 'cat litter box accessories' (tried=1)
+[2026-04-17T06:14:06.483309+00:00] image uploaded id=1293 url=https://eviehometech.com/wp-content/uploads/2026/04/cat-litter-box-accessories.jpg
+[2026-04-17T06:14:07.586236+00:00] published post_id=1294 link=https://eviehometech.com/automatic-litter-box-accessories-replacement-parts/
+[2026-04-17T06:14:08.233666+00:00] indexnow: 200
+[2026-04-17T06:14:08.235803+00:00] marked article #28 as published
