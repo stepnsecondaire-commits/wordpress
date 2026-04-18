@@ -316,3 +316,11 @@
 [2026-04-18T15:00:31.520771+00:00] indexnow: 200
 [2026-04-18T15:00:31.522565+00:00] marked article #33 as published
 [2026-04-18T17:24:36.488058+00:00] no article due for publication
+[2026-04-18T19:51:50.266385+00:00] picked article #34 [Gravity vs Programmable vs Smart Pet Feeders: Comparison Guide]
+[2026-04-18T19:51:50.266699+00:00] using pre-written content file for article #34
+[2026-04-18T19:51:50.266762+00:00] generated 6845 chars, meta_title='Gravity vs Programmable vs Smart Pet Feeders: Comparison Gui'
+[2026-04-18T19:51:50.794587+00:00] unsplash: matched 'gravity vs smart pet feeder' (tried=1)
+[2026-04-18T19:51:54.276957+00:00] image uploaded id=1303 url=https://eviehometech.com/wp-content/uploads/2026/04/gravity-vs-smart-pet-feeder.jpg
+[2026-04-18T19:51:55.355437+00:00] published post_id=1304 link=https://eviehometech.com/gravity-vs-programmable-smart-pet-feeders-comparison/
+[2026-04-18T19:51:55.860097+00:00] indexnow: 200
+[2026-04-18T19:51:55.862077+00:00] marked article #34 as published
