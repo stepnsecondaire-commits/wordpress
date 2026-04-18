@@ -297,3 +297,11 @@
 [2026-04-17T22:24:17.784191+00:00] no article due for publication
 [2026-04-18T00:07:10.284372+00:00] no article due for publication
 [2026-04-18T05:56:37.553421+00:00] no article due for publication
+[2026-04-18T08:09:07.858156+00:00] picked article #32 [Automatic Cat Feeder vs Dog Feeder: Key Differences for Retailers]
+[2026-04-18T08:09:07.858453+00:00] using pre-written content file for article #32
+[2026-04-18T08:09:07.858510+00:00] generated 7180 chars, meta_title='Automatic Cat Feeder vs Dog Feeder: Key Differences for Reta'
+[2026-04-18T08:09:08.210406+00:00] unsplash: matched 'cat feeder vs dog feeder' (tried=1)
+[2026-04-18T08:09:09.842086+00:00] image uploaded id=1299 url=https://eviehometech.com/wp-content/uploads/2026/04/cat-feeder-vs-dog-feeder.jpg
+[2026-04-18T08:09:10.777241+00:00] published post_id=1300 link=https://eviehometech.com/automatic-cat-feeder-vs-dog-feeder-differences/
+[2026-04-18T08:09:11.687633+00:00] indexnow: 200
+[2026-04-18T08:09:11.689981+00:00] marked article #32 as published
