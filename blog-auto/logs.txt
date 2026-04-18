@@ -307,3 +307,11 @@
 [2026-04-18T08:09:11.689981+00:00] marked article #32 as published
 [2026-04-18T10:27:37.336999+00:00] no article due for publication
 [2026-04-18T12:00:53.419539+00:00] no article due for publication
+[2026-04-18T15:00:26.810535+00:00] picked article #33 [WiFi-Connected Pet Feeders: Features That Sell in 2026]
+[2026-04-18T15:00:26.810845+00:00] using pre-written content file for article #33
+[2026-04-18T15:00:26.810900+00:00] generated 7569 chars, meta_title='WiFi-Connected Pet Feeders: Features That Sell in 2026 | Evi'
+[2026-04-18T15:00:27.188697+00:00] unsplash: matched 'wifi pet feeder' (tried=1)
+[2026-04-18T15:00:29.888616+00:00] image uploaded id=1301 url=https://eviehometech.com/wp-content/uploads/2026/04/wifi-pet-feeder.jpg
+[2026-04-18T15:00:30.979800+00:00] published post_id=1302 link=https://eviehometech.com/wifi-connected-pet-feeders-features-2026/
+[2026-04-18T15:00:31.520771+00:00] indexnow: 200
+[2026-04-18T15:00:31.522565+00:00] marked article #33 as published
