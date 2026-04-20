@@ -335,3 +335,11 @@
 [2026-04-19T20:04:26.928142+00:00] no article due for publication
 [2026-04-19T22:02:17.556923+00:00] no article due for publication
 [2026-04-20T00:05:40.850661+00:00] no article due for publication
+[2026-04-20T11:58:23.833770+00:00] picked article #35 [How to Choose a Smart Cat Water Fountain for Your Retail Store]
+[2026-04-20T11:58:23.834053+00:00] using pre-written content file for article #35
+[2026-04-20T11:58:23.834107+00:00] generated 7399 chars, meta_title='How to Choose a Smart Cat Water Fountain for Your Retail Sto'
+[2026-04-20T11:58:23.969856+00:00] unsplash: matched 'cat water fountain wholesale' (tried=1)
+[2026-04-20T11:58:27.742638+00:00] image uploaded id=1305 url=https://eviehometech.com/wp-content/uploads/2026/04/cat-water-fountain-wholesale.jpg
+[2026-04-20T11:58:29.159031+00:00] published post_id=1306 link=https://eviehometech.com/choose-smart-cat-water-fountain-retail/
+[2026-04-20T11:58:29.956420+00:00] indexnow: 200
+[2026-04-20T11:58:29.958513+00:00] marked article #35 as published
