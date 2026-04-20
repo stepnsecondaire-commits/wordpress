@@ -343,3 +343,11 @@
 [2026-04-20T11:58:29.159031+00:00] published post_id=1306 link=https://eviehometech.com/choose-smart-cat-water-fountain-retail/
 [2026-04-20T11:58:29.956420+00:00] indexnow: 200
 [2026-04-20T11:58:29.958513+00:00] marked article #35 as published
+[2026-04-20T16:20:51.755618+00:00] picked article #36 [Pet Water Fountain Filters: Types, Certifications and Sourcing]
+[2026-04-20T16:20:51.755857+00:00] using pre-written content file for article #36
+[2026-04-20T16:20:51.755898+00:00] generated 7446 chars, meta_title='Pet Water Fountain Filters: Types, Certifications and Sourci'
+[2026-04-20T16:20:52.078184+00:00] unsplash: matched 'pet water fountain filter' (tried=1)
+[2026-04-20T16:20:55.281190+00:00] image uploaded id=1307 url=https://eviehometech.com/wp-content/uploads/2026/04/pet-water-fountain-filter.jpg
+[2026-04-20T16:20:56.349539+00:00] published post_id=1308 link=https://eviehometech.com/pet-water-fountain-filters-types-sourcing/
+[2026-04-20T16:20:56.996397+00:00] indexnow: 200
+[2026-04-20T16:20:56.998446+00:00] marked article #36 as published
