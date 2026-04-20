@@ -351,3 +351,11 @@
 [2026-04-20T16:20:56.349539+00:00] published post_id=1308 link=https://eviehometech.com/pet-water-fountain-filters-types-sourcing/
 [2026-04-20T16:20:56.996397+00:00] indexnow: 200
 [2026-04-20T16:20:56.998446+00:00] marked article #36 as published
+[2026-04-20T20:05:26.012228+00:00] picked article #37 [Portion Control Technology in Smart Pet Feeders]
+[2026-04-20T20:05:26.012571+00:00] using pre-written content file for article #37
+[2026-04-20T20:05:26.012639+00:00] generated 8561 chars, meta_title='Portion Control Technology in Smart Pet Feeders | Eviehome'
+[2026-04-20T20:05:26.359804+00:00] unsplash: matched 'portion control pet feeder' (tried=1)
+[2026-04-20T20:05:29.748102+00:00] image uploaded id=1309 url=https://eviehometech.com/wp-content/uploads/2026/04/portion-control-pet-feeder.jpg
+[2026-04-20T20:05:30.449681+00:00] published post_id=1310 link=https://eviehometech.com/portion-control-smart-pet-feeders/
+[2026-04-20T20:05:31.224934+00:00] indexnow: 200
+[2026-04-20T20:05:31.226882+00:00] marked article #37 as published
