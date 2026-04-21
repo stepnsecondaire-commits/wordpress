@@ -369,3 +369,11 @@
 [2026-04-21T06:21:27.304096+00:00] indexnow: 200
 [2026-04-21T06:21:27.306404+00:00] marked article #38 as published
 [2026-04-21T10:52:00.495429+00:00] no article due for publication
+[2026-04-21T15:56:22.698992+00:00] picked article #39 [Battery vs Plug-In Pet Feeders: What the Market Prefers]
+[2026-04-21T15:56:22.699348+00:00] using pre-written content file for article #39
+[2026-04-21T15:56:22.699414+00:00] generated 8196 chars, meta_title='Battery vs Plug-In Pet Feeders: What the Market Prefers...'
+[2026-04-21T15:56:23.273574+00:00] unsplash: matched 'battery pet feeder' (tried=1)
+[2026-04-21T15:56:25.097761+00:00] image uploaded id=1313 url=https://eviehometech.com/wp-content/uploads/2026/04/battery-pet-feeder.jpg
+[2026-04-21T15:56:26.609628+00:00] published post_id=1314 link=https://eviehometech.com/battery-vs-plug-in-pet-feeders/
+[2026-04-21T15:56:27.313942+00:00] indexnow: 200
+[2026-04-21T15:56:27.316158+00:00] marked article #39 as published
