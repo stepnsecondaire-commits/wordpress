@@ -360,3 +360,11 @@
 [2026-04-20T20:05:31.224934+00:00] indexnow: 200
 [2026-04-20T20:05:31.226882+00:00] marked article #37 as published
 [2026-04-20T23:06:08.477520+00:00] no article due for publication
+[2026-04-21T06:21:23.099377+00:00] picked article #38 [Camera-Equipped Pet Feeders: The Premium Segment Opportunity]
+[2026-04-21T06:21:23.099682+00:00] using pre-written content file for article #38
+[2026-04-21T06:21:23.099745+00:00] generated 7889 chars, meta_title='Camera-Equipped Pet Feeders: The Premium Segment Opportunity'
+[2026-04-21T06:21:23.417935+00:00] unsplash: matched 'camera pet feeder' (tried=1)
+[2026-04-21T06:21:25.222983+00:00] image uploaded id=1311 url=https://eviehometech.com/wp-content/uploads/2026/04/camera-pet-feeder.jpg
+[2026-04-21T06:21:26.334718+00:00] published post_id=1312 link=https://eviehometech.com/camera-equipped-pet-feeders-premium-segment/
+[2026-04-21T06:21:27.304096+00:00] indexnow: 200
+[2026-04-21T06:21:27.306404+00:00] marked article #38 as published
