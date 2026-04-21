@@ -377,3 +377,11 @@
 [2026-04-21T15:56:26.609628+00:00] published post_id=1314 link=https://eviehometech.com/battery-vs-plug-in-pet-feeders/
 [2026-04-21T15:56:27.313942+00:00] indexnow: 200
 [2026-04-21T15:56:27.316158+00:00] marked article #39 as published
+[2026-04-21T19:55:22.471306+00:00] picked article #40 [Smart Pet Feeder App Integration: What Buyers Expect in 2026]
+[2026-04-21T19:55:22.471593+00:00] using pre-written content file for article #40
+[2026-04-21T19:55:22.471660+00:00] generated 7836 chars, meta_title='Smart Pet Feeder App Integration: What Buyers Expect in 2026'
+[2026-04-21T19:55:22.955372+00:00] unsplash: matched 'smart pet feeder app' (tried=1)
+[2026-04-21T19:55:26.329940+00:00] image uploaded id=1315 url=https://eviehometech.com/wp-content/uploads/2026/04/smart-pet-feeder-app.jpg
+[2026-04-21T19:55:27.313385+00:00] published post_id=1316 link=https://eviehometech.com/smart-pet-feeder-app-integration-2026/
+[2026-04-21T19:55:27.861424+00:00] indexnow: 200
+[2026-04-21T19:55:27.864412+00:00] marked article #40 as published
