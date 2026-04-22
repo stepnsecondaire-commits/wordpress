@@ -489,7 +489,10 @@
     "slug": "create-pet-feeding-product-line-oem",
     "keywords": "pet feeder OEM, create pet feeder brand, pet feeding product line",
     "scheduled_datetime": "2026-04-22T06:00:00",
-    "published": false
+    "published": true,
+    "published_at": "2026-04-22T06:26:36.062735+00:00",
+    "wp_post_id": 1319,
+    "wp_link": "https://eviehometech.com/create-pet-feeding-product-line-oem/"
   },
   {
     "index": 42,
