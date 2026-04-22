@@ -404,3 +404,11 @@
 [2026-04-22T15:53:05.022914+00:00] published post_id=1366 link=https://eviehometech.com/fresh-water-science-cat-water-fountains/
 [2026-04-22T15:53:05.532778+00:00] indexnow: 200
 [2026-04-22T15:53:05.535035+00:00] marked article #42 as published
+[2026-04-22T19:57:07.298224+00:00] picked article #44 [GPS Pet Trackers: Technology, Pricing and Wholesale Opportunities]
+[2026-04-22T19:57:07.298588+00:00] using pre-written content file for article #44
+[2026-04-22T19:57:07.298659+00:00] generated 8537 chars, meta_title='GPS Pet Trackers: Technology, Pricing and Wholesale Opportun'
+[2026-04-22T19:57:07.793026+00:00] unsplash: matched 'GPS pet tracker wholesale' (tried=1)
+[2026-04-22T19:57:11.141782+00:00] image uploaded id=1367 url=https://eviehometech.com/wp-content/uploads/2026/04/gps-pet-tracker-wholesale.jpg
+[2026-04-22T19:57:12.395137+00:00] published post_id=1368 link=https://eviehometech.com/gps-pet-trackers-technology-wholesale/
+[2026-04-22T19:57:12.923230+00:00] indexnow: 200
+[2026-04-22T19:57:12.925629+00:00] marked article #44 as published
