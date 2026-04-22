@@ -396,3 +396,11 @@
 [2026-04-22T06:26:40.215889+00:00] indexnow: 200
 [2026-04-22T06:26:40.218023+00:00] marked article #41 as published
 [2026-04-22T10:49:39.177763+00:00] no article due for publication
+[2026-04-22T15:52:59.534820+00:00] picked article #42 [Fresh Water Happy Pets: The Science Behind Cat Water Fountains]
+[2026-04-22T15:52:59.535189+00:00] using pre-written content file for article #42
+[2026-04-22T15:52:59.535258+00:00] generated 8335 chars, meta_title='Fresh Water Happy Pets: The Science Behind Cat Water Fountai'
+[2026-04-22T15:53:00.178985+00:00] unsplash: matched 'cat water fountain science' (tried=1)
+[2026-04-22T15:53:03.778669+00:00] image uploaded id=1365 url=https://eviehometech.com/wp-content/uploads/2026/04/cat-water-fountain-science.jpg
+[2026-04-22T15:53:05.022914+00:00] published post_id=1366 link=https://eviehometech.com/fresh-water-science-cat-water-fountains/
+[2026-04-22T15:53:05.532778+00:00] indexnow: 200
+[2026-04-22T15:53:05.535035+00:00] marked article #42 as published
