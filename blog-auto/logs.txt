@@ -422,3 +422,11 @@
 [2026-04-23T06:21:40.507938+00:00] indexnow: 200
 [2026-04-23T06:21:40.510126+00:00] marked article #45 as published
 [2026-04-23T10:56:51.018458+00:00] no article due for publication
+[2026-04-23T16:54:54.587868+00:00] picked article #46 [Pet Air Purifiers: The Emerging Category for Pet Households]
+[2026-04-23T16:54:54.588183+00:00] using pre-written content file for article #46
+[2026-04-23T16:54:54.588243+00:00] generated 7922 chars, meta_title='Pet Air Purifiers: The Emerging Category for Pet Households.'
+[2026-04-23T16:54:55.052119+00:00] unsplash: matched 'pet air purifier wholesale' (tried=1)
+[2026-04-23T16:54:56.637911+00:00] image uploaded id=1399 url=https://eviehometech.com/wp-content/uploads/2026/04/pet-air-purifier-wholesale.jpg
+[2026-04-23T16:54:57.610405+00:00] published post_id=1400 link=https://eviehometech.com/pet-air-purifiers-emerging-category/
+[2026-04-23T16:54:58.289229+00:00] indexnow: 200
+[2026-04-23T16:54:58.291562+00:00] marked article #46 as published
