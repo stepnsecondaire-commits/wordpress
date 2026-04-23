@@ -421,3 +421,4 @@
 [2026-04-23T06:21:39.608784+00:00] published post_id=1389 link=https://eviehometech.com/smart-bark-collars-humane-training-tech/
 [2026-04-23T06:21:40.507938+00:00] indexnow: 200
 [2026-04-23T06:21:40.510126+00:00] marked article #45 as published
+[2026-04-23T10:56:51.018458+00:00] no article due for publication
