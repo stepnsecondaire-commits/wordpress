@@ -413,3 +413,11 @@
 [2026-04-22T19:57:12.923230+00:00] indexnow: 200
 [2026-04-22T19:57:12.925629+00:00] marked article #44 as published
 [2026-04-22T22:35:06.246517+00:00] no article due for publication
+[2026-04-23T06:21:34.925855+00:00] picked article #45 [Smart Bark Collars: Humane Training Tech That Is Selling Fast]
+[2026-04-23T06:21:34.926222+00:00] using pre-written content file for article #45
+[2026-04-23T06:21:34.926290+00:00] generated 8407 chars, meta_title='Smart Bark Collars: Humane Training Tech That Is Selling Fas'
+[2026-04-23T06:21:35.447204+00:00] unsplash: matched 'smart bark collar' (tried=1)
+[2026-04-23T06:21:37.910845+00:00] image uploaded id=1388 url=https://eviehometech.com/wp-content/uploads/2026/04/smart-bark-collar.jpg
+[2026-04-23T06:21:39.608784+00:00] published post_id=1389 link=https://eviehometech.com/smart-bark-collars-humane-training-tech/
+[2026-04-23T06:21:40.507938+00:00] indexnow: 200
+[2026-04-23T06:21:40.510126+00:00] marked article #45 as published
