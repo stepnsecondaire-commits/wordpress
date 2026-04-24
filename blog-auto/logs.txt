@@ -439,3 +439,11 @@
 [2026-04-23T20:15:21.025948+00:00] indexnow: 200
 [2026-04-23T20:15:21.028201+00:00] marked article #47 as published
 [2026-04-23T23:11:38.473802+00:00] no article due for publication
+[2026-04-24T06:28:25.789484+00:00] picked article #48 [AI in Pet Products: What Is Real and What Is Hype]
+[2026-04-24T06:28:25.789804+00:00] using pre-written content file for article #48
+[2026-04-24T06:28:25.789876+00:00] generated 8705 chars, meta_title='AI in Pet Products: What Is Real and What Is Hype | Eviehome'
+[2026-04-24T06:28:26.279972+00:00] unsplash: matched 'smart pet' (tried=2)
+[2026-04-24T06:28:29.782732+00:00] image uploaded id=1403 url=https://eviehometech.com/wp-content/uploads/2026/04/smart-pet.jpg
+[2026-04-24T06:28:30.948558+00:00] published post_id=1404 link=https://eviehometech.com/ai-pet-products-real-vs-hype/
+[2026-04-24T06:28:31.902014+00:00] indexnow: 200
+[2026-04-24T06:28:31.904842+00:00] marked article #48 as published
