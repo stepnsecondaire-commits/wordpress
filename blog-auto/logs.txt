@@ -456,3 +456,11 @@
 [2026-04-24T15:49:27.100998+00:00] published post_id=1406 link=https://eviehometech.com/iot-pet-products-connected-devices-pet-care/
 [2026-04-24T15:49:27.812381+00:00] indexnow: 200
 [2026-04-24T15:49:27.814333+00:00] marked article #49 as published
+[2026-04-24T18:05:33.241569+00:00] picked article #50 [Pet Cameras and Monitors: Market Trends for Retailers]
+[2026-04-24T18:05:33.241860+00:00] using pre-written content file for article #50
+[2026-04-24T18:05:33.241933+00:00] generated 8169 chars, meta_title='Pet Cameras and Monitors: Market Trends for Retailers | Evie'
+[2026-04-24T18:05:33.566658+00:00] unsplash: matched 'pet camera wholesale' (tried=1)
+[2026-04-24T18:05:37.224480+00:00] image uploaded id=1407 url=https://eviehometech.com/wp-content/uploads/2026/04/pet-camera-wholesale.jpg
+[2026-04-24T18:05:38.415044+00:00] published post_id=1408 link=https://eviehometech.com/pet-cameras-monitors-market-trends-retailers/
+[2026-04-24T18:05:39.204365+00:00] indexnow: 200
+[2026-04-24T18:05:39.206422+00:00] marked article #50 as published
