@@ -447,3 +447,4 @@
 [2026-04-24T06:28:30.948558+00:00] published post_id=1404 link=https://eviehometech.com/ai-pet-products-real-vs-hype/
 [2026-04-24T06:28:31.902014+00:00] indexnow: 200
 [2026-04-24T06:28:31.904842+00:00] marked article #48 as published
+[2026-04-24T10:54:30.643356+00:00] no article due for publication
