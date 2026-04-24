@@ -448,3 +448,11 @@
 [2026-04-24T06:28:31.902014+00:00] indexnow: 200
 [2026-04-24T06:28:31.904842+00:00] marked article #48 as published
 [2026-04-24T10:54:30.643356+00:00] no article due for publication
+[2026-04-24T15:49:22.341582+00:00] picked article #49 [IoT Pet Products: How Connected Devices Are Changing Pet Care]
+[2026-04-24T15:49:22.341906+00:00] using pre-written content file for article #49
+[2026-04-24T15:49:22.341962+00:00] generated 8602 chars, meta_title='IoT Pet Products: How Connected Devices Are Changing Pet Car'
+[2026-04-24T15:49:22.951833+00:00] unsplash: matched 'IoT pet products' (tried=1)
+[2026-04-24T15:49:26.303228+00:00] image uploaded id=1405 url=https://eviehometech.com/wp-content/uploads/2026/04/iot-pet-products.jpg
+[2026-04-24T15:49:27.100998+00:00] published post_id=1406 link=https://eviehometech.com/iot-pet-products-connected-devices-pet-care/
+[2026-04-24T15:49:27.812381+00:00] indexnow: 200
+[2026-04-24T15:49:27.814333+00:00] marked article #49 as published

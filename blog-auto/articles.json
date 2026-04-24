@@ -586,7 +586,10 @@
     "slug": "iot-pet-products-connected-devices-pet-care",
     "keywords": "IoT pet products, connected pet devices, smart home pet",
     "scheduled_datetime": "2026-04-24T14:00:00",
-    "published": false
+    "published": true,
+    "published_at": "2026-04-24T15:49:22.341510+00:00",
+    "wp_post_id": 1406,
+    "wp_link": "https://eviehometech.com/iot-pet-products-connected-devices-pet-care/"
   },
   {
     "index": 50,
