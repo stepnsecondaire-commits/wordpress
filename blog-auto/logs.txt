@@ -484,3 +484,11 @@
 [2026-04-25T14:31:57.741254+00:00] indexnow: 200
 [2026-04-25T14:31:57.743562+00:00] marked article #52 as published
 [2026-04-25T17:25:14.011906+00:00] no article due for publication
+[2026-04-25T19:53:25.616075+00:00] picked article #53 [Wearable Pet Health Tech: The Next Frontier]
+[2026-04-25T19:53:25.616365+00:00] using pre-written content file for article #53
+[2026-04-25T19:53:25.616424+00:00] generated 8974 chars, meta_title='Wearable Pet Health Tech: The Next Frontier | Eviehome'
+[2026-04-25T19:53:26.107588+00:00] unsplash: matched 'wearable pet tech' (tried=1)
+[2026-04-25T19:53:28.244765+00:00] image uploaded id=1413 url=https://eviehometech.com/wp-content/uploads/2026/04/wearable-pet-tech.jpg
+[2026-04-25T19:53:29.102806+00:00] published post_id=1414 link=https://eviehometech.com/wearable-pet-health-tech-next-frontier/
+[2026-04-25T19:53:29.655228+00:00] indexnow: 200
+[2026-04-25T19:53:29.657521+00:00] marked article #53 as published
