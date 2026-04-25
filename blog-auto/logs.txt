@@ -466,3 +466,11 @@
 [2026-04-24T18:05:39.206422+00:00] marked article #50 as published
 [2026-04-24T21:09:58.219137+00:00] no article due for publication
 [2026-04-24T23:28:16.636707+00:00] no article due for publication
+[2026-04-25T09:37:26.319969+00:00] picked article #51 [Robot Pet Toys: Technology and Manufacturing Insights]
+[2026-04-25T09:37:26.320355+00:00] using pre-written content file for article #51
+[2026-04-25T09:37:26.320427+00:00] generated 8333 chars, meta_title='Robot Pet Toys: Technology and Manufacturing Insights | Evie'
+[2026-04-25T09:37:26.523127+00:00] unsplash: matched 'robot pet toy' (tried=1)
+[2026-04-25T09:37:30.816264+00:00] image uploaded id=1409 url=https://eviehometech.com/wp-content/uploads/2026/04/robot-pet-toy.jpg
+[2026-04-25T09:37:31.793366+00:00] published post_id=1410 link=https://eviehometech.com/robot-pet-toys-technology-manufacturing/
+[2026-04-25T09:37:32.604842+00:00] indexnow: 200
+[2026-04-25T09:37:32.606725+00:00] marked article #51 as published
