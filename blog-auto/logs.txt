@@ -475,3 +475,11 @@
 [2026-04-25T09:37:32.604842+00:00] indexnow: 200
 [2026-04-25T09:37:32.606725+00:00] marked article #51 as published
 [2026-04-25T11:57:32.357757+00:00] no article due for publication
+[2026-04-25T14:31:53.892263+00:00] picked article #52 [Smart Pet Doors: Microchip, App-Controlled and RFID]
+[2026-04-25T14:31:53.892583+00:00] using pre-written content file for article #52
+[2026-04-25T14:31:53.892646+00:00] generated 8022 chars, meta_title='Smart Pet Doors: Microchip, App-Controlled and RFID | Evieho'
+[2026-04-25T14:31:54.276041+00:00] unsplash: matched 'smart pet door' (tried=1)
+[2026-04-25T14:31:55.724168+00:00] image uploaded id=1411 url=https://eviehometech.com/wp-content/uploads/2026/04/smart-pet-door.jpg
+[2026-04-25T14:31:57.052681+00:00] published post_id=1412 link=https://eviehometech.com/smart-pet-doors-microchip-app-rfid/
+[2026-04-25T14:31:57.741254+00:00] indexnow: 200
+[2026-04-25T14:31:57.743562+00:00] marked article #52 as published
