@@ -518,3 +518,11 @@
 [2026-04-27T17:52:21.115533+00:00] published post_id=1418 link=https://eviehometech.com/design-custom-packaging-pet-product-brand/
 [2026-04-27T17:52:21.694730+00:00] indexnow: 200
 [2026-04-27T17:52:21.697117+00:00] marked article #56 as published
+[2026-04-27T21:37:20.784284+00:00] picked article #57 [From Idea to Product: The OEM Development Timeline]
+[2026-04-27T21:37:20.784564+00:00] using pre-written content file for article #57
+[2026-04-27T21:37:20.784621+00:00] generated 8554 chars, meta_title='From Idea to Product: The OEM Development Timeline | Eviehom'
+[2026-04-27T21:37:21.922331+00:00] unsplash: matched 'factory worker china' (tried=2)
+[2026-04-27T21:37:23.910842+00:00] image uploaded id=1419 url=https://eviehometech.com/wp-content/uploads/2026/04/factory-worker-china-1.jpg
+[2026-04-27T21:37:24.777579+00:00] published post_id=1420 link=https://eviehometech.com/idea-to-product-oem-development-timeline/
+[2026-04-27T21:37:25.260294+00:00] indexnow: 200
+[2026-04-27T21:37:25.262739+00:00] marked article #57 as published
