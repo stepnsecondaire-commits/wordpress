@@ -501,3 +501,11 @@
 [2026-04-26T17:58:52.513975+00:00] no article due for publication
 [2026-04-26T20:01:24.569287+00:00] no article due for publication
 [2026-04-26T22:06:39.107100+00:00] no article due for publication
+[2026-04-27T07:42:35.632030+00:00] picked article #54 [Pet Tech CES 2026 Recap: What Trends Matter for Buyers]
+[2026-04-27T07:42:35.632363+00:00] using pre-written content file for article #54
+[2026-04-27T07:42:35.632426+00:00] generated 7957 chars, meta_title='Pet Tech CES 2026 Recap: What Trends Matter for Buyers | Evi'
+[2026-04-27T07:42:36.462463+00:00] unsplash: matched 'smart pet' (tried=2)
+[2026-04-27T07:42:38.299602+00:00] image uploaded id=1415 url=https://eviehometech.com/wp-content/uploads/2026/04/smart-pet-1.jpg
+[2026-04-27T07:42:39.867192+00:00] published post_id=1416 link=https://eviehometech.com/pet-tech-ces-2026-recap-trends/
+[2026-04-27T07:42:40.439868+00:00] indexnow: 200
+[2026-04-27T07:42:40.441968+00:00] marked article #54 as published
