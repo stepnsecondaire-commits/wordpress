@@ -534,3 +534,11 @@
 [2026-04-28T07:39:59.449787+00:00] published post_id=1422 link=https://eviehometech.com/private-label-vs-white-label-pet-products/
 [2026-04-28T07:40:00.081193+00:00] indexnow: 200
 [2026-04-28T07:40:00.146600+00:00] marked article #58 as published
+[2026-04-28T16:18:51.419218+00:00] picked article #59 [How to Protect Your Pet Product Design with a Chinese Manufacturer]
+[2026-04-28T16:18:51.419562+00:00] using pre-written content file for article #59
+[2026-04-28T16:18:51.419623+00:00] generated 9462 chars, meta_title='How to Protect Your Pet Product Design with a Chinese Manufa'
+[2026-04-28T16:18:51.798613+00:00] unsplash: matched 'factory worker china' (tried=2)
+[2026-04-28T16:18:56.332677+00:00] image uploaded id=1423 url=https://eviehometech.com/wp-content/uploads/2026/04/factory-worker-china-3.jpg
+[2026-04-28T16:18:57.769326+00:00] published post_id=1424 link=https://eviehometech.com/protect-pet-product-design-chinese-manufacturer/
+[2026-04-28T16:18:58.312266+00:00] indexnow: 200
+[2026-04-28T16:18:58.314443+00:00] marked article #59 as published
