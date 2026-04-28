@@ -526,3 +526,11 @@
 [2026-04-27T21:37:24.777579+00:00] published post_id=1420 link=https://eviehometech.com/idea-to-product-oem-development-timeline/
 [2026-04-27T21:37:25.260294+00:00] indexnow: 200
 [2026-04-27T21:37:25.262739+00:00] marked article #57 as published
+[2026-04-28T07:39:54.683675+00:00] picked article #58 [Private Label vs White Label Pet Products: What Is the Difference?]
+[2026-04-28T07:39:54.683956+00:00] using pre-written content file for article #58
+[2026-04-28T07:39:54.684022+00:00] generated 8282 chars, meta_title='Private Label vs White Label Pet Products: What Is the Diffe'
+[2026-04-28T07:39:55.351045+00:00] unsplash: matched 'factory worker china' (tried=2)
+[2026-04-28T07:39:58.239695+00:00] image uploaded id=1421 url=https://eviehometech.com/wp-content/uploads/2026/04/factory-worker-china-2.jpg
+[2026-04-28T07:39:59.449787+00:00] published post_id=1422 link=https://eviehometech.com/private-label-vs-white-label-pet-products/
+[2026-04-28T07:40:00.081193+00:00] indexnow: 200
+[2026-04-28T07:40:00.146600+00:00] marked article #58 as published
