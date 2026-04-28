@@ -542,3 +542,11 @@
 [2026-04-28T16:18:57.769326+00:00] published post_id=1424 link=https://eviehometech.com/protect-pet-product-design-chinese-manufacturer/
 [2026-04-28T16:18:58.312266+00:00] indexnow: 200
 [2026-04-28T16:18:58.314443+00:00] marked article #59 as published
+[2026-04-28T20:50:05.742335+00:00] picked article #60 [NDA and IP Protection When Working with Chinese Factories]
+[2026-04-28T20:50:05.742634+00:00] using pre-written content file for article #60
+[2026-04-28T20:50:05.742706+00:00] generated 8604 chars, meta_title='NDA and IP Protection When Working with Chinese Factories...'
+[2026-04-28T20:50:06.195589+00:00] unsplash: matched 'NDA china factory' (tried=1)
+[2026-04-28T20:50:08.531853+00:00] image uploaded id=1425 url=https://eviehometech.com/wp-content/uploads/2026/04/nda-china-factory.jpg
+[2026-04-28T20:50:10.198043+00:00] published post_id=1426 link=https://eviehometech.com/nda-ip-protection-chinese-factories/
+[2026-04-28T20:50:10.723675+00:00] indexnow: 200
+[2026-04-28T20:50:10.725922+00:00] marked article #60 as published
