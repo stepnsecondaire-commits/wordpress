@@ -559,3 +559,11 @@
 [2026-04-29T16:05:10.869545+00:00] published post_id=1428 link=https://eviehometech.com/build-pet-products-brand-from-scratch-2026/
 [2026-04-29T16:05:11.442085+00:00] indexnow: 200
 [2026-04-29T16:05:11.444393+00:00] marked article #61 as published
+[2026-04-29T20:41:52.091250+00:00] picked article #62 [Dropshipping vs Wholesale vs Private Label Pet Products]
+[2026-04-29T20:41:52.091598+00:00] using pre-written content file for article #62
+[2026-04-29T20:41:52.091675+00:00] generated 8209 chars, meta_title='Dropshipping vs Wholesale vs Private Label Pet Products...'
+[2026-04-29T20:41:52.660409+00:00] unsplash: matched 'dropshipping vs wholesale pet' (tried=1)
+[2026-04-29T20:41:56.068745+00:00] image uploaded id=1429 url=https://eviehometech.com/wp-content/uploads/2026/04/dropshipping-vs-wholesale-pet.jpg
+[2026-04-29T20:41:57.197995+00:00] published post_id=1430 link=https://eviehometech.com/dropshipping-vs-wholesale-vs-private-label-pet-products/
+[2026-04-29T20:41:57.575323+00:00] indexnow: 200
+[2026-04-29T20:41:57.577790+00:00] marked article #62 as published
