@@ -583,3 +583,11 @@
 [2026-04-30T08:39:47.326358+00:00] published post_id=1434 link=https://eviehometech.com/product-liability-insurance-imported-pet-products/
 [2026-04-30T08:39:47.733921+00:00] indexnow: 200
 [2026-04-30T08:39:47.736258+00:00] marked article #64 as published
+[2026-04-30T15:29:21.481047+00:00] picked article #65 [How to Create a Product Spec Sheet for Your Manufacturer]
+[2026-04-30T15:29:21.481288+00:00] using pre-written content file for article #65
+[2026-04-30T15:29:21.481331+00:00] generated 9044 chars, meta_title='How to Create a Product Spec Sheet for Your Manufacturer...'
+[2026-04-30T15:29:21.916709+00:00] unsplash: matched 'product spec sheet' (tried=1)
+[2026-04-30T15:29:24.644117+00:00] image uploaded id=1437 url=https://eviehometech.com/wp-content/uploads/2026/04/product-spec-sheet.jpg
+[2026-04-30T15:29:26.773251+00:00] published post_id=1438 link=https://eviehometech.com/create-product-spec-sheet-manufacturer/
+[2026-04-30T15:29:27.268570+00:00] indexnow: 200
+[2026-04-30T15:29:27.284024+00:00] marked article #65 as published

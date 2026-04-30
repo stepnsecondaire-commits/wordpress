@@ -779,7 +779,10 @@
     "slug": "create-product-spec-sheet-manufacturer",
     "keywords": "product spec sheet, pet product specifications, manufacturer spec sheet",
     "scheduled_datetime": "2026-04-30T14:00:00",
-    "published": false
+    "published": true,
+    "published_at": "2026-04-30T15:29:21.481003+00:00",
+    "wp_post_id": 1438,
+    "wp_link": "https://eviehometech.com/create-product-spec-sheet-manufacturer/"
   },
   {
     "index": 66,
