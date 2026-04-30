@@ -567,3 +567,11 @@
 [2026-04-29T20:41:57.197995+00:00] published post_id=1430 link=https://eviehometech.com/dropshipping-vs-wholesale-vs-private-label-pet-products/
 [2026-04-29T20:41:57.575323+00:00] indexnow: 200
 [2026-04-29T20:41:57.577790+00:00] marked article #62 as published
+[2026-04-30T00:09:18.470079+00:00] picked article #63 [How to Calculate Your True Cost When Importing Pet Products]
+[2026-04-30T00:09:18.470302+00:00] using pre-written content file for article #63
+[2026-04-30T00:09:18.470349+00:00] generated 8725 chars, meta_title='How to Calculate Your True Cost When Importing Pet Products.'
+[2026-04-30T00:09:18.764445+00:00] unsplash: matched 'landed cost pet products' (tried=1)
+[2026-04-30T00:09:23.144482+00:00] image uploaded id=1431 url=https://eviehometech.com/wp-content/uploads/2026/04/landed-cost-pet-products.jpg
+[2026-04-30T00:09:24.497925+00:00] published post_id=1432 link=https://eviehometech.com/calculate-true-cost-importing-pet-products/
+[2026-04-30T00:09:25.395129+00:00] indexnow: 200
+[2026-04-30T00:09:25.397304+00:00] marked article #63 as published

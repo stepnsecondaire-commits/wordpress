@@ -755,7 +755,10 @@
     "slug": "calculate-true-cost-importing-pet-products",
     "keywords": "landed cost pet products, true import cost, calculate importing cost",
     "scheduled_datetime": "2026-04-29T18:00:00",
-    "published": false
+    "published": true,
+    "published_at": "2026-04-30T00:09:18.470032+00:00",
+    "wp_post_id": 1432,
+    "wp_link": "https://eviehometech.com/calculate-true-cost-importing-pet-products/"
   },
   {
     "index": 64,
