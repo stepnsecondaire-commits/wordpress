@@ -599,3 +599,4 @@
 [2026-04-30T20:02:03.740735+00:00] published post_id=1440 link=https://eviehometech.com/working-chinese-manufacturer-communication-tips/
 [2026-04-30T20:02:04.327635+00:00] indexnow: 200
 [2026-04-30T20:02:04.329915+00:00] marked article #66 as published
+[2026-04-30T23:36:51.889992+00:00] no article due for publication
