@@ -575,3 +575,11 @@
 [2026-04-30T00:09:24.497925+00:00] published post_id=1432 link=https://eviehometech.com/calculate-true-cost-importing-pet-products/
 [2026-04-30T00:09:25.395129+00:00] indexnow: 200
 [2026-04-30T00:09:25.397304+00:00] marked article #63 as published
+[2026-04-30T08:39:44.265129+00:00] picked article #64 [Product Liability Insurance for Imported Pet Products]
+[2026-04-30T08:39:44.265428+00:00] using pre-written content file for article #64
+[2026-04-30T08:39:44.265487+00:00] generated 8622 chars, meta_title='Product Liability Insurance for Imported Pet Products | Evie'
+[2026-04-30T08:39:44.558532+00:00] unsplash: matched 'product liability insurance pet' (tried=1)
+[2026-04-30T08:39:46.362817+00:00] image uploaded id=1433 url=https://eviehometech.com/wp-content/uploads/2026/04/product-liability-insurance-pet.jpg
+[2026-04-30T08:39:47.326358+00:00] published post_id=1434 link=https://eviehometech.com/product-liability-insurance-imported-pet-products/
+[2026-04-30T08:39:47.733921+00:00] indexnow: 200
+[2026-04-30T08:39:47.736258+00:00] marked article #64 as published
