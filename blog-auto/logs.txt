@@ -591,3 +591,11 @@
 [2026-04-30T15:29:26.773251+00:00] published post_id=1438 link=https://eviehometech.com/create-product-spec-sheet-manufacturer/
 [2026-04-30T15:29:27.268570+00:00] indexnow: 200
 [2026-04-30T15:29:27.284024+00:00] marked article #65 as published
+[2026-04-30T20:01:59.011176+00:00] picked article #66 [Working with a Chinese Manufacturer: Communication Tips and Tools]
+[2026-04-30T20:01:59.011497+00:00] using pre-written content file for article #66
+[2026-04-30T20:01:59.011560+00:00] generated 8304 chars, meta_title='Working with a Chinese Manufacturer: Communication Tips and '
+[2026-04-30T20:01:59.366882+00:00] unsplash: matched 'communication china factory' (tried=1)
+[2026-04-30T20:02:01.489156+00:00] image uploaded id=1439 url=https://eviehometech.com/wp-content/uploads/2026/04/communication-china-factory.jpg
+[2026-04-30T20:02:03.740735+00:00] published post_id=1440 link=https://eviehometech.com/working-chinese-manufacturer-communication-tips/
+[2026-04-30T20:02:04.327635+00:00] indexnow: 200
+[2026-04-30T20:02:04.329915+00:00] marked article #66 as published
