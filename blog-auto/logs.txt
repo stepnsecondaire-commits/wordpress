@@ -617,3 +617,11 @@
 [2026-05-01T15:36:25.922986+00:00] published post_id=1444 link=https://eviehometech.com/ce-marking-pet-products-eu-requirements/
 [2026-05-01T15:36:26.427924+00:00] indexnow: 200
 [2026-05-01T15:36:26.430209+00:00] marked article #69 as published
+[2026-05-01T19:56:41.840804+00:00] picked article #70 [ISO 9001 for Pet Product Manufacturers: What It Means for Buyers]
+[2026-05-01T19:56:41.841102+00:00] using pre-written content file for article #70
+[2026-05-01T19:56:41.841155+00:00] generated 8238 chars, meta_title='ISO 9001 for Pet Product Manufacturers: What It Means for Bu'
+[2026-05-01T19:56:42.327593+00:00] unsplash: matched 'ISO 9001 pet manufacturer' (tried=1)
+[2026-05-01T19:56:45.279619+00:00] image uploaded id=1445 url=https://eviehometech.com/wp-content/uploads/2026/05/iso-9001-pet-manufacturer.jpg
+[2026-05-01T19:56:47.347639+00:00] published post_id=1446 link=https://eviehometech.com/iso-9001-pet-product-manufacturers/
+[2026-05-01T19:56:47.914399+00:00] indexnow: 200
+[2026-05-01T19:56:47.916390+00:00] marked article #70 as published
