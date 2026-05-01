@@ -609,3 +609,11 @@
 [2026-05-01T07:53:55.902977+00:00] indexnow: 200
 [2026-05-01T07:53:55.906323+00:00] marked article #68 as published
 [2026-05-01T11:43:02.765792+00:00] no article due for publication
+[2026-05-01T15:36:19.420164+00:00] picked article #69 [CE Marking for Pet Products: Requirements for the EU Market]
+[2026-05-01T15:36:19.420446+00:00] using pre-written content file for article #69
+[2026-05-01T15:36:19.420502+00:00] generated 9468 chars, meta_title='CE Marking for Pet Products: Requirements for the EU Market.'
+[2026-05-01T15:36:19.930422+00:00] unsplash: matched 'CE marking pet products' (tried=1)
+[2026-05-01T15:36:24.017579+00:00] image uploaded id=1443 url=https://eviehometech.com/wp-content/uploads/2026/05/ce-marking-pet-products.jpg
+[2026-05-01T15:36:25.922986+00:00] published post_id=1444 link=https://eviehometech.com/ce-marking-pet-products-eu-requirements/
+[2026-05-01T15:36:26.427924+00:00] indexnow: 200
+[2026-05-01T15:36:26.430209+00:00] marked article #69 as published
