@@ -600,3 +600,11 @@
 [2026-04-30T20:02:04.327635+00:00] indexnow: 200
 [2026-04-30T20:02:04.329915+00:00] marked article #66 as published
 [2026-04-30T23:36:51.889992+00:00] no article due for publication
+[2026-05-01T07:53:49.957978+00:00] picked article #68 [FCC Certification for Electronic Pet Products: A Complete Guide]
+[2026-05-01T07:53:49.958331+00:00] using pre-written content file for article #68
+[2026-05-01T07:53:49.958403+00:00] generated 9004 chars, meta_title='FCC Certification for Electronic Pet Products: A Complete Gu'
+[2026-05-01T07:53:50.303735+00:00] unsplash: matched 'FCC certification pet products' (tried=1)
+[2026-05-01T07:53:53.371034+00:00] image uploaded id=1441 url=https://eviehometech.com/wp-content/uploads/2026/05/fcc-certification-pet-products.jpg
+[2026-05-01T07:53:55.025451+00:00] published post_id=1442 link=https://eviehometech.com/fcc-certification-electronic-pet-products-guide/
+[2026-05-01T07:53:55.902977+00:00] indexnow: 200
+[2026-05-01T07:53:55.906323+00:00] marked article #68 as published
