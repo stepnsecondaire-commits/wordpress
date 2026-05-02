@@ -635,3 +635,11 @@
 [2026-05-02T06:24:31.773097+00:00] indexnow: 200
 [2026-05-02T06:24:31.776099+00:00] marked article #71 as published
 [2026-05-02T10:07:38.521070+00:00] no article due for publication
+[2026-05-02T14:14:18.449855+00:00] picked article #72 [REACH Compliance for Pet Products Sold in Europe]
+[2026-05-02T14:14:18.450206+00:00] using pre-written content file for article #72
+[2026-05-02T14:14:18.450273+00:00] generated 8764 chars, meta_title='REACH Compliance for Pet Products Sold in Europe | Eviehome'
+[2026-05-02T14:14:18.686342+00:00] unsplash: matched 'REACH compliance pet products' (tried=1)
+[2026-05-02T14:14:21.751754+00:00] image uploaded id=1449 url=https://eviehometech.com/wp-content/uploads/2026/05/reach-compliance-pet-products.jpg
+[2026-05-02T14:14:24.021278+00:00] published post_id=1450 link=https://eviehometech.com/reach-compliance-pet-products-europe/
+[2026-05-02T14:14:24.635009+00:00] indexnow: 200
+[2026-05-02T14:14:24.636912+00:00] marked article #72 as published
