@@ -652,3 +652,4 @@
 [2026-05-02T20:00:10.558753+00:00] published post_id=1452 link=https://eviehometech.com/pet-product-safety-testing-what-gets-tested/
 [2026-05-02T20:00:11.006928+00:00] indexnow: 200
 [2026-05-02T20:00:11.009232+00:00] marked article #73 as published
+[2026-05-02T22:08:22.679431+00:00] no article due for publication
