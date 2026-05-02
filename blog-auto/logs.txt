@@ -626,3 +626,11 @@
 [2026-05-01T19:56:47.914399+00:00] indexnow: 200
 [2026-05-01T19:56:47.916390+00:00] marked article #70 as published
 [2026-05-01T22:37:21.528953+00:00] no article due for publication
+[2026-05-02T06:24:26.267868+00:00] picked article #71 [UL Certification for Pet Electronics: Is It Worth It?]
+[2026-05-02T06:24:26.268153+00:00] using pre-written content file for article #71
+[2026-05-02T06:24:26.268206+00:00] generated 9148 chars, meta_title='UL Certification for Pet Electronics: Is It Worth It? | Evie'
+[2026-05-02T06:24:26.702022+00:00] unsplash: matched 'UL certification pet' (tried=1)
+[2026-05-02T06:24:29.504302+00:00] image uploaded id=1447 url=https://eviehometech.com/wp-content/uploads/2026/05/ul-certification-pet.jpg
+[2026-05-02T06:24:31.202534+00:00] published post_id=1448 link=https://eviehometech.com/ul-certification-pet-electronics-worth-it/
+[2026-05-02T06:24:31.773097+00:00] indexnow: 200
+[2026-05-02T06:24:31.776099+00:00] marked article #71 as published
