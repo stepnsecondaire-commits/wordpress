@@ -667,3 +667,11 @@
 [2026-05-04T08:07:27.701120+00:00] published post_id=1454 link=https://eviehometech.com/california-prop-65-pet-products-importers/
 [2026-05-04T08:07:28.329108+00:00] indexnow: 200
 [2026-05-04T08:07:28.331541+00:00] marked article #74 as published
+[2026-05-04T15:32:17.129261+00:00] picked article #75 [How to Read and Verify a Chinese Manufacturer Certifications]
+[2026-05-04T15:32:17.129573+00:00] using pre-written content file for article #75
+[2026-05-04T15:32:17.129641+00:00] generated 8526 chars, meta_title='How to Read and Verify a Chinese Manufacturer Certifications'
+[2026-05-04T15:32:17.609508+00:00] unsplash: matched 'verify china certifications' (tried=1)
+[2026-05-04T15:32:20.460407+00:00] image uploaded id=1455 url=https://eviehometech.com/wp-content/uploads/2026/05/verify-china-certifications.jpg
+[2026-05-04T15:32:22.518107+00:00] published post_id=1456 link=https://eviehometech.com/verify-chinese-manufacturer-certifications/
+[2026-05-04T15:32:23.123077+00:00] indexnow: 200
+[2026-05-04T15:32:23.125506+00:00] marked article #75 as published
