@@ -659,3 +659,11 @@
 [2026-05-03T17:31:21.318355+00:00] no article due for publication
 [2026-05-03T20:06:32.253614+00:00] no article due for publication
 [2026-05-03T22:26:15.508360+00:00] no article due for publication
+[2026-05-04T08:07:21.466480+00:00] picked article #74 [California Prop 65 and Pet Products: What Importers Must Know]
+[2026-05-04T08:07:21.466811+00:00] using pre-written content file for article #74
+[2026-05-04T08:07:21.466879+00:00] generated 8605 chars, meta_title='California Prop 65 and Pet Products: What Importers Must Kno'
+[2026-05-04T08:07:22.418877+00:00] unsplash: matched 'laboratory testing' (tried=2)
+[2026-05-04T08:07:25.032401+00:00] image uploaded id=1453 url=https://eviehometech.com/wp-content/uploads/2026/05/laboratory-testing.jpg
+[2026-05-04T08:07:27.701120+00:00] published post_id=1454 link=https://eviehometech.com/california-prop-65-pet-products-importers/
+[2026-05-04T08:07:28.329108+00:00] indexnow: 200
+[2026-05-04T08:07:28.331541+00:00] marked article #74 as published
