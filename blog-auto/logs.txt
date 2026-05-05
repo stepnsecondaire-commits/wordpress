@@ -692,3 +692,4 @@
 [2026-05-05T07:33:50.768840+00:00] published post_id=1460 link=https://eviehometech.com/pet-industry-statistics-2026-us-europe-global/
 [2026-05-05T07:33:51.256983+00:00] indexnow: 200
 [2026-05-05T07:33:51.286720+00:00] marked article #78 as published
+[2026-05-05T11:52:14.926389+00:00] no article due for publication
