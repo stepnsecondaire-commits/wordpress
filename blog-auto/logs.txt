@@ -693,3 +693,11 @@
 [2026-05-05T07:33:51.256983+00:00] indexnow: 200
 [2026-05-05T07:33:51.286720+00:00] marked article #78 as published
 [2026-05-05T11:52:14.926389+00:00] no article due for publication
+[2026-05-05T17:07:54.936690+00:00] picked article #79 [The Humanization of Pets: How It Is Driving Smart Product Demand]
+[2026-05-05T17:07:54.936943+00:00] using pre-written content file for article #79
+[2026-05-05T17:07:54.936985+00:00] generated 8677 chars, meta_title='The Humanization of Pets: How It Is Driving Smart Product De'
+[2026-05-05T17:07:55.588336+00:00] unsplash: matched 'humanization of pets' (tried=1)
+[2026-05-05T17:07:59.104406+00:00] image uploaded id=1461 url=https://eviehometech.com/wp-content/uploads/2026/05/humanization-of-pets.jpg
+[2026-05-05T17:08:01.336744+00:00] published post_id=1462 link=https://eviehometech.com/humanization-pets-driving-smart-product-demand/
+[2026-05-05T17:08:01.954922+00:00] indexnow: 200
+[2026-05-05T17:08:01.956908+00:00] marked article #79 as published
