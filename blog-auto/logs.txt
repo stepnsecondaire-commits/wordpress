@@ -701,3 +701,11 @@
 [2026-05-05T17:08:01.336744+00:00] published post_id=1462 link=https://eviehometech.com/humanization-pets-driving-smart-product-demand/
 [2026-05-05T17:08:01.954922+00:00] indexnow: 200
 [2026-05-05T17:08:01.956908+00:00] marked article #79 as published
+[2026-05-05T21:13:48.371217+00:00] picked article #80 [Gen Z and Millennial Pet Owners: What They Buy and Why]
+[2026-05-05T21:13:48.371494+00:00] using pre-written content file for article #80
+[2026-05-05T21:13:48.371557+00:00] generated 8842 chars, meta_title='Gen Z and Millennial Pet Owners: What They Buy and Why | Evi'
+[2026-05-05T21:13:48.881362+00:00] unsplash: matched 'gen z pet owners' (tried=1)
+[2026-05-05T21:13:52.053005+00:00] image uploaded id=1463 url=https://eviehometech.com/wp-content/uploads/2026/05/gen-z-pet-owners.jpg
+[2026-05-05T21:13:54.223045+00:00] published post_id=1464 link=https://eviehometech.com/gen-z-millennial-pet-owners-what-they-buy/
+[2026-05-05T21:13:54.755918+00:00] indexnow: 200
+[2026-05-05T21:13:54.758037+00:00] marked article #80 as published
