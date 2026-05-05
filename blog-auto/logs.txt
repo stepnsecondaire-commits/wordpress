@@ -684,3 +684,11 @@
 [2026-05-04T20:48:38.382515+00:00] indexnow: 200
 [2026-05-04T20:48:38.384930+00:00] marked article #76 as published
 [2026-05-05T00:10:44.985792+00:00] no article due for publication
+[2026-05-05T07:33:44.423495+00:00] picked article #78 [Pet Industry Statistics 2026: US, Europe and Global Overview]
+[2026-05-05T07:33:44.423705+00:00] using pre-written content file for article #78
+[2026-05-05T07:33:44.423750+00:00] generated 9169 chars, meta_title='Pet Industry Statistics 2026: US, Europe and Global Overview'
+[2026-05-05T07:33:44.748923+00:00] unsplash: matched 'pet industry statistics 2026' (tried=1)
+[2026-05-05T07:33:48.520589+00:00] image uploaded id=1459 url=https://eviehometech.com/wp-content/uploads/2026/05/pet-industry-statistics-2026.jpg
+[2026-05-05T07:33:50.768840+00:00] published post_id=1460 link=https://eviehometech.com/pet-industry-statistics-2026-us-europe-global/
+[2026-05-05T07:33:51.256983+00:00] indexnow: 200
+[2026-05-05T07:33:51.286720+00:00] marked article #78 as published
