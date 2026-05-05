@@ -683,3 +683,4 @@
 [2026-05-04T20:48:37.905116+00:00] published post_id=1458 link=https://eviehometech.com/pet-food-contact-materials-fda-eu/
 [2026-05-04T20:48:38.382515+00:00] indexnow: 200
 [2026-05-04T20:48:38.384930+00:00] marked article #76 as published
+[2026-05-05T00:10:44.985792+00:00] no article due for publication
