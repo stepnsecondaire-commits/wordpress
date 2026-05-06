@@ -997,7 +997,10 @@
     "slug": "subscription-box-smart-pet-products",
     "keywords": "pet subscription box, pet box business, subscription pet products",
     "scheduled_datetime": "2026-05-06T18:00:00",
-    "published": false
+    "published": true,
+    "published_at": "2026-05-06T20:58:15.835586+00:00",
+    "wp_post_id": 1470,
+    "wp_link": "https://eviehometech.com/subscription-box-smart-pet-products/"
   },
   {
     "index": 84,

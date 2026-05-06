@@ -726,3 +726,11 @@
 [2026-05-06T16:15:52.580920+00:00] published post_id=1468 link=https://eviehometech.com/pet-products-ecommerce-trends-dtc-marketplace/
 [2026-05-06T16:15:53.385432+00:00] indexnow: 200
 [2026-05-06T16:15:53.387213+00:00] marked article #82 as published
+[2026-05-06T20:58:15.835626+00:00] picked article #83 [The Subscription Box Opportunity for Smart Pet Products]
+[2026-05-06T20:58:15.835945+00:00] using pre-written content file for article #83
+[2026-05-06T20:58:15.836007+00:00] generated 9358 chars, meta_title='The Subscription Box Opportunity for Smart Pet Products...'
+[2026-05-06T20:58:16.416675+00:00] unsplash: matched 'pet subscription box' (tried=1)
+[2026-05-06T20:58:18.914686+00:00] image uploaded id=1469 url=https://eviehometech.com/wp-content/uploads/2026/05/pet-subscription-box.jpg
+[2026-05-06T20:58:21.055459+00:00] published post_id=1470 link=https://eviehometech.com/subscription-box-smart-pet-products/
+[2026-05-06T20:58:21.572554+00:00] indexnow: 200
+[2026-05-06T20:58:21.574778+00:00] marked article #83 as published
