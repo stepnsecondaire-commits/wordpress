@@ -973,7 +973,10 @@
     "slug": "amazon-best-sellers-smart-pet-products",
     "keywords": "amazon best sellers pet, amazon pet products top, amazon pet tech best",
     "scheduled_datetime": "2026-05-06T06:00:00",
-    "published": false
+    "published": true,
+    "published_at": "2026-05-06T09:36:45.094291+00:00",
+    "wp_post_id": 1466,
+    "wp_link": "https://eviehometech.com/amazon-best-sellers-smart-pet-products/"
   },
   {
     "index": 82,

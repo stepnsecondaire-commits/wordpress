@@ -710,3 +710,11 @@
 [2026-05-05T21:13:54.755918+00:00] indexnow: 200
 [2026-05-05T21:13:54.758037+00:00] marked article #80 as published
 [2026-05-06T00:10:09.200335+00:00] no article due for publication
+[2026-05-06T09:36:45.094335+00:00] picked article #81 [Amazon Best Sellers Analysis: Smart Pet Product Categories]
+[2026-05-06T09:36:45.094652+00:00] using pre-written content file for article #81
+[2026-05-06T09:36:45.094714+00:00] generated 8800 chars, meta_title='Amazon Best Sellers Analysis: Smart Pet Product Categories..'
+[2026-05-06T09:36:45.837592+00:00] unsplash: matched 'business chart' (tried=2)
+[2026-05-06T09:36:48.506839+00:00] image uploaded id=1465 url=https://eviehometech.com/wp-content/uploads/2026/05/business-chart.jpg
+[2026-05-06T09:36:49.980532+00:00] published post_id=1466 link=https://eviehometech.com/amazon-best-sellers-smart-pet-products/
+[2026-05-06T09:36:51.054821+00:00] indexnow: 200
+[2026-05-06T09:36:51.057061+00:00] marked article #81 as published
