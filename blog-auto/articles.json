@@ -985,7 +985,10 @@
     "slug": "pet-products-ecommerce-trends-dtc-marketplace",
     "keywords": "pet products ecommerce, DTC pet brand, pet marketplace trends",
     "scheduled_datetime": "2026-05-06T14:00:00",
-    "published": false
+    "published": true,
+    "published_at": "2026-05-06T16:15:46.894256+00:00",
+    "wp_post_id": 1468,
+    "wp_link": "https://eviehometech.com/pet-products-ecommerce-trends-dtc-marketplace/"
   },
   {
     "index": 83,

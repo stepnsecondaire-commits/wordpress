@@ -718,3 +718,11 @@
 [2026-05-06T09:36:49.980532+00:00] published post_id=1466 link=https://eviehometech.com/amazon-best-sellers-smart-pet-products/
 [2026-05-06T09:36:51.054821+00:00] indexnow: 200
 [2026-05-06T09:36:51.057061+00:00] marked article #81 as published
+[2026-05-06T16:15:46.894293+00:00] picked article #82 [Pet Products E-commerce Trends: DTC, Marketplace and Omnichannel]
+[2026-05-06T16:15:46.894585+00:00] using pre-written content file for article #82
+[2026-05-06T16:15:46.894653+00:00] generated 9141 chars, meta_title='Pet Products E-commerce Trends: DTC, Marketplace and Omnicha'
+[2026-05-06T16:15:47.284957+00:00] unsplash: matched 'pet products ecommerce' (tried=1)
+[2026-05-06T16:15:50.645420+00:00] image uploaded id=1467 url=https://eviehometech.com/wp-content/uploads/2026/05/pet-products-ecommerce.jpg
+[2026-05-06T16:15:52.580920+00:00] published post_id=1468 link=https://eviehometech.com/pet-products-ecommerce-trends-dtc-marketplace/
+[2026-05-06T16:15:53.385432+00:00] indexnow: 200
+[2026-05-06T16:15:53.387213+00:00] marked article #82 as published
