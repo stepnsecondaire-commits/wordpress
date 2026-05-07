@@ -735,3 +735,11 @@
 [2026-05-06T20:58:21.572554+00:00] indexnow: 200
 [2026-05-06T20:58:21.574778+00:00] marked article #83 as published
 [2026-05-07T00:05:57.456106+00:00] no article due for publication
+[2026-05-07T10:02:17.867785+00:00] picked article #84 [Luxury Pet Products: The Premium Segment Growth Story]
+[2026-05-07T10:02:17.868089+00:00] using pre-written content file for article #84
+[2026-05-07T10:02:17.868152+00:00] generated 9015 chars, meta_title='Luxury Pet Products: The Premium Segment Growth Story | Evie'
+[2026-05-07T10:02:18.107650+00:00] unsplash: matched 'business chart' (tried=2)
+[2026-05-07T10:02:20.510497+00:00] image uploaded id=1471 url=https://eviehometech.com/wp-content/uploads/2026/05/business-chart-1.jpg
+[2026-05-07T10:02:22.436334+00:00] published post_id=1472 link=https://eviehometech.com/luxury-pet-products-premium-segment-growth/
+[2026-05-07T10:02:23.358003+00:00] indexnow: 200
+[2026-05-07T10:02:23.360300+00:00] marked article #84 as published
