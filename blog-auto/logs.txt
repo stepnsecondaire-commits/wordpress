@@ -751,3 +751,11 @@
 [2026-05-07T17:17:39.454109+00:00] published post_id=1474 link=https://eviehometech.com/pet-adoption-trends-post-pandemic-product-demand/
 [2026-05-07T17:17:40.118791+00:00] indexnow: 200
 [2026-05-07T17:17:40.121235+00:00] marked article #85 as published
+[2026-05-07T21:14:24.862083+00:00] picked article #86 [Sustainable and Eco-Friendly Pet Products: A Growing Demand]
+[2026-05-07T21:14:24.862414+00:00] using pre-written content file for article #86
+[2026-05-07T21:14:24.862484+00:00] generated 8328 chars, meta_title='Sustainable and Eco-Friendly Pet Products: A Growing Demand.'
+[2026-05-07T21:14:25.389526+00:00] unsplash: matched 'sustainable pet products' (tried=1)
+[2026-05-07T21:14:27.973798+00:00] image uploaded id=1475 url=https://eviehometech.com/wp-content/uploads/2026/05/sustainable-pet-products.jpg
+[2026-05-07T21:14:30.330765+00:00] published post_id=1476 link=https://eviehometech.com/sustainable-eco-friendly-pet-products/
+[2026-05-07T21:14:30.879861+00:00] indexnow: 200
+[2026-05-07T21:14:30.882063+00:00] marked article #86 as published
