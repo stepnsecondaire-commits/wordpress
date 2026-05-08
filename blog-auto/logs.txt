@@ -785,3 +785,4 @@
 [2026-05-08T20:16:16.830087+00:00] published post_id=1483 link=https://eviehometech.com/set-up-smart-pet-feeder-step-by-step/
 [2026-05-08T20:16:17.332096+00:00] indexnow: 200
 [2026-05-08T20:16:17.334558+00:00] marked article #89 as published
+[2026-05-08T23:41:10.964362+00:00] no article due for publication
