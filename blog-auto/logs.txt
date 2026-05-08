@@ -777,3 +777,11 @@
 [2026-05-08T16:02:19.357492+00:00] published post_id=1481 link=https://eviehometech.com/transition-cat-self-cleaning-litter-box/
 [2026-05-08T16:02:19.817235+00:00] indexnow: 200
 [2026-05-08T16:02:19.819145+00:00] marked article #88 as published
+[2026-05-08T20:16:11.314390+00:00] picked article #89 [How to Set Up a Smart Pet Feeder: Step-by-Step Guide]
+[2026-05-08T20:16:11.314682+00:00] using pre-written content file for article #89
+[2026-05-08T20:16:11.314762+00:00] generated 8350 chars, meta_title='How to Set Up a Smart Pet Feeder: Step-by-Step Guide | Evieh'
+[2026-05-08T20:16:11.811734+00:00] unsplash: matched 'set up smart pet feeder' (tried=1)
+[2026-05-08T20:16:14.470840+00:00] image uploaded id=1482 url=https://eviehometech.com/wp-content/uploads/2026/05/set-up-smart-pet-feeder.jpg
+[2026-05-08T20:16:16.830087+00:00] published post_id=1483 link=https://eviehometech.com/set-up-smart-pet-feeder-step-by-step/
+[2026-05-08T20:16:17.332096+00:00] indexnow: 200
+[2026-05-08T20:16:17.334558+00:00] marked article #89 as published
