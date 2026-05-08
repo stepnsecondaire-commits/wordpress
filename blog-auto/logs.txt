@@ -760,3 +760,11 @@
 [2026-05-07T21:14:30.879861+00:00] indexnow: 200
 [2026-05-07T21:14:30.882063+00:00] marked article #86 as published
 [2026-05-08T00:12:29.656587+00:00] no article due for publication
+[2026-05-08T06:24:16.047759+00:00] picked article #87 [How to Choose the Right Cat Litter for an Automatic Litter Box]
+[2026-05-08T06:24:16.048059+00:00] using pre-written content file for article #87
+[2026-05-08T06:24:16.048116+00:00] generated 8220 chars, meta_title='How to Choose the Right Cat Litter for an Automatic Litter B'
+[2026-05-08T06:24:16.449401+00:00] unsplash: matched 'cat litter for automatic litter box' (tried=1)
+[2026-05-08T06:24:19.589405+00:00] image uploaded id=1477 url=https://eviehometech.com/wp-content/uploads/2026/05/cat-litter-for-automatic-litter-box.jpg
+[2026-05-08T06:24:21.646302+00:00] published post_id=1478 link=https://eviehometech.com/choose-right-cat-litter-automatic-litter-box/
+[2026-05-08T06:24:22.574406+00:00] indexnow: 200
+[2026-05-08T06:24:22.576817+00:00] marked article #87 as published
