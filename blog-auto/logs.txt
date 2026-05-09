@@ -795,3 +795,11 @@
 [2026-05-09T07:24:11.387374+00:00] indexnow: 200
 [2026-05-09T07:24:11.389799+00:00] marked article #90 as published
 [2026-05-09T10:39:51.040178+00:00] no article due for publication
+[2026-05-09T14:35:44.688478+00:00] picked article #91 [How to Train Your Dog with a Smart Bark Collar]
+[2026-05-09T14:35:44.688792+00:00] using pre-written content file for article #91
+[2026-05-09T14:35:44.688852+00:00] generated 8052 chars, meta_title='How to Train Your Dog with a Smart Bark Collar | Eviehome'
+[2026-05-09T14:35:45.198956+00:00] unsplash: matched 'train dog bark collar' (tried=1)
+[2026-05-09T14:35:48.141828+00:00] image uploaded id=1486 url=https://eviehometech.com/wp-content/uploads/2026/05/train-dog-bark-collar.jpg
+[2026-05-09T14:35:50.264352+00:00] published post_id=1487 link=https://eviehometech.com/train-dog-smart-bark-collar/
+[2026-05-09T14:35:50.773973+00:00] indexnow: 200
+[2026-05-09T14:35:50.776445+00:00] marked article #91 as published
