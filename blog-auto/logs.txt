@@ -844,3 +844,11 @@
 [2026-05-11T16:07:51.809378+00:00] published post_id=1493 link=https://eviehometech.com/pet-air-purifier-vs-regular-air-purifier/
 [2026-05-11T16:07:52.540254+00:00] indexnow: 200
 [2026-05-11T16:07:52.542782+00:00] marked article #94 as published
+[2026-05-11T18:19:08.279006+00:00] picked article #95 [How Much Does a Smart Cat Litter Box Cost: Price Guide 2026]
+[2026-05-11T18:19:08.279358+00:00] using pre-written content file for article #95
+[2026-05-11T18:19:08.279420+00:00] generated 7963 chars, meta_title='How Much Does a Smart Cat Litter Box Cost: Price Guide 2026.'
+[2026-05-11T18:19:09.351012+00:00] unsplash: matched 'smart litter box cost' (tried=1)
+[2026-05-11T18:19:12.508410+00:00] image uploaded id=1494 url=https://eviehometech.com/wp-content/uploads/2026/05/smart-litter-box-cost.jpg
+[2026-05-11T18:19:14.942698+00:00] published post_id=1495 link=https://eviehometech.com/smart-cat-litter-box-cost-price-guide-2026/
+[2026-05-11T18:19:15.476570+00:00] indexnow: 200
+[2026-05-11T18:19:15.479151+00:00] marked article #95 as published
