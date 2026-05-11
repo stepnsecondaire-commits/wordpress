@@ -836,3 +836,11 @@
 [2026-05-11T09:55:02.948355+00:00] indexnow: 200
 [2026-05-11T09:55:02.950845+00:00] marked article #93 as published
 [2026-05-11T12:44:07.871210+00:00] no article due for publication
+[2026-05-11T16:07:46.097741+00:00] picked article #94 [Pet Air Purifier vs Regular Air Purifier: What Is Different?]
+[2026-05-11T16:07:46.098057+00:00] using pre-written content file for article #94
+[2026-05-11T16:07:46.098122+00:00] generated 8441 chars, meta_title='Pet Air Purifier vs Regular Air Purifier: What Is Different?'
+[2026-05-11T16:07:46.502824+00:00] unsplash: matched 'pet air purifier vs regular' (tried=1)
+[2026-05-11T16:07:49.497617+00:00] image uploaded id=1492 url=https://eviehometech.com/wp-content/uploads/2026/05/pet-air-purifier-vs-regular.jpg
+[2026-05-11T16:07:51.809378+00:00] published post_id=1493 link=https://eviehometech.com/pet-air-purifier-vs-regular-air-purifier/
+[2026-05-11T16:07:52.540254+00:00] indexnow: 200
+[2026-05-11T16:07:52.542782+00:00] marked article #94 as published
