@@ -857,3 +857,11 @@
 [2026-05-11T23:01:47.536878+00:00] no article due for publication
 [2026-05-12T01:17:38.705801+00:00] no article due for publication
 [2026-05-12T05:06:45.479817+00:00] no article due for publication
+[2026-05-12T08:10:12.599911+00:00] picked article #96 [Best Smart Pet Products for Small Apartments]
+[2026-05-12T08:10:12.600240+00:00] using pre-written content file for article #96
+[2026-05-12T08:10:12.600298+00:00] generated 8273 chars, meta_title='Best Smart Pet Products for Small Apartments | Eviehome'
+[2026-05-12T08:10:13.480025+00:00] unsplash: matched 'cat care' (tried=2)
+[2026-05-12T08:10:15.729548+00:00] image uploaded id=1496 url=https://eviehometech.com/wp-content/uploads/2026/05/cat-care.jpg
+[2026-05-12T08:10:17.671806+00:00] published post_id=1497 link=https://eviehometech.com/best-smart-pet-products-small-apartments/
+[2026-05-12T08:10:18.217200+00:00] indexnow: 200
+[2026-05-12T08:10:18.219711+00:00] marked article #96 as published
