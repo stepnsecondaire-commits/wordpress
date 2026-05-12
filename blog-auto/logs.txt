@@ -867,3 +867,11 @@
 [2026-05-12T08:10:18.219711+00:00] marked article #96 as published
 [2026-05-12T10:59:46.554213+00:00] no article due for publication
 [2026-05-12T13:10:08.063501+00:00] no article due for publication
+[2026-05-12T16:03:19.491156+00:00] picked article #97 [Smart Pet Products for Elderly Pet Owners: Accessibility Guide]
+[2026-05-12T16:03:19.491478+00:00] using pre-written content file for article #97
+[2026-05-12T16:03:19.491538+00:00] generated 9660 chars, meta_title='Smart Pet Products for Elderly Pet Owners: Accessibility Gui'
+[2026-05-12T16:03:19.902198+00:00] unsplash: matched 'pet products elderly' (tried=1)
+[2026-05-12T16:03:22.208792+00:00] image uploaded id=1498 url=https://eviehometech.com/wp-content/uploads/2026/05/pet-products-elderly.jpg
+[2026-05-12T16:03:24.167481+00:00] published post_id=1499 link=https://eviehometech.com/smart-pet-products-elderly-owners-accessibility/
+[2026-05-12T16:03:24.568008+00:00] indexnow: 200
+[2026-05-12T16:03:24.570392+00:00] marked article #97 as published
