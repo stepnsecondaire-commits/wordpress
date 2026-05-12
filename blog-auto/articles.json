@@ -1177,7 +1177,10 @@
     "slug": "set-up-multi-pet-smart-feeding-station",
     "keywords": "multi pet feeder, multiple pet feeding station, feeder for multiple pets",
     "scheduled_datetime": "2026-05-12T18:00:00",
-    "published": false
+    "published": true,
+    "published_at": "2026-05-12T18:22:29.631637+00:00",
+    "wp_post_id": 1501,
+    "wp_link": "https://eviehometech.com/set-up-multi-pet-smart-feeding-station/"
   },
   {
     "index": 99,
