@@ -888,3 +888,11 @@
 [2026-05-12T23:08:35.283415+00:00] no article due for publication
 [2026-05-13T01:24:15.016722+00:00] no article due for publication
 [2026-05-13T05:29:04.091983+00:00] no article due for publication
+[2026-05-13T08:17:52.632241+00:00] picked article #99 [The Ultimate Pet-Proofing Guide for Smart Home Devices]
+[2026-05-13T08:17:52.632578+00:00] using pre-written content file for article #99
+[2026-05-13T08:17:52.632637+00:00] generated 8963 chars, meta_title='The Ultimate Pet-Proofing Guide for Smart Home Devices | Evi'
+[2026-05-13T08:17:53.158993+00:00] unsplash: matched 'pet proof smart home' (tried=1)
+[2026-05-13T08:17:55.278035+00:00] image uploaded id=1511 url=https://eviehometech.com/wp-content/uploads/2026/05/pet-proof-smart-home.jpg
+[2026-05-13T08:17:57.200069+00:00] published post_id=1512 link=https://eviehometech.com/pet-proofing-smart-home-devices-guide/
+[2026-05-13T08:17:57.751547+00:00] indexnow: 200
+[2026-05-13T08:17:57.753862+00:00] marked article #99 as published
